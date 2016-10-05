@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CREPDL", "CREPDL\CREPDL.fsproj", "{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BMPTest", "BMPTest\BMPTest.fsproj", "{4A7524FB-B5AD-4228-A88D-3D10442794A7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21} = {E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GraphemeTest", "GraphemeTest\GraphemeTest.fsproj", "{0EAC70A0-2E34-43F9-B2C9-2C0B79A457F4}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CREPDLTest", "CREPDLTest\CREPDLTest.fsproj", "{8E7F3787-712B-4079-A4F8-1A6798CB96E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21} = {E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A7524FB-B5AD-4228-A88D-3D10442794A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A7524FB-B5AD-4228-A88D-3D10442794A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A7524FB-B5AD-4228-A88D-3D10442794A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A7524FB-B5AD-4228-A88D-3D10442794A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EAC70A0-2E34-43F9-B2C9-2C0B79A457F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EAC70A0-2E34-43F9-B2C9-2C0B79A457F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EAC70A0-2E34-43F9-B2C9-2C0B79A457F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EAC70A0-2E34-43F9-B2C9-2C0B79A457F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E7F3787-712B-4079-A4F8-1A6798CB96E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E7F3787-712B-4079-A4F8-1A6798CB96E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E7F3787-712B-4079-A4F8-1A6798CB96E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E7F3787-712B-4079-A4F8-1A6798CB96E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
