@@ -102,7 +102,7 @@ let rbtCollections() =
             "0x2300, 0x23FF");
        (41, "CONTROL PICTURES",
             "0x2400, 0x243F");
-       (42, "OPTICAL CHARACTER  RECOGNITION",
+       (42, "OPTICAL CHARACTER RECOGNITION",
             "0x2440, 0x245F");
        (43, "ENCLOSED ALPHANUMERICS",
             "0x2460, 0x24FF");
@@ -150,7 +150,7 @@ let rbtCollections() =
             "0xFE50, 0xFE6F");
        (68, "ARABIC PRESENTATION FORMS-B",
             "0xFE70, 0xFEFE");
-       (69, "HALFWIDTH AND FULLWIDTH  FORMS",
+       (69, "HALFWIDTH AND FULLWIDTH FORMS",
             "0xFF00, 0xFFEF");
        (70, "SPECIALS",
             "0xFFF0, 0xFFFD");
@@ -258,7 +258,7 @@ let rbtCollections() =
            "0x2C00,0x2C5F");
        (119,"COPTIC",
            "0x03E2,0x03EF
-       	    0x2C80,0x2CFF");
+           0x2C80,0x2CFF");
        (120,"GEORGIAN SUPPLEMENT",
            "0x2D00,0x2D2F");
        (121,"TIFINAGH",
