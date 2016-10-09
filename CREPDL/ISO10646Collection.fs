@@ -612,13 +612,110 @@ let rbtCollections() =
             0xFA2A, 0xFA6A
             0x2F800, 0x2FA1D");
 
-//382 CJK UNIFIED IDEOGRAPHS-2005 Collection 380*  9FA6-9FBB
-//383 CJK COMPATIBILITY IDEOGRAPHS-2005 Collection 381 *  FA70-FAD9
-//384 CJK UNIFIED IDEOGRAPHS-2007 Collection 382 *  9FBC-9FC3
-//385 CJK UNIFIED IDEOGRAPHS-2008 Collection 384 *  9FC4-9FC6 2A700-2B734
-//386 CJK COMPATIBILITY IDEOGRAPHS-2008 Collection 383 *  FA6B-FA6D
-//387 CJK UNIFIED IDEOGRAPHS-2009 Collection 385 *  9FC7-9FCB  2B740-2B81D
-//388 CJK UNIFIED IDEOGRAPHS-2014 Collection 387 *  2B820-2CEA1
+       (382, "CJK UNIFIED IDEOGRAPHS-2005",
+            "0x3400, 0x4DB5
+            0x4E00, 0x9FA5
+         0x9FA6,0x9FBB
+            0xFA0E, 0xFA0F
+            0xFA11
+            0xFA13, 0xFA14
+            0xFA1F
+            0xFA21
+            0xFA23, 0xFA24
+            0xFA27, 0xFA29
+            0x20000, 0x2A6D6");
+
+       (383, "CJK COMPATIBILITY IDEOGRAPHS-2005",
+            "0xF900, 0xFA0D
+            0xFA10
+            0xFA12
+            0xFA15, 0xFA1E
+            0xFA20
+            0xFA22
+            0xFA25, 0xFA26
+            0xFA2A, 0xFA6A
+          0xFA70, 0xFAD9
+            0x2F800, 0x2FA1D");
+
+       (384, "CJK UNIFIED IDEOGRAPHS-2007",
+            "0x3400, 0x4DB5
+            0x4E00, 0x9FA5
+         0x9FA6,0x9FBB
+         0x9FBC,0x9FC3
+            0xFA0E, 0xFA0F
+            0xFA11
+            0xFA13, 0xFA14
+            0xFA1F
+            0xFA21
+            0xFA23, 0xFA24
+            0xFA27, 0xFA29
+            0x20000, 0x2A6D6");
+
+       (385, "CJK UNIFIED IDEOGRAPHS-2008",
+            "0x3400, 0x4DB5
+            0x4E00, 0x9FA5
+         0x9FA6,0x9FBB
+         0x9FBC,0x9FC3
+         0x9FC4,0x9FC6
+            0xFA0E, 0xFA0F
+            0xFA11
+            0xFA13, 0xFA14
+            0xFA1F
+            0xFA21
+            0xFA23, 0xFA24
+            0xFA27, 0xFA29
+            0x20000, 0x2A6D6
+         0x2A700,0x2B734");
+
+       (386, "CJK COMPATIBILITY IDEOGRAPHS-2008",
+            "0xF900, 0xFA0D
+            0xFA10
+            0xFA12
+            0xFA15, 0xFA1E
+            0xFA20
+            0xFA22
+            0xFA25, 0xFA26
+            0xFA2A, 0xFA6A
+          0xFA6B, 0xFA6D
+          0xFA70, 0xFAD9
+            0x2F800, 0x2FA1D");
+
+       (387, "CJK UNIFIED IDEOGRAPHS-2009",
+            "0x3400, 0x4DB5
+            0x4E00, 0x9FA5
+         0x9FA6,0x9FBB
+         0x9FBC,0x9FC3
+         0x9FC4,0x9FC6
+         0x9FC7,0x9FCB
+            0xFA0E, 0xFA0F
+            0xFA11
+            0xFA13, 0xFA14
+            0xFA1F
+            0xFA21
+            0xFA23, 0xFA24
+            0xFA27, 0xFA29
+            0x20000, 0x2A6D6
+         0x2A700,0x2B734
+         0x2B740,0x2B81D");
+
+       (388, "CJK UNIFIED IDEOGRAPHS-2014",
+            "0x3400, 0x4DB5
+            0x4E00, 0x9FA5
+         0x9FA6,0x9FBB
+         0x9FBC,0x9FC3
+         0x9FC4,0x9FC6
+         0x9FC7,0x9FCB
+            0xFA0E, 0xFA0F
+            0xFA11
+            0xFA13, 0xFA14
+            0xFA1F
+            0xFA21
+            0xFA23, 0xFA24
+            0xFA27, 0xFA29
+            0x20000, 0x2A6D6
+         0x2A700,0x2B734
+         0x2B740,0x2B81D
+         0x2B820,0x2CEA1");
 
 //270 COMBINING CHARACTERS BMP characters specified in 4.14
 //281 MES-1 see A.5.2 *

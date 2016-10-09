@@ -8,6 +8,7 @@ open CREPDL.ISO10646
 open CREPDL.ThreeValuedBoolean
 open CREPDL.ReadingCREPDL
 open CREPDL.TopLevelValidation
+open ConstructAllCollections
 
 
 let dir = "h:\Documents\Visual Studio 2013\Projects\CREPDL\examples/"
@@ -17,6 +18,7 @@ let rr = createRepertoireRepository (rbtCollections()) (deweyCollections()) in
 
 System.Console.WriteLine(System.DateTime.Now - startTime)
 
+constructAll10646Collections rr
 
 System.Console.WriteLine "8859-15"
 

@@ -55,3 +55,9 @@ let validateFile (rr: RepertoireRegistory) (schemaUri: string)
 let validateString (rr: RepertoireRegistory) (schemaUri: string)
                    (str: string) (sr: TextWriter): threeValuedBoolean =
    validateTextReader rr (readAndCheckSchema schemaUri) (new StringReader(str)) sr 
+
+
+let validateStringAgainstSchemaString (rr: RepertoireRegistory) (schemaString: string)
+                   (str: string) (sr: TextWriter): threeValuedBoolean =
+
+   validateTextReader rr (XDocument.Parse( schemaString).Root) (new StringReader(str)) sr 

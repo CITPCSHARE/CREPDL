@@ -18,6 +18,7 @@ type Registry =
 type Repertoire = Lazy<char -> bool>
     
 let createDeweyRepertoire (sr: StreamReader)  =
+    
     let pOrP = ref NotAllocated
 
     let rec readLines () =
@@ -133,8 +134,8 @@ let createRepertoireRepository rbtCol dCol: RepertoireRegistory =
     getRepertoire ;;
     
     
-let checkCharAgainst10646Collection char (rr: RepertoireRegistory) collectionNumber name version: threeValuedBoolean =
-    let repertoire = rr name collectionNumber
+let checkCharAgainst10646Collection char (rr: RepertoireRegistory) name  collectionNumber  version: threeValuedBoolean =
+    let repertoire = rr  collectionNumber name
     let validator = repertoire.Force()
     if validator char then True else False
     
@@ -164,7 +165,7 @@ let checkCharAgainstRepertoire char (rr: RepertoireRegistory) (registry: Registr
                                (minUV, maxUV): threeValuedBoolean =
     match registry with
     | ISO10646(version, name, collectionNumber) -> 
-        checkCharAgainst10646Collection char rr name collectionNumber version
+        checkCharAgainst10646Collection char rr  name collectionNumber version
     | CLDR(version, name) -> checkCharAgainstCLDR char name version
     | IANA(version, name, mIBEnum)  -> 
         checkCharAgainstIANA char name mIBEnum version
