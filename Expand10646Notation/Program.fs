@@ -16,9 +16,9 @@ let parseLine (line: string) =
                 match v.Split([|'-'|], 2) with 
                 |[|rangeStart;rangeEnd|] 
                     -> if rangeStart.Length <> 2 then failwith "should not happen"
-                       row+rangeStart+","+row+rangeEnd
+                       "0x"+row+rangeStart+","+"0x"+row+rangeEnd
                 |[|point|] 
-                    -> if point.Length <> 2 then failwith "should not happen" else row+point
+                    -> if point.Length <> 2 then failwith "should not happen" else "0x"+row+point
                 | _-> failwith "should not happen"}
   | _ -> failwith "should not happen"
 

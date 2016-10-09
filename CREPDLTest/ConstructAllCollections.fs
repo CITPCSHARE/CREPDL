@@ -208,6 +208,8 @@ let constructAll10646Collections rr =
         @"<repertoire  xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0""  registry=""10646"" number=""26""/>";
         @"<repertoire  xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0""  registry=""10646"" number=""27""/>";
         @"<repertoire  xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0""  registry=""10646"" number=""28""/>";
+        @"<repertoire  xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0""  registry=""10646"" number=""281""/>";
+        @"<repertoire  xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0""  registry=""10646"" number=""282""/>";
         @"<repertoire  xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0""  registry=""10646"" number=""29""/>";
         @"<repertoire  xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0""  registry=""10646"" number=""3""/>";
         @"<repertoire  xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0""  registry=""10646"" number=""30""/>";

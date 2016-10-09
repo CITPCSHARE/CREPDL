@@ -18,6 +18,8 @@ let rr = createRepertoireRepository (rbtCollections()) (deweyCollections()) in
 
 System.Console.WriteLine(System.DateTime.Now - startTime)
 
+System.Console.ReadKey() |> ignore;;
+
 constructAll10646Collections rr
 
 System.Console.WriteLine "8859-15"

@@ -25,7 +25,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Debug\Expand10646Notation.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
-    <StartArguments>"h:/Documents/visual studio 2015/Projects/CREPDL/CREPDL/302prep.txt" "h:/Documents/visual studio 2015/Projects/CREPDL/CREPDL/302.txt"</StartArguments>
+    <StartArguments>"h:/Documents/visual studio 2015/Projects/CREPDL/CREPDL/282prep.txt" "h:/Documents/visual studio 2015/Projects/CREPDL/CREPDL/282.txt"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

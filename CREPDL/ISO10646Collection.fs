@@ -718,8 +718,6 @@ let rbtCollections() =
          0x2B820,0x2CEA1");
 
 //270 COMBINING CHARACTERS BMP characters specified in 4.14
-//281 MES-1 see A.5.2 *
-//282 MES-2 see A.5.3 *
 //283 MODERN EUROPEAN SCRIPTS see A.5.4 *
 //284 CONTEMPORARY LITHUANIAN LETTERS see A.5.5 *
 //285 BASIC JAPANESE see A.5.6 *
@@ -770,7 +768,9 @@ let rbtCollections() =
             0xE0000, 0xEFFFD")]
 
 let deweyCollections() =
-     [(301, "BMP-AMD.7", "301.txt");
+     [(281, "MES-1", "281.txt");
+      (282, "MES-2", "282.txt");
+      (301, "BMP-AMD.7", "301.txt");
       (302, "BMP SECOND EDITION", "302.txt");
       (370, "IICORE", "IICORE.txt");
       (371, "JIS2004 IDEOGRAPHICS EXTENSION", "JIExt.txt");
