@@ -1,0 +1,5 @@
+<union xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+  <ref href="kyouiku1b.crepdl"/>
+  <ref href="kyouiku2b.crepdl"/>
+  <ref href="kyouiku3.crepdl"/>
+</union>

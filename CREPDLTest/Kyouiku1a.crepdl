@@ -1,0 +1,18 @@
+<union xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+  <char>[&#x4e00;&#x53f3;&#x96e8;&#x5186;&#x738b;]</char>
+  <char>[&#x97f3;&#x4e0b;&#x706b;&#x82b1;&#x8c9d;]</char>
+  <char>[&#x5b66;&#x6c17;&#x4e5d;&#x4f11;&#x7389;]</char>
+  <char>[&#x91d1;&#x7a7a;&#x6708;&#x72ac;&#x898b;]</char>
+  <char>[&#x53e3;&#x6821;&#x5de6;&#x4e09;&#x5c71;]</char>
+  <char>[&#x5b50;&#x56db;&#x7cf8;&#x5b57;&#x8033;]</char>
+  <char>[&#x4e03;&#x8eca;&#x624b;&#x5341;&#x51fa;]</char>
+  <char>[&#x5973;&#x5c0f;&#x4e0a;&#x68ee;&#x4eba;]</char>
+  <char>[&#x6c34;&#x6b63;&#x751f;&#x9752;&#x5915;]</char>
+  <char>[&#x77f3;&#x8d64;&#x5343;&#x5ddd;&#x5148;]</char>
+  <char>[&#x65e9;&#x8349;&#x8db3;&#x6751;&#x5927;]</char>
+  <char>[&#x7537;&#x7af9;&#x4e2d;&#x866b;&#x753a;]</char>
+  <char>[&#x5929;&#x7530;&#x571f;&#x4e8c;&#x65e5;]</char>
+  <char>[&#x5165;&#x5e74;&#x767d;&#x516b;&#x767e;]</char>
+  <char>[&#x6587;&#x6728;&#x672c;&#x540d;&#x76ee;]</char>
+  <char>[&#x7acb;&#x529b;&#x6797;&#x516d;&#x4e94;]</char>
+</union>

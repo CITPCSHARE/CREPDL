@@ -1,0 +1,17 @@
+<union  xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+  <union>
+    <char>[&#xD02;-&#xD03;]</char>
+    <char>[&#xD05;-&#xD0C;]</char>
+    <char>[&#xD0E;-&#xD10;]</char>
+    <char>[&#xD12;-&#xD28;]</char>
+    <char>[&#xD2A;-&#xD39;]</char>
+    <char>[&#xD3D;-&#xD44;]</char>
+    <char>[&#xD46;-&#xD48;]</char>
+    <char>[&#xD4A;-&#xD4D;]</char>
+    <char>&#xD57;</char>
+    <char>[&#xD60;-&#xD63;]</char>
+    <char>[&#xD66;-&#xD75;]</char>
+    <char>[&#xD79;-&#xD7F;]</char>
+  </union>
+  <char><hull>[&#x0D00;-&#x0D7F;&#x200C;-&#x200d;]</hull></char>
+</union>

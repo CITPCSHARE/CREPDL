@@ -110,7 +110,6 @@ let createRepertoireRepository rbtCol dCol: RepertoireRegistory =
     let addDeweyRepertoires() =
         let asm = Assembly.GetExecutingAssembly()
         let path = Path.GetDirectoryName(asm.Location)
-        let pppath = (Directory.GetParent (path)).Name
         
         List.iter
             (fun (i, name, filename) ->

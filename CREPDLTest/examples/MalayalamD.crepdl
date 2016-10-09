@@ -1,0 +1,14 @@
+<intersection  xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+  <union>
+    <char><kernel>[&#x0D01;-&#x0D03;]</kernel></char>
+    <char><kernel>[&#x0D05;-&#x0D0C;]</kernel></char>
+    <char><kernel>[&#x0D0E;-&#x0D10;]</kernel></char>
+    <char><kernel>[&#x0D12;-&#x0D3A;]</kernel></char>
+    <char><kernel>[&#x0D3D;-&#x0D44;]</kernel></char>
+    <char><kernel>[&#x0D46;-&#x0D48;]</kernel></char>
+    <char><kernel>[&#x0D4A;-&#x0D4F;]</kernel></char>
+    <char><kernel>[&#x0D54;-&#x0D63;]</kernel></char>
+    <char><kernel>[&#x0D66;-&#x0D7F;]</kernel></char>
+  </union>
+  <char>[&#x0D00;-&#x0D7F;&#x200C;-&#x200d;]</char>
+</intersection>

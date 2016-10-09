@@ -1,0 +1,3 @@
+<union xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+  <ref href="refLoop.crepdl"/>
+</union>

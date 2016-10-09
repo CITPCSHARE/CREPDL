@@ -1,0 +1,19 @@
+<union xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+  <ref href="Hiragana.crepdl"/>
+  <ref href="Katakana.crepdl"/>
+  <char>[a-zA-Z0-9]</char>
+  <char>[&#x20;&#xA;]</char>
+  <char>[,;:\'\/\.\?\+\-\(\)]</char>
+  <char>[々〆&#x2014;&#x2026;]</char>
+  <char>[　、。「」（）！？]</char> -->
+  <char>[、。「」（），．、！・　：；]</char> 
+  <char>[&#x2014;&#x2015;]</char>
+  <char>[１２３４５６７８９０]</char>
+  <char>[ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ]</char>
+  <char>[ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ]</char> 
+  <char>[１２３４５６７８９０]</char>
+<char>[&#x2015;&#xFF3C;&#xFF5E;&#xFFE2;&#xFF0D;]</char>
+  <char>[『』”＃＄％＆’＞＜〜−〜｜？αβ＾？●〜…＋←→―]</char>
+  <char>[￥／\‐〒◎○〇■△×＠＊↓［］〔〕《》±≠＝≒〈〉−※★“‘【】〓]</char>
+  <repertoire registry="10646" number="370"/>
+</union>

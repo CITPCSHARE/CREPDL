@@ -1,0 +1,11 @@
+<union xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+  <char>\p{IsBasicLatin}</char>
+  <char>&#xA0;</char>
+  <char>&#xA4;</char>
+  <char>&#xAD;</char>
+  <char>&#x60C;</char>
+  <char>&#x61B;</char>
+  <char>&#x61F;</char>
+  <char>[&#x621;-&#x63A;]</char>
+  <char>[&#x640;-&#x652;]</char>
+</union>

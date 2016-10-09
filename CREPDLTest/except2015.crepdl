@@ -1,0 +1,8 @@
+<difference xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+  <union>
+     <ref href="HiraganaKatakanaTouyouKanjiBasicLatinKigou.crepdl"/>
+     <repertoire registry="10646" number="370"/>
+    <char>[々&#x2014;]</char>
+   </union>
+  <char>[&#x2015;]</char>
+</difference>

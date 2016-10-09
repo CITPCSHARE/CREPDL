@@ -1,0 +1,4 @@
+<char xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+    <kernel>[&#x0D01;-&#x0D03;&#x0D05;-&#x0D0C;&#x0D0E;-&#x0D10;&#x0D12;-&#x0D3A;&#x0D3D;-&#x0D44;&#x0D46;-&#x0D48;&#x0D4A;-&#x0D4F;&#x0D54;-&#x0D63;&#x0D66;-&#x0D7F;]</kernel>
+    <hull>[&#x0D00;-&#x0D7F;&#x200C;-&#x200d;]</hull>
+</char>

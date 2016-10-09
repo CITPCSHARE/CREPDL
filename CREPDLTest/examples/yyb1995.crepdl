@@ -1,0 +1,620 @@
+<union xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+  <!-- A -->
+  <!-- an -->
+  <char>[庵暗鞍岸]</char>
+  <!-- ao -->
+  <char>[坳鰲翱]</char>
+  <!-- B -->
+  <!-- ba -->
+  <char>[霸]</char>
+  <!-- bai -->
+  <char>[柏稗]</char>
+  <!-- ban -->
+  <char>[坂]</char>
+  <!-- bang -->
+  <char>[幫膀榜]</char>
+  <!-- bao -->
+  <char>[刨褓寳褒]</char>
+  <!-- bei -->
+  <char>[背備悖杯]</char>
+  <!-- ben -->
+  <char>[奔]</char>
+  <!-- beng -->
+  <char>[綳]</char>
+  <!-- bi -->
+  <char>[痹逼毙秘弊秕]</char>
+  <!-- bian -->
+  <char>[遍]</char>
+  <!-- biao -->
+  <char>[膘]</char>
+  <!-- bie -->
+  <char>[鱉瘪]</char>
+  <!-- bing -->
+  <char>[冰幷禀]</char>
+  <!-- bo -->
+  <char>[鉢博駁脖]</char>
+  <!-- bu -->
+  <char>[布]</char>
+  <!-- C -->
+  <char>[]</char>
+  <!-- cai -->
+  <char>[睬踩采彩]</char>
+  <!-- can -->
+  <char>[慚參]</char>
+  <!-- cao -->
+  <char>[草操]</char>
+  <!-- ce -->
+  <char>[册厠策]</char>
+  <!-- cha -->
+  <char>[碴查察插]</char>
+  <!-- chan -->
+  <char>[鏟]</char>
+  <!-- chang -->
+  <char>[嘗腸場]</char>
+  <!-- che -->
+  <char>[扯]</char>
+  <!-- chen -->
+  <char>[嗔趁]</char>
+  <!-- cheng -->
+  <char>[乘撑澄塍]</char>
+  <!-- chi -->
+  <char>[吃翅耻痴敕]</char>
+  <!-- chou -->
+  <char>[仇瞅酬綢]</char>
+  <!-- chu -->
+  <char>[鋤蹰橱厨]</char>
+  <!-- chuan -->
+  <char>[船]</char>
+  <!-- chuang -->
+  <char>[創窗床]</char>
+  <!-- chui -->
+  <char>[捶棰錘]</char>
+  <!-- chun -->
+  <char>[唇春醇蠢淳蒓]</char>
+  <!-- ci -->
+  <char>[詞辭糍鷀]</char>
+  <!-- cong -->
+  <char>[匆葱]</char>
+  <!-- cou -->
+  <char>[凑]</char>
+  <!-- cu -->
+  <char>[粗蹴]</char>
+  <!-- cuan -->
+  <char>[篡]</char>
+  <!-- cui -->
+  <char>[脆悴]</char>
+  <!-- cun -->
+  <char>[村]</char>
+  <!-- cuo -->
+  <char>[銼 ]</char>
+  <!-- D -->
+  <char>[]</char>
+  <!-- da -->
+  <char>[瘩]</char>
+  <!-- dai -->
+  <char>[呆玳]</char>
+  <!-- dan -->
+  <char>[啖耽]</char>
+  <!-- dang -->
+  <char>[擋蕩]</char>
+  <!-- dao -->
+  <char>[搗島]</char>
+  <!-- de -->
+  <char>[德]</char>
+  <!-- deng -->
+  <char>[凳]</char>
+  <!-- di -->
+  <char>[堤抵蒂]</char>
+  <!-- diao -->
+  <char>[雕吊]</char>
+  <!-- die -->
+  <char>[蝶叠喋]</char>
+  <!-- ding -->
+  <char>[碇]</char>
+  <!-- dong -->
+  <char>[動]</char>
+  <!-- dou -->
+  <char>[兜鬥豆]</char>
+  <!-- du -->
+  <char>[睹妒]</char>
+  <!-- dun -->
+  <char>[敦惇遁墩]</char>
+  <!-- duo -->
+  <char>[朵垛跺 ]</char>
+  <!-- E -->
+  <char>[]</char>
+  <!-- e -->
+  <char>[額扼萼峨鵝婀厄鰐腭訛]</char>
+  <!-- en -->
+  <char>[恩]</char>
+  <!-- er -->
+  <char>[爾 ]</char>
+  <!-- F -->
+  <char>[]</char>
+  <!-- fa -->
+  <char>[罰筏法珐]</char>
+  <!-- fan -->
+  <char>[繁翻凡帆泛]</char>
+  <!-- fang -->
+  <char>[仿]</char>
+  <!-- fei -->
+  <char>[痱廢]</char>
+  <!-- fen -->
+  <char>[氛]</char>
+  <!-- feng -->
+  <char>[蜂峰]</char>
+  <!-- fu -->
+  <char>[俯佛婦附麩 ]</char>
+  <!-- G -->
+  <char>[]</char>
+  <!-- ga -->
+  <char>[戛嘎]</char>
+  <!-- gai -->
+  <char>[丐槪]</char>
+  <!-- gan -->
+  <char>[贛秆杆乾幹]</char>
+  <!-- gang -->
+  <char>[杠扛肛]</char>
+  <!-- gao -->
+  <char>[皋槁糕稿]</char>
+  <!-- ge -->
+  <char>[閣胳歌個]</char>
+  <!-- gen -->
+  <char>[亘]</char>
+  <!-- geng -->
+  <char>[耕粳鯁]</char>
+  <!-- gong -->
+  <char>[躬]</char>
+  <!-- gou -->
+  <char>[够鈎構]</char>
+  <!-- gu -->
+  <char>[雇鼓]</char>
+  <!-- gua -->
+  <char>[挂括]</char>
+  <!-- guai -->
+  <char>[拐怪]</char>
+  <!-- guan -->
+  <char>[管館罐]</char>
+  <!-- gui -->
+  <char>[規瑰]</char>
+  <!-- guo -->
+  <char>[果椁 ]</char>
+  <!-- H -->
+  <char>[]</char>
+  <!-- han -->
+  <char>[函悍焊捍]</char>
+  <!-- hao -->
+  <char>[嗥皓蚝]</char>
+  <!-- he -->
+  <char>[呵盍核和]</char>
+  <!-- heng -->
+  <char>[恒]</char>
+  <!-- hong -->
+  <char>[哄]</char>
+  <!-- hou -->
+  <char>[糇]</char>
+  <!-- hu -->
+  <char>[呼糊胡]</char>
+  <!-- hua -->
+  <char>[話嘩花]</char>
+  <!-- huan -->
+  <char>[獾歡]</char>
+  <!-- huang -->
+  <char>[恍晃]</char>
+  <!-- hui -->
+  <char>[毁蛔輝匯迴徽]</char>
+  <!-- hun -->
+  <char>[魂昏]</char>
+  <!-- huo -->
+  <char>[禍 ]</char>
+  <!-- J -->
+  <char>[]</char>
+  <!-- ji -->
+  <char>[羈鷄楫績迹期賫]</char>
+  <!-- jia -->
+  <char>[假夾]</char>
+  <!-- jian -->
+  <char>[箋劍鑒緘奸鹼碱减繭]</char>
+  <!-- jiang -->
+  <char>[缰僵奬]</char>
+  <!-- jiao -->
+  <char>[僥叫剿脚]</char>
+  <!-- jie -->
+  <char>[秸届階潔劫杰捷]</char>
+  <!-- jin -->
+  <char>[斤晋緊]</char>
+  <!-- jing -->
+  <char>[阱徑凈脛]</char>
+  <!-- jiong -->
+  <char>[炯迥]</char>
+  <!-- jiu -->
+  <char>[韭救糾揪厩]</char>
+  <!-- ju -->
+  <char>[巨矩局據舉颶]</char>
+  <!-- juan -->
+  <char>[狷眷倦]</char>
+  <!-- jue -->
+  <char>[橛撅决]</char>
+  <!-- jun -->
+  <char>[俊浚隽 ]</char>
+  <!-- K -->
+  <char>[]</char>
+  <!-- kai -->
+  <char>[慨]</char>
+  <!-- kan -->
+  <char>[刊瞰侃坎]</char>
+  <!-- kang -->
+  <char>[糠炕]</char>
+  <!-- kao -->
+  <char>[考]</char>
+  <!-- ke -->
+  <char>[咳疴剋]</char>
+  <!-- ken -->
+  <char>[肯]</char>
+  <!-- keng -->
+  <char>[坑]</char>
+  <!-- kou -->
+  <char>[寇叩扣]</char>
+  <!-- ku -->
+  <char>[褲]</char>
+  <!-- kuai -->
+  <char>[膾]</char>
+  <!-- kuan -->
+  <char>[款]</char>
+  <!-- kuang -->
+  <char>[况礦誑]</char>
+  <!-- kui -->
+  <char>[饋愧窺]</char>
+  <!-- kun -->
+  <char>[昆捆坤]</char>
+  <!-- kuo -->
+  <char>[闊 ]</char>
+  <!-- L -->
+  <char>[]</char>
+  <!-- la -->
+  <char>[辣臘]</char>
+  <!-- lai -->
+  <char>[賴]</char>
+  <!-- lan -->
+  <char>[懶婪]</char>
+  <!-- lang -->
+  <char>[螂琅]</char>
+  <!-- lei -->
+  <char>[泪]</char>
+  <!-- leng -->
+  <char>[棱]</char>
+  <!-- li -->
+  <char>[厘裏歷暦莅犁狸梨隸藜栗璃荔]</char>
+  <!-- lian -->
+  <char>[廉鐮奩煉斂]</char>
+  <!-- liang -->
+  <char>[梁凉]</char>
+  <!-- lin -->
+  <char>[麟吝鄰淋磷]</char>
+  <!-- ling -->
+  <char>[菱]</char>
+  <!-- liu -->
+  <char>[留琉瘤柳]</char>
+  <!-- long -->
+  <char>[弄]</char>
+  <!-- lu -->
+  <char>[櫓碌戮爐]</char>
+  <!-- lü -->
+  <char>[綠]</char>
+  <!-- lüe -->
+  <char>[略]</char>
+  <!-- lun -->
+  <char>[侖]</char>
+  <!-- luo -->
+  <char>[裸騾虜 ]</char>
+  <!-- M -->
+  <char>[]</char>
+  <!-- ma -->
+  <char>[駡麻蟆]</char>
+  <!-- mai -->
+  <char>[脉]</char>
+  <!-- mang -->
+  <char>[虻]</char>
+  <!-- mao -->
+  <char>[冒帽卯猫牦]</char>
+  <!-- mei -->
+  <char>[梅]</char>
+  <!-- mi -->
+  <char>[幂眯覓]</char>
+  <!-- mian -->
+  <char>[綿麵]</char>
+  <!-- miao -->
+  <char>[眇渺妙]</char>
+  <!-- mie -->
+  <char>[咩]</char>
+  <!-- min -->
+  <char>[泯]</char>
+  <!-- ming -->
+  <char>[命冥]</char>
+  <!-- mo -->
+  <char>[饃謨]</char>
+  <!-- mu -->
+  <char>[幕畝 ]</char>
+  <!-- N -->
+  <char>[]</char>
+  <!-- na -->
+  <char>[拿]</char>
+  <!-- nai -->
+  <char>[奶乃]</char>
+  <!-- nan -->
+  <char>[楠]</char>
+  <!-- nao -->
+  <char>[閙]</char>
+  <!-- ni -->
+  <char>[霓你昵擬]</char>
+  <!-- nian -->
+  <char>[拈念年]</char>
+  <!-- niang -->
+  <char>[娘]</char>
+  <!-- niao -->
+  <char>[裊]</char>
+  <!-- nie -->
+  <char>[嚙捏涅孽]</char>
+  <!-- ning -->
+  <char>[寧]</char>
+  <!-- nong -->
+  <char>[農]</char>
+  <!-- nü -->
+  <char>[衄]</char>
+  <!-- nuan -->
+  <char>[暖]</char>
+  <!-- nen -->
+  <char>[嫩]</char>
+  <!-- nuo -->
+  <char>[糯挪 ]</char>
+  <!-- P -->
+  <char>[]</char>
+  <!-- pao -->
+  <char>[疱炮]</char>
+  <!-- pei -->
+  <char>[胚]</char>
+  <!-- peng -->
+  <char>[碰]</char>
+  <!-- pi -->
+  <char>[毗匹]</char>
+  <!-- piao -->
+  <char>[飄]</char>
+  <!-- ping -->
+  <char>[憑瓶]</char>
+  <!-- po -->
+  <char>[迫]</char>
+  <!-- pu -->
+  <char>[鋪 ]</char>
+  <!-- Q -->
+  <char>[]</char>
+  <!-- qi -->
+  <char>[戚啓棋栖凄旗弃憩]</char>
+  <!-- qian -->
+  <char>[鉛潜愆]</char>
+  <!-- qiang -->
+  <char>[强襁牆檣羌槍]</char>
+  <!-- qiao -->
+  <char>[憔蹺峭蕎鍬]</char>
+  <!-- qie -->
+  <char>[愜]</char>
+  <!-- qin -->
+  <char>[寢勤琴撳]</char>
+  <!-- qiu -->
+  <char>[丘虬鰍秋球]</char>
+  <!-- qu -->
+  <char>[麯驅]</char>
+  <!-- quan -->
+  <char>[券]</char>
+  <!-- que -->
+  <char>[榷却]</char>
+  <!-- qun -->
+  <char>[群裙 ]</char>
+  <!-- R -->
+  <char>[]</char>
+  <!-- ran -->
+  <char>[冉髯]</char>
+  <!-- rao -->
+  <char>[繞]</char>
+  <!-- ren -->
+  <char>[韌軔飪衽妊]</char>
+  <!-- rong -->
+  <char>[冗絨熔融]</char>
+  <!-- ruan -->
+  <char>[蠕軟]</char>
+  <!-- rui -->
+  <char>[蕊睿]</char>
+  <!-- ruo -->
+  <char>[箬 ]</char>
+  <!-- S -->
+  <char>[]</char>
+  <!-- sa -->
+  <char>[颯]</char>
+  <!-- sai -->
+  <char>[腮]</char>
+  <!-- san -->
+  <char>[傘散]</char>
+  <!-- sang -->
+  <char>[桑]</char>
+  <!-- se -->
+  <char>[澀]</char>
+  <!-- shan -->
+  <char>[鱔删姗栅珊膳膻]</char>
+  <!-- shao -->
+  <char>[筲]</char>
+  <!-- she -->
+  <char>[蛇射]</char>
+  <!-- shen -->
+  <char>[深愼參]</char>
+  <!-- sheng -->
+  <char>[升剩]</char>
+  <!-- shi -->
+  <char>[虱是尸濕謚實時視柿]</char>
+  <!-- shu -->
+  <char>[倏庶竪漱疏薯]</char>
+  <!-- si -->
+  <char>[飼祀厮俟似]</char>
+  <!-- sou -->
+  <char>[嗽搜]</char>
+  <!-- su -->
+  <char>[溯宿訴蘇]</char>
+  <!-- sui -->
+  <char>[歲]</char>
+  <!-- sun -->
+  <char>[笋飧]</char>
+  <!-- suo -->
+  <char>[瑣鎖蓑挲 ]</char>
+  <!-- T -->
+  <char>[]</char>
+  <!-- ta -->
+  <char>[塔拓它]</char>
+  <!-- tan -->
+  <char>[嘆罎袒]</char>
+  <!-- tang -->
+  <char>[趟糖]</char>
+  <!-- tao -->
+  <char>[掏縧]</char>
+  <!-- teng -->
+  <char>[藤]</char>
+  <!-- ti -->
+  <char>[剃啼蹄]</char>
+  <!-- tiao -->
+  <char>[眺]</char>
+  <!-- tong -->
+  <char>[筒同峒]</char>
+  <!-- tou -->
+  <char>[偷]</char>
+  <!-- tu -->
+  <char>[兔]</char>
+  <!-- tui -->
+  <char>[腿頽]</char>
+  <!-- tun -->
+  <char>[臀]</char>
+  <!-- tuo -->
+  <char>[馱托駝拖 ]</char>
+  <!-- W -->
+  <char>[]</char>
+  <!-- wa -->
+  <char>[蛙襪]</char>
+  <!-- wan -->
+  <char>[挽浣玩碗]</char>
+  <!-- wang -->
+  <char>[亡望往罔]</char>
+  <!-- wei -->
+  <char>[喂猬]</char>
+  <!-- wen -->
+  <char>[吻蚊]</char>
+  <!-- weng -->
+  <char>[瓮]</char>
+  <!-- wu -->
+  <char>[污塢忤 ]</char>
+  <!-- X -->
+  <char>[]</char>
+  <!-- xi -->
+  <char>[嘻溪晰席煕戲膝]</char>
+  <!-- xia -->
+  <char>[厦狹]</char>
+  <!-- xian -->
+  <char>[銜弦仙鮮閑嫻涎綫籼]</char>
+  <!-- xiang -->
+  <char>[享餉嚮厢]</char>
+  <!-- xiao -->
+  <char>[笑效]</char>
+  <!-- xie -->
+  <char>[脅邪蟹燮蝎泄紲鞋携]</char>
+  <!-- xin -->
+  <char>[欣]</char>
+  <!-- xing -->
+  <char>[幸]</char>
+  <!-- xiong -->
+  <char>[汹凶胸]</char>
+  <!-- xiu -->
+  <char>[修綉銹]</char>
+  <!-- xu -->
+  <char>[叙勖恤婿]</char>
+  <!-- xuan -->
+  <char>[喧楦萱璇]</char>
+  <!-- xue -->
+  <char>[靴]</char>
+  <!-- xun -->
+  <char>[熏徇勛塤尋巡 ]</char>
+  <!-- Y -->
+  <char>[]</char>
+  <!-- ya -->
+  <char>[鴉丫]</char>
+  <!-- yan -->
+  <char>[贋雁驗烟胭燕鼹腌咽檐岩焰艷宴]</char>
+  <!-- yang -->
+  <char>[揚]</char>
+  <!-- yao -->
+  <char>[淆肴耀咬拗窑夭]</char>
+  <!-- ye -->
+  <char>[野夜燁]</char>
+  <!-- yi -->
+  <char>[翳异咿移以]</char>
+  <!-- yin -->
+  <char>[因殷飮淫喑堙陰吟蔭姻]</char>
+  <!-- ying -->
+  <char>[罌穎映鶯]</char>
+  <!-- yong -->
+  <char>[咏涌恿雍]</char>
+  <!-- you -->
+  <char>[游]</char>
+  <!-- yu -->
+  <char>[寓欲逾愈鬱]</char>
+  <!-- yuan -->
+  <char>[冤猿]</char>
+  <!-- yue -->
+  <char>[岳]</char>
+  <!-- yun -->
+  <char>[韵 ]</char>
+  <!-- Z -->
+  <char>[]</char>
+  <!-- za -->
+  <char>[雜匝]</char>
+  <!-- zai -->
+  <char>[灾再]</char>
+  <!-- zan -->
+  <char>[咱贊簪]</char>
+  <!-- zang -->
+  <char>[葬]</char>
+  <!-- zao -->
+  <char>[唣糟噪皂]</char>
+  <!-- zha -->
+  <char>[札閘榨扎咤]</char>
+  <!-- zhai -->
+  <char>[寨齋]</char>
+  <!-- zhan -->
+  <char>[盞氈占嶄暫沾]</char>
+  <!-- zhang -->
+  <char>[獐]</char>
+  <!-- zhao -->
+  <char>[照棹]</char>
+  <!-- zhe -->
+  <char>[浙輒謫哲懾]</char>
+  <!-- zhen -->
+  <char>[針鴆砧珍偵]</char>
+  <!-- zhi -->
+  <char>[卮帙址置跖栀祇志紙稚侄]</char>
+  <!-- zhong -->
+  <char>[冢衆]</char>
+  <!-- zhou -->
+  <char>[周咒帚]</char>
+  <!-- zhu -->
+  <char>[煮箸伫注猪]</char>
+  <!-- zhuan -->
+  <char>[磚撰專饌]</char>
+  <!-- zhuang -->
+  <char>[妝]</char>
+  <!-- zhuo -->
+  <char>[斫桌]</char>
+  <!-- zi -->
+  <char>[姊資眦]</char>
+  <!-- zong -->
+  <char>[偬鬃踪棕粽]</char>
+  <!-- zu -->
+  <char>[卒]</char>
+  <!-- zuan -->
+  <char>[纂鑽樽]</char>
+  <!-- zui -->
+  <char>[最罪]</char>
+</union>

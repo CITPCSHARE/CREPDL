@@ -72,6 +72,8 @@
     <Compile Include="Main.fs" />
     <None Include="App.config" />
     <EmbeddedResource Include="IICORE.txt" />
+    <EmbeddedResource Include="JIExt.txt" />
+    <EmbeddedResource Include="JIS2004 IDEOGRAPHICS EXTENSION.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
