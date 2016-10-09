@@ -17,6 +17,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CREPDLTest", "CREPDLTest\CR
 		{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21} = {E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}
 	EndProjectSection
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Expand10646Notation", "Expand10646Notation\Expand10646Notation.fsproj", "{95FE28D9-DBED-46AC-81CC-2906CB40BCBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8E7F3787-712B-4079-A4F8-1A6798CB96E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E7F3787-712B-4079-A4F8-1A6798CB96E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E7F3787-712B-4079-A4F8-1A6798CB96E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95FE28D9-DBED-46AC-81CC-2906CB40BCBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95FE28D9-DBED-46AC-81CC-2906CB40BCBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95FE28D9-DBED-46AC-81CC-2906CB40BCBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95FE28D9-DBED-46AC-81CC-2906CB40BCBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -573,8 +573,7 @@ let rbtCollections() =
        (3002, "ALTERNATE FORMAT CHARACTERS",
             "0xE0000, 0xE0FFF");
 
-//301, BMP-AMD.7  see A.3.1     
-//302, BMP SECOND EDITION  see A.3.3     
+  
 //303 UNICODE 3.1 see A.6.2 *
 //304 UNICODE 3.2 see A.6.3 *
 //305 UNICODE 4.0 see A.6.4 *
@@ -622,7 +621,6 @@ let rbtCollections() =
 //388 CJK UNIFIED IDEOGRAPHS-2014 Collection 387 *  2B820-2CEA1
 
 //270 COMBINING CHARACTERS BMP characters specified in 4.14
-//271 (This collection number shall not be used, see Note 2) *
 //281 MES-1 see A.5.2 *
 //282 MES-2 see A.5.3 *
 //283 MODERN EUROPEAN SCRIPTS see A.5.4 *
@@ -635,12 +633,15 @@ let rbtCollections() =
             "0x0000, 0xD7FF
             0xE000, 0xFFFD");
 
-//401 PRIVATE USE PLANES-0F-10 Planes 0F and 10
+       (401, "PRIVATE USE PLANES-0F-10",
+            "0x0F0000,0x10FFFF")
 
        (1000, "SMP",
             "0x10000, 0x1FFFD");
 
 //1900 SMP COMBINING CHARACTERS SMP characters specified in 4.14
+//4.14  combining character character which has General Category values of 
+//Spacing Combining Mark (Mc), Non Spacing Mark (Mn), and Enclosing Mark (Me) 
 
        (2000, "SIP",
             "0x20000, 0x2FFFD");
@@ -672,6 +673,8 @@ let rbtCollections() =
             0xE0000, 0xEFFFD")]
 
 let deweyCollections() =
-     [(370, "IICORE", "IICORE.txt");
+     [(301, "BMP-AMD.7", "301.txt");
+      (302, "BMP SECOND EDITION", "302.txt");
+      (370, "IICORE", "IICORE.txt");
       (371, "JIS2004 IDEOGRAPHICS EXTENSION", "JIExt.txt");
       (372, "JAPANESE IDEOGRAPHICS SUPPLEMENT", "JIS2004 IDEOGRAPHICS EXTENSION.txt")]

@@ -15,7 +15,7 @@ type Registry =
   | IANA of  string option * string option * int  option
   | UNDEFINED of string
   
-type Repertoire = char -> bool
+type Repertoire = Lazy<char -> bool>
     
 let createDeweyRepertoire (sr: StreamReader)  =
     let pOrP = ref NotAllocated
@@ -105,7 +105,8 @@ let createRepertoireRepository rbtCol dCol: RepertoireRegistory =
     let addRBTRepertoires() =
         List.iter
             (fun (i, name, str) -> 
-                    addRepertoir i name (createRBTRepertoire str))
+                    let lazyRepoirtore = lazy (createRBTRepertoire str)
+                    addRepertoir i name lazyRepoirtore)
             rbtCol
     let addDeweyRepertoires() =
         let asm = Assembly.GetExecutingAssembly()
@@ -114,9 +115,12 @@ let createRepertoireRepository rbtCol dCol: RepertoireRegistory =
         List.iter
             (fun (i, name, filename) ->
                 let fn = Path.Combine(path, filename)
-                let textStreamReader = 
-                    new StreamReader(asm.GetManifestResourceStream(filename));
-                addRepertoir i name (createDeweyRepertoire textStreamReader))
+                let lazyRepoirtore = 
+                    lazy (
+                        let textStreamReader = 
+                            new StreamReader(asm.GetManifestResourceStream(filename))
+                        createDeweyRepertoire textStreamReader)
+                addRepertoir i name lazyRepoirtore)
             dCol
     let getRepertoire (collectionNumber: int option) (name: string option)  =
         match (name, collectionNumber) with
@@ -131,7 +135,8 @@ let createRepertoireRepository rbtCol dCol: RepertoireRegistory =
     
 let checkCharAgainst10646Collection char (rr: RepertoireRegistory) collectionNumber name version: threeValuedBoolean =
     let repertoire = rr name collectionNumber
-    if repertoire char then True else False
+    let validator = repertoire.Force()
+    if validator char then True else False
     
 let checkCharAgainstCLDR  charn name versio: threeValuedBoolean =
     System.Console.WriteLine("CLDR is not supported yet")
