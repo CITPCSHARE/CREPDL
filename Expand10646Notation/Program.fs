@@ -10,7 +10,8 @@ let parseLine (line: string) =
   let trimedLine = line.Trim()
   match trimedLine.Split([|' '|], 2) with 
   | [|row; rest|] ->
-    if row.Length > 2 then seq {yield rest.Replace("-", ",")}
+    if row.Length > 2 then 
+        seq {yield "0x" + rest.Replace("-", ",0x")}
     else
         let values = rest.Split([|' '|])
         seq { for v in values ->
