@@ -3,6 +3,7 @@
 
 open System
 open System.IO
+open System.Reflection
 
 
 let parseLine (line: string) =
@@ -22,18 +23,36 @@ let parseLine (line: string) =
                 | _-> failwith "should not happen"}
   | _ -> failwith "should not happen"
 
-let expandedLines filename =
-  let lines = File.ReadLines(filename)
-  seq { for line in lines do 
-        if not(line.StartsWith(";")) && line.Length > 3 then yield! parseLine line }
+let expandedLines (str: StreamReader) =
+    seq{ while not(str.EndOfStream) do
+            let line = str.ReadLine()
+            if not(line.StartsWith(";")) && line.Length > 3 then yield! parseLine line }
+
 
 [<EntryPoint>]
-let main argv = 
-    let inputFile = argv.[0]
-    let outputputFile = argv.[1]
-    use ofs = new FileStream(outputputFile,  FileMode.Create)
-    use ofsWriter = new StreamWriter (ofs)
-    let lines = expandedLines inputFile
-    for line in lines do
-        ofsWriter.WriteLine(line)
+let main argv =
+    let prepFiles =
+        ["281.txt"; "282.txt"; "286.txt"; "288.txt";
+        "301.txt"; "302.txt"];
+
+    let asm = Assembly.GetExecutingAssembly()
+    let path = Path.GetDirectoryName(asm.Location)
+    let dir = 
+        match path.Split([|@"Expand10646Notation\bin"|],StringSplitOptions.None) with
+        | [|x; _|] -> x + @"CREPDL\"
+        | _ -> failwith "error"
+ 
+    let help (filename: string) =
+        let fn = Path.Combine(path, filename)
+        let textStreamReader = 
+            new StreamReader(asm.GetManifestResourceStream(filename))
+
+        let outputFile = dir + filename
+        use ofs = new FileStream(outputFile,  FileMode.Create)
+        use ofsWriter = new StreamWriter (ofs)
+        let lines = expandedLines textStreamReader
+        for line in lines do
+            ofsWriter.WriteLine(line)
+               
+    List.iter help prepFiles
     0 // return an integer exit code

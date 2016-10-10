@@ -73,9 +73,11 @@
     <None Include="App.config" />
     <EmbeddedResource Include="IICORE.txt" />
     <EmbeddedResource Include="JIExt.txt" />
-    <EmbeddedResource Include="JIS2004 IDEOGRAPHICS EXTENSION.txt" />
+    <EmbeddedResource Include="JAPANESE IDEOGRAPHICS SUPPLEMENT.txt" />
     <EmbeddedResource Include="281.txt" />
     <EmbeddedResource Include="282.txt" />
+    <EmbeddedResource Include="286.txt" />
+    <EmbeddedResource Include="288.txt" />
     <EmbeddedResource Include="301.txt" />
     <EmbeddedResource Include="302.txt" />
   </ItemGroup>
