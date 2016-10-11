@@ -15,8 +15,9 @@ open Repertoire
 open Char
 open Validation
 open ReadingCREPDL
+open RepertoireCollection
                           
-let validateTextReader (rr: RepertoireRegistory) (schema: XElement) (tr: TextReader) (sr: TextWriter): threeValuedBoolean =
+let validateTextReader (repCol: RepertoireCollection) (schema: XElement) (tr: TextReader) (sr: TextWriter): threeValuedBoolean =
     let mutable character = readChar tr
     let mutable result = True
     let mutable lineNumber = 1
@@ -25,7 +26,7 @@ let validateTextReader (rr: RepertoireRegistory) (schema: XElement) (tr: TextRea
         if (character = char '\n') || (character = char '\r') then 
             lineNumber <- lineNumber + 1;
             charNumber <- 1
-        match checkCharWithMemo rr schema character with
+        match checkCharWithMemo repCol schema character with
             | True -> () 
             | False -> sr.Write("Line:" + lineNumber.ToString() + " Position: " + charNumber.ToString() + " ");
                        sr.WriteLine(character.ToString() + "(U+" + (int character).ToString("X4") + "): incorrect");
@@ -38,7 +39,7 @@ let validateTextReader (rr: RepertoireRegistory) (schema: XElement) (tr: TextRea
         charNumber <- charNumber + 1
     result
 
-let validateFile (rr: RepertoireRegistory) (schemaUri: string) 
+let validateFile (repCol: RepertoireCollection) (schemaUri: string) 
                  (filename: string) (encName: string) (tw: TextWriter): threeValuedBoolean =
   let enc =
     try
@@ -49,15 +50,15 @@ let validateFile (rr: RepertoireRegistory) (schemaUri: string)
   
   use fs = new FileStream(filename,  FileMode.Open)
   use sr = new StreamReader(fs, enc)
-  validateTextReader rr (readAndCheckSchema schemaUri) sr tw
+  validateTextReader repCol (readAndCheckSchema schemaUri) sr tw
 
 
-let validateString (rr: RepertoireRegistory) (schemaUri: string)
+let validateString (repCol: RepertoireCollection) (schemaUri: string)
                    (str: string) (sr: TextWriter): threeValuedBoolean =
-   validateTextReader rr (readAndCheckSchema schemaUri) (new StringReader(str)) sr 
+   validateTextReader repCol (readAndCheckSchema schemaUri) (new StringReader(str)) sr 
 
 
-let validateStringAgainstSchemaString (rr: RepertoireRegistory) (schemaString: string)
+let validateStringAgainstSchemaString (repCol: RepertoireCollection) (schemaString: string)
                    (str: string) (sr: TextWriter): threeValuedBoolean =
 
-   validateTextReader rr (XDocument.Parse( schemaString).Root) (new StringReader(str)) sr 
+   validateTextReader repCol (XDocument.Parse( schemaString).Root) (new StringReader(str)) sr 
