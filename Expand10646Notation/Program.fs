@@ -10,7 +10,7 @@ let parseLine (line: string) =
   let trimedLine = line.Trim()
   match trimedLine.Split([|' '|], 2) with 
   | [|row; rest|] ->
-    if row.Length > 2 then 
+    if row.Length >= 5 then //AA-DD for example
         seq {yield "0x" + rest.Replace("-", ",0x")}
     else
         let values = rest.Split([|' '|])
@@ -22,6 +22,10 @@ let parseLine (line: string) =
                 |[|point|] 
                     -> if point.Length <> 2 then failwith "should not happen" else "0x"+row+point
                 | _-> failwith "should not happen"}
+  | [| singleton |] ->
+    if singleton.Length >= 5 then //AA-DD for example
+        seq {yield "0x" + singleton.Replace("-", ",0x")}
+    else failwith "should not happen"
   | _ -> failwith "should not happen"
 
 let expandedLines (str: StreamReader) =
@@ -33,8 +37,8 @@ let expandedLines (str: StreamReader) =
 [<EntryPoint>]
 let main argv =
     let prepFiles =
-        ["281.txt"; "282.txt"; "286.txt"; "288.txt";
-        "301.txt"; "302.txt"];
+        ["281.txt"; "282.txt"; "-200285.txt"; "286.txt"; "288.txt";
+        "301.txt"; "302.txt"; "-303.txt"];
 
     let asm = Assembly.GetExecutingAssembly()
     let path = Path.GetDirectoryName(asm.Location)

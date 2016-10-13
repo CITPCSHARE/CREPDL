@@ -9,20 +9,31 @@ open ActivePattern
 
 [<Literal>]
 let readOneCREPDLWithMemoCount = 100
+
+let private testNamespace (node: XElement) =
+   if node.Name.NamespaceName.Equals crepdlNamespace then () 
+   else failwith ("illegal namespace: " +  node.Name.NamespaceName)
     
 let readOneCREPDL (absUri: Uri): XElement =
     try
         let doc = XDocument.Load(absUri.ToString(), LoadOptions.SetBaseUri)
         let root = doc.Root
-        if root.Name.NamespaceName.Equals crepdlNamespace
-          then root
-          else failwith ("illegal namespace: " +  root.Name.NamespaceName)
+        testNamespace root
+        root
     with
         | :? FileNotFoundException as e ->
             failwith ("file not found: " + absUri.ToString())
 
 let readOneCREPDLWithMemo: Uri-> XElement =
             memoize (fun uri -> readOneCREPDL uri) readOneCREPDLWithMemoCount
+
+let readOneCREPDLFromString (schemaString: string): XElement =
+    let root = XDocument.Parse(schemaString).Root
+    testNamespace root
+    root
+
+let readOneCREPDLFromStringWithMemo: string -> XElement =
+    memoize (fun str -> readOneCREPDLFromString str) readOneCREPDLWithMemoCount
 
 let readAndCheckSchema (schemaUri: string) : XElement =
      

@@ -1,6 +1,6 @@
-module CREPDL.ISO10646
+module CREPDL.ISO10646Collection
 
-let rbtCollections() =
+let rbtCollections =
       [(1, "BASIC LATIN",
         "0x0020, 0x007E")
        (2, "LATIN-1 SUPPLEMENT",
@@ -574,7 +574,6 @@ let rbtCollections() =
             "0xE0000, 0xE0FFF");
 
   
-//303 UNICODE 3.1 see A.6.2 *
 //304 UNICODE 3.2 see A.6.3 *
 //305 UNICODE 4.0 see A.6.4 *
 //306 UNICODE 4.1 see A.6.5 *
@@ -588,8 +587,25 @@ let rbtCollections() =
 //314 UNICODE 7.0 see A.6.13 *
 //340 COMBINED FIRST EDITION see A.3.5 *
 
-//10646 UNICODE 0000-FDCF FDF0-FFFD 10000-1FFFD 20000-2FFFD 30000-3FFFD 40000-4FFFD 50000-5FFFD 60000-6FFFD 70000-7FFFD 80000-8FFFD 90000-9FFFD A0000-AFFFD B0000-BFFFD C0000-CFFFD D0000-DFFFD E0000-EFFFD F0000-FFFFD 100000-10FFFD 
-
+        (10646, "UNICODE",
+            "0x0000, 0xFDCF
+            0xFDF0, 0xFFFD
+            0x10000, 0x1FFFD
+            0x20000, 0x2FFFD
+            0x30000, 0x3FFFD
+            0x40000, 0x4FFFD
+            0x50000, 0x5FFFD
+            0x60000, 0x6FFFD
+            0x70000, 0x7FFFD
+            0x80000, 0x8FFFD
+            0x90000, 0x9FFFD
+            0xA0000, 0xAFFFD
+            0xB0000, 0xBFFFD
+            0xC0000, 0xCFFFD
+            0xD0000, 0xDFFFD
+            0xE0000, 0xEFFFD
+            0xF0000, 0xFFFFD
+            0x100000, 0x10FFFD");
        (380, "CJK UNIFIED IDEOGRAPHS-2001",
             "0x3400, 0x4DB5
             0x4E00, 0x9FA5
@@ -717,10 +733,7 @@ let rbtCollections() =
          0x2B740,0x2B81D
          0x2B820,0x2CEA1");
 
-//270 COMBINING CHARACTERS BMP characters specified in 4.14
-//283 MODERN EUROPEAN SCRIPTS see A.5.4 *
 //284 CONTEMPORARY LITHUANIAN LETTERS see A.5.5 *
-//285 BASIC JAPANESE see A.5.6 *
 
        (300, "BMP",
             "0x0000, 0xD7FF
@@ -731,11 +744,6 @@ let rbtCollections() =
 
        (1000, "SMP",
             "0x10000, 0x1FFFD");
-
-//1900 SMP COMBINING CHARACTERS SMP characters specified in 4.14
-//4.14  combining character character which has General Category values of 
-//Spacing Combining Mark (Mc), Non Spacing Mark (Mn), and Enclosing Mark (Me) 
-
        (2000, "SIP",
             "0x20000, 0x2FFFD");
        (3000, "SSP",
@@ -743,11 +751,6 @@ let rbtCollections() =
        (63, " ALPHABETIC PRESENTATION FORMS",
             "0xFB00, 0xFB1C
             0xFB1D, 0xFB4F");
-
-//63 ALPHABETIC PRESENTATION FORMS   Collections 104-105
-//250 GENERAL FORMAT CHARACTERS  Collections 200-203
-//251 SCRIPT-SPECIFIC FORMAT CHARACTERS Collections 204-206
-//4000 UCS PART-2 Collections 1000, 2000, 3000
 
        (250, "GENERAL FORMAT CHARACTERS",
             "0x200B, 0x200D
@@ -765,13 +768,104 @@ let rbtCollections() =
             0x20000, 0x2FFFD
             0xE0000, 0xEFFFD")]
 
-let deweyCollections() =
+let deweyCollections =
      [(281, "MES-1", "281.txt");
       (282, "MES-2", "282.txt");
+      (-100285, "", "-100285.txt");
+      (-200285, "", "-200285.txt");
       (286, "JAPANESE NON IDEOGRAPHICS EXTENSION", "286.txt");
       (288, "MULTILINGUAL LATIN SUBSET", "288.txt");
       (301, "BMP-AMD.7", "301.txt");
       (302, "BMP SECOND EDITION", "302.txt");
+      (-303, "", "-303.txt");
       (370, "IICORE", "IICORE.txt");
       (371, "JIS2004 IDEOGRAPHICS EXTENSION", "JIExt.txt");
       (372, "JAPANESE IDEOGRAPHICS SUPPLEMENT", "JAPANESE IDEOGRAPHICS SUPPLEMENT.txt")]
+
+let collectionsInCREPDL =
+    [
+       (270, "COMBINING CHARACTERS", 
+            @"<intersection xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+              <char>[\p{Mc}|\p{Mn}|\p{Me}]</char>
+              <collection name=""BMP"" registry=""10646""/>
+            </intersection>");
+    
+
+       (1900, "COMBINING CHARACTERS", 
+            @"<intersection xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+              <char>[\p{Mc}|\p{Mn}|\p{Me}]</char>
+              <collection name=""SMP"" registry=""10646""/>
+            </intersection>");
+
+      (63, "ALPHABETIC PRESENTATION FORMS",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""104""/>
+                  <repertoire  registry=""10646"" number=""105""/>
+                </union>");
+
+      (250, "GENERAL FORMAT CHARACTERS",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""200""/>
+                  <repertoire  registry=""10646"" number=""201""/>
+                  <repertoire  registry=""10646"" number=""202""/>
+                  <repertoire  registry=""10646"" number=""203""/>
+                </union>");
+
+      (251, "SCRIPT-SPECIFIC FORMAT CHARACTERS", 
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""204""/>
+                  <repertoire  registry=""10646"" number=""205""/>
+                  <repertoire  registry=""10646"" number=""206""/>
+                </union>");
+      (283, "MODERN EUROPEAN SCRIPTS",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""1""/>
+                  <repertoire  registry=""10646"" number=""2""/>
+                  <repertoire  registry=""10646"" number=""3""/>
+                  <repertoire  registry=""10646"" number=""4""/>
+                  <repertoire  registry=""10646"" number=""5""/>
+                  <repertoire  registry=""10646"" number=""6""/>
+                  <repertoire  registry=""10646"" number=""7""/>
+                  <repertoire  registry=""10646"" number=""8""/>
+                  <repertoire  registry=""10646"" number=""9""/>
+                  <repertoire  registry=""10646"" number=""10""/>
+                  <repertoire  registry=""10646"" number=""11""/>
+                  <repertoire  registry=""10646"" number=""27""/>
+                  <repertoire  registry=""10646"" number=""30""/>
+                  <repertoire  registry=""10646"" number=""31""/>
+                  <repertoire  registry=""10646"" number=""32""/>
+                  <repertoire  registry=""10646"" number=""33""/>
+                  <repertoire  registry=""10646"" number=""34""/>
+                  <repertoire  registry=""10646"" number=""35""/>
+                  <repertoire  registry=""10646"" number=""36""/>
+                  <repertoire  registry=""10646"" number=""37""/>
+                  <repertoire  registry=""10646"" number=""38""/>
+                  <repertoire  registry=""10646"" number=""39""/>
+                  <repertoire  registry=""10646"" number=""40""/>
+                  <repertoire  registry=""10646"" number=""42""/>
+                  <repertoire  registry=""10646"" number=""44""/>
+                  <repertoire  registry=""10646"" number=""45""/>
+                  <repertoire  registry=""10646"" number=""46""/>
+                  <repertoire  registry=""10646"" number=""47""/>
+                  <repertoire  registry=""10646"" number=""65""/>
+                  <repertoire  registry=""10646"" number=""70""/>
+                  <repertoire  registry=""10646"" number=""92""/>
+                  <repertoire  registry=""10646"" number=""104""/>
+                  <repertoire  registry=""10646"" number=""283""/>
+            </union>");
+      (285,  "BASIC JAPANESE",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""-100285""/>
+                  <repertoire  registry=""10646"" number=""-200285""/>
+                </union>");
+      (303, "UNICODE 3.1 ",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""302""/>
+                  <repertoire  registry=""10646"" number=""-303""/>
+                </union>");
+      (4000, "UCS PART-2",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""1000""/>
+                  <repertoire  registry=""10646"" number=""2000""/>
+                  <repertoire  registry=""10646"" number=""3000""/>
+                </union>")];;

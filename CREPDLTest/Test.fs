@@ -5,17 +5,17 @@ open CREPDL.Basics
 open CREPDL.Validation
 open CREPDL.Repertoire
 open CREPDL.RepertoireCollection
-open CREPDL.ISO10646
+open CREPDL.ISO10646Collection
 open CREPDL.ThreeValuedBoolean
 open CREPDL.ReadingCREPDL
 open CREPDL.TopLevelValidation
 open ConstructAllCollections
 
 
-let dir = "h:\Documents\Visual Studio 2013\Projects\CREPDL\examples/"
+let dir = @"H:\CREPDLScripts\examples\"
 
 let startTime = System.DateTime.Now in
-let repCol = createRepertoireCollection (rbtCollections()) (deweyCollections()) in
+let repCol = createRepertoireCollection rbtCollections deweyCollections in
 
 System.Console.WriteLine(System.DateTime.Now - startTime)
 

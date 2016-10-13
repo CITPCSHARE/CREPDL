@@ -8,16 +8,14 @@ open Basics
 open RBT
 open Dewey
 open ThreeValuedBoolean
+open System.Xml.Linq;
 
-type Registry = 
-  ISO10646 of string option * string option * int option
-  | CLDR of string option * string option
-  | IANA of  string option * string option * int  option
-  | UNDEFINED of string
   
-type Repertoire = Lazy<char -> bool>
+type Repertoire = char -> bool
+
+type RepertoireInCREPDL = string -> XElement
     
-let createDeweyRepertoire (sr: StreamReader)  =
+let createDeweyRepertoire (sr: StreamReader): Repertoire  =
     
     let pOrP = ref NotAllocated
 
@@ -43,7 +41,7 @@ let createDeweyRepertoire (sr: StreamReader)  =
     checkUCSChar;;
 
 
-let createRBTRepertoire (str: string) =
+let createRBTRepertoire (str: string): Repertoire  =
 
     let createRange x y =
         if x <= y then (x, y)
@@ -91,3 +89,6 @@ let createRBTRepertoire (str: string) =
                                  
     checkUCSChar;;
     
+
+let createCREPDLRepertoire (schemaString: string) = 
+    XDocument.Parse( schemaString).Root

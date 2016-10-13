@@ -57,9 +57,11 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Program.fs" />
+    <EmbeddedResource Include="-303.txt" />
     <EmbeddedResource Include="302.txt" />
     <EmbeddedResource Include="301.txt" />
     <EmbeddedResource Include="288.txt" />
+    <EmbeddedResource Include="-200285.txt" />
     <EmbeddedResource Include="286.txt" />
     <EmbeddedResource Include="282.txt" />
     <EmbeddedResource Include="281.txt" />

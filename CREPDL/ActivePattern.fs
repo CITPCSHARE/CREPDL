@@ -5,7 +5,7 @@ open System.IO;
 open System.Xml.Linq;
 open System.Text.RegularExpressions;
 open System.Text;
-
+open Registry;
 open Repertoire;
 
 open Basics;
@@ -30,8 +30,10 @@ let (|Union|Intersection|Difference|Ref|Repertoire|Char|Illegal|) (crepdl: XElem
     List.filter (fun (c: XElement) -> c.Name.NamespaceName.Equals crepdlNamespace) 
                 (Seq.toList (crepdl.Elements()))  
   let getAndTrimAttributeValue (name: string): string option =
-    let at = crepdl.Attribute(XNamespace.None + name)
-    if at = null then None else Some(at.Value.Trim())
+    match crepdl.Attribute(XNamespace.None + name) with
+    | null ->  let x = 1 
+               None
+    | x -> Some(x.Value.Trim())
   let minUV = 
     let atv = getAndTrimAttributeValue "minUcsVersion"
     Option.map versionString2Int atv 
@@ -79,7 +81,7 @@ let (|Union|Intersection|Difference|Ref|Repertoire|Char|Illegal|) (crepdl: XElem
                 | Some("10646") -> ISO10646(version, name, Option.map int number)
                 | Some("CLDR") -> CLDR(version, name)
                 | Some("IANA") -> IANA(version, name, Option.map int number)
-                | Some(x) -> UNDEFINED(x)
+                | Some(x) -> failwith ("undefined registry: " + x)
                 | None -> failwith "@registry is missing"
           Repertoire(minUV, maxUV, registry)
     | "char"

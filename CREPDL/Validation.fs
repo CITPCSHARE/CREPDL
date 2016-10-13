@@ -10,8 +10,10 @@ open ThreeValuedBoolean
 open ActivePattern
 open Repertoire
 open Char
+open Registry
 open ReadingCREPDL
 open RepertoireCollection
+open ExpandCollectionInCREPDL
 
 
 [<Literal>]
@@ -75,7 +77,14 @@ and checkChar (repCol: RepertoireCollection) (crepdl: XElement) (char: char) (mi
         | Difference(mn, mx, children) -> 
             differenceHelp repCol char children (minMaxHelp mn mx)
         | Repertoire(mn, mx, registry)  -> 
-            checkCharAgainstRepertoire char repCol registry (minMaxHelp mn mx) 
+            match registry with
+            | ISO10646(_, name, number)  -> 
+                match getCollectionInCREPDL number name with
+                | Some(schemaString) ->
+                    let crepdl = readOneCREPDLFromStringWithMemo schemaString
+                    checkChar repCol crepdl char (minMaxHelp mn mx)
+                | None -> checkCharAgainstRepertoire char repCol registry (minMaxHelp mn mx)
+            | _ -> checkCharAgainstRepertoire char repCol registry (minMaxHelp mn mx) 
         | Char(mn, mx, kernel, hull)  -> 
             checkCharAgainstChar char kernel hull  (minMaxHelp mn mx)
         | Ref(mn, mx, absUri) -> 

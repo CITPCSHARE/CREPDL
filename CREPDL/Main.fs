@@ -5,7 +5,7 @@ open System.Text
 open Basics
 open Validation
 open Repertoire
-open ISO10646
+open ISO10646Collection
 
 open ThreeValuedBoolean
 open TopLevelValidation
@@ -15,7 +15,7 @@ open RepertoireCollection
 let main args =
     Dewey.checkShiftSizeCount()
     let startTime = System.DateTime.Now in
-    let repCol = createRepertoireCollection (rbtCollections()) (deweyCollections()) in
+    let repCol = createRepertoireCollection rbtCollections deweyCollections in
     System.Console.WriteLine(System.DateTime.Now - startTime)
     let returnCode = 
       try

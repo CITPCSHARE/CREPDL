@@ -8,18 +8,20 @@ open Basics
 open RBT
 open Dewey
 open ThreeValuedBoolean
+open Registry
 open Repertoire
 
-type RepertoireCollection = int option -> string option -> Repertoire
 
-let createRepertoireCollection rbtCol dCol: RepertoireCollection =            
+type RepertoireCollection = int option -> string option -> Lazy<Repertoire>
+
+let createRepertoireCollection rbtCol dCol : RepertoireCollection =            
     let numberDict = 
-        System.Collections.Generic.Dictionary<int, Repertoire>()
+        System.Collections.Generic.Dictionary<int, Lazy<Repertoire>>()
     let nameDict = 
-        System.Collections.Generic.Dictionary<string, Repertoire>()
-    let addRepertoir index name rc =
+        System.Collections.Generic.Dictionary<string, Lazy<Repertoire>>()
+    let addRepertoir index name (rc: Lazy<Repertoire>) =
         numberDict.Add(index, rc)
-        nameDict.Add(name, rc)
+        if name<>"" then nameDict.Add(name, rc)
         ()
     let addRBTRepertoires() =
         List.iter
@@ -38,17 +40,26 @@ let createRepertoireCollection rbtCol dCol: RepertoireCollection =
                     lazy (
                         let textStreamReader = 
                             new StreamReader(asm.GetManifestResourceStream(filename))
-                        CREPDL.Repertoire.createDeweyRepertoire textStreamReader)
+                        createDeweyRepertoire textStreamReader)
                 addRepertoir i name lazyRepoirtore)
             dCol
+
+//    let addCREPDLRepertoires(repCpl: RepertoireCollection) =
+//        List.iter
+//            (fun (i, name, schemaStr) -> 
+//                    let lazyRepoirtore = lazy (createCREPDLRepertoire repCpl schemaStr)
+//                    addRepertoir i name lazyRepoirtore)
+//            crepdlCol
+
     let getRepertoire (collectionNumber: int option) (name: string option)  =
         match (name, collectionNumber) with
            | Some(nm), _ when nameDict.ContainsKey(nm) -> nameDict.[nm]
            | _, Some(cnum) when numberDict.ContainsKey(cnum) -> numberDict.[cnum]
-           | _,_ -> failwith "No such repertoires"  
+           | _,_ -> failwith "Specify either a name or a number"
     
     addRBTRepertoires()
     addDeweyRepertoires()
+//    addCREPDLRepertoires(getRepertoire)
     getRepertoire ;;
     
 
@@ -80,7 +91,7 @@ let checkCharAgainstIANA ch encName miBenum version: threeValuedBoolean =
         Unknown
     | _,_ -> failwith "Both number and name are missing"
 
-let checkCharAgainstRepertoire char (repCpl: RepertoireCollection) (registry: CREPDL.Repertoire.Registry) 
+let checkCharAgainstRepertoire char (repCpl: RepertoireCollection) (registry: Registry) 
                                (minUV, maxUV): threeValuedBoolean =
     match registry with
     | ISO10646(version, name, collectionNumber) -> 
@@ -88,4 +99,3 @@ let checkCharAgainstRepertoire char (repCpl: RepertoireCollection) (registry: CR
     | CLDR(version, name) -> checkCharAgainstCLDR char name version
     | IANA(version, name, mIBEnum)  -> 
         checkCharAgainstIANA char name mIBEnum version
-    | UNDEFINED(x) -> Unknown
