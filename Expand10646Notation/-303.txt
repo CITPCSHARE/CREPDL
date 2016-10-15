@@ -1,20 +1,30 @@
-﻿;Plane 0
-03 F4-F5
-;Plane 1
-0103 00-1E 20-23 30-4A
-0104 00-25 28-4D
-01D0 00-F5
-01D1 00-26 2A-DD 
-01D4 00-54 56-9C 9E-9F A2 A5-A6 A9-AC AE-B9 BB BD-C0 C2-C3 C5-FF
-01D5 00-05 07-0A 0D-14 16-1C 1E-39 3B-3E 40-44 46 4A-50 52-FF
-01D6 00-A3 A8-FF
-01D7 00-C9 CE-FF  
-;Plane 02 Row Values within row
-020000-02A6D6
-02F800-02FA1D
-;Plane 0E Row Values within row
-0E00 01 20-7F
-;Plane 0F Row Values within row 00-FF 0000-FFFD
-0F0000-0FFFFD
-;Plane 10 Row Values within row 00-FF 0000-FFFD
-100000-10FFFD
+﻿;A.6.2       303 UNICODE 3.1
+
+Plane 00
+
+03         F4-F5
+
+Plane 01
+
+03         00-1E 20-23 30-4A
+04         00-25 28-4D
+D0        00-F5
+D1        00-26 2A-DD
+D4        00-54 56-9C 9E-9F A2 A5-A6 A9-AC AE-B9 BB BD-C0 C2-C3 C5-FF
+D5        00-05 07-0A 0D-14 16-1C 1E-39 3B-3E 40-44 46 4A-50 52-FF
+D6        00-A3 A8-FF
+D7        00-C9 CE-FF
+
+Plane 02
+00-A6    0000-A6D6
+F8-FA    F800-FA1D
+
+Plane 0E
+00         01 20-7F
+
+Plane 0F
+00-FF    0000-FFFD
+
+Plane 10
+00-FF    0000-FFFD
+

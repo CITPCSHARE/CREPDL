@@ -1,5 +1,15 @@
 module CREPDL.ISO10646Collection
 
+//A pre-defined collections is represented in either (1) a sequence of code points or 
+//ranges, or (2) a CREPDL script.  Sequences are represented either Red-Black trees 
+//or Dewey-numbered trees.  
+//
+//It is not always clear which of the three representation should be
+//chosen for a particular collection.  When a collection has a number of
+//scattered code points or ranges, Dewey-numbered trees are guranteed to
+//be fast, although Red-Back trees might be good enough.  CREPDL
+//scripts can use pre-defined collections and regular expressions.
+
 let rbtCollections =
       [(1, "BASIC LATIN",
         "0x0020, 0x007E")
@@ -572,21 +582,6 @@ let rbtCollections =
              0x0007F,0x009F");
        (3002, "ALTERNATE FORMAT CHARACTERS",
             "0xE0000, 0xE0FFF");
-
-  
-//304 UNICODE 3.2 see A.6.3 *
-//305 UNICODE 4.0 see A.6.4 *
-//306 UNICODE 4.1 see A.6.5 *
-//307 UNICODE 5.0 see A.6.6 *
-//308 UNICODE 5.1 see A.6.7 *
-//309 UNICODE 5.2 see A.6.8 *
-//310 UNICODE 6.0 see A.6.9 *
-//311 UNICODE 6.1 see A.6.10 *
-//312 UNICODE 6.2 see A.6.11 *
-//313 UNICODE 6.3 see A.6.12 *
-//314 UNICODE 7.0 see A.6.13 *
-//340 COMBINED FIRST EDITION see A.3.5 *
-
         (10646, "UNICODE",
             "0x0000, 0xFDCF
             0xFDF0, 0xFFFD
@@ -778,9 +773,18 @@ let deweyCollections =
       (301, "BMP-AMD.7", "301.txt");
       (302, "BMP SECOND EDITION", "302.txt");
       (-303, "", "-303.txt");
+      (-304, "", "-304.txt");
+      (-306, "", "-306.txt");
+      (-307, "", "-307.txt");
+      (308, "UNICODE 5.1", "308.txt");
+      (309, "UNICODE 5.2", "309.txt");
+      (310, "UNICODE 6.0", "310.txt");
+      (311, "UNICODE 6.1", "311.txt");
+      (314, "UNICODE 7.0", "314.txt");
       (370, "IICORE", "IICORE.txt");
       (371, "JIS2004 IDEOGRAPHICS EXTENSION", "JIExt.txt");
-      (372, "JAPANESE IDEOGRAPHICS SUPPLEMENT", "JAPANESE IDEOGRAPHICS SUPPLEMENT.txt")]
+      (372, "JAPANESE IDEOGRAPHICS SUPPLEMENT", "JAPANESE IDEOGRAPHICS SUPPLEMENT.txt");
+      (-340, "", "-340.txt")]
 
 let collectionsInCREPDL =
     [
@@ -862,6 +866,47 @@ let collectionsInCREPDL =
             @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
                   <repertoire  registry=""10646"" number=""302""/>
                   <repertoire  registry=""10646"" number=""-303""/>
+                </union>");
+      (304, "UNICODE 3.2",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""303""/>
+                  <repertoire  registry=""10646"" number=""-304""/>
+                </union>");
+      (305, "UNICODE 4.0",
+            @"<repertoire xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0""
+                  registry=""10646"" number=""340""/>");
+      (306, "UNICODE 4.1",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""305""/>
+                  <repertoire  registry=""10646"" number=""-306""/>
+                </union>");
+      (307, "UNICODE 4.1",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""306""/>
+                  <repertoire  registry=""10646"" number=""-307""/>
+                </union>");
+      (312, "UNICODE 6.2",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""311""/>
+                  <char>&#x20BA;</char>
+                </union>");
+      (313, "UNICODE 6.3",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""311""/>
+                  <char>[&#x061C;&#x2066;-&#x2069;&#x20BA;]</char>
+                </union>");
+      (340, "COMBINED FIRST EDITION",
+            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
+                  <repertoire  registry=""10646"" number=""302""/>
+                  <repertoire  registry=""10646"" number=""98""/>
+                  <repertoire  registry=""10646"" number=""99""/>
+                  <repertoire  registry=""10646"" number=""100""/>
+                  <repertoire  registry=""10646"" number=""101""/>
+                  <repertoire  registry=""10646"" number=""102""/>
+                  <repertoire  registry=""10646"" number=""103""/>
+                  <repertoire  registry=""10646"" number=""108""/>
+                  <repertoire  registry=""10646"" number=""111""/>
+                  <repertoire  registry=""10646"" number=""-340 ""/>
                 </union>");
       (4000, "UCS PART-2",
             @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">

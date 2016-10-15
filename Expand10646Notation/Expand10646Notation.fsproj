@@ -57,6 +57,15 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Program.fs" />
+    <EmbeddedResource Include="-340.txt" />
+    <EmbeddedResource Include="314.txt" />
+    <EmbeddedResource Include="311.txt" />
+    <EmbeddedResource Include="310.txt" />
+    <EmbeddedResource Include="309.txt" />
+    <EmbeddedResource Include="308.txt" />
+    <EmbeddedResource Include="-307.txt" />
+    <EmbeddedResource Include="-306.txt" />
+    <EmbeddedResource Include="-304.txt" />
     <EmbeddedResource Include="-303.txt" />
     <EmbeddedResource Include="302.txt" />
     <EmbeddedResource Include="301.txt" />
