@@ -63,7 +63,6 @@
     <Compile Include="Repertoire.fs" />
     <Compile Include="RepertoireCollection.fs" />
     <Compile Include="ActivePattern.fs" />
-    <Compile Include="BMPTest.fs" />
     <Compile Include="Char.fs" />
     <Compile Include="ISO10646Collection.fs" />
     <Compile Include="ExpandCollectionInCREPDL.fs" />
