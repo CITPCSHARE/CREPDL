@@ -3,8 +3,6 @@
 open System;
 open System.IO;
 open System.Net
-open System.Xml.Linq;
-open System.Text.RegularExpressions;
 open System.Text;
 
 let private surrogate2real (high: int16) (low: int16) =

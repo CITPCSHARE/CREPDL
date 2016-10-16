@@ -1,12 +1,7 @@
 ﻿module CREPDL.Main
 
-open System
-open System.Text
-open Basics
-open Validation
-open Repertoire
-open ISO10646Collection
 
+open ISO10646Collection
 open ThreeValuedBoolean
 open TopLevelValidation
 open RepertoireCollection

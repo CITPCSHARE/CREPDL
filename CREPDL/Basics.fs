@@ -2,7 +2,6 @@
 
 open System
 open System.IO
-open System.Xml.Linq
 
 [<Literal>]
 let crepdlNamespace = "http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"

@@ -3,17 +3,13 @@
 open System
 open System.Text
 open System.IO
-open System.Reflection
 open Basics
 open RBT
 open Dewey
-open ThreeValuedBoolean
-open System.Xml.Linq;
 
   
 type Repertoire = char -> bool
 
-type RepertoireInCREPDL = string -> XElement
     
 let createDeweyRepertoire (sr: StreamReader): Repertoire  =
     
@@ -89,6 +85,3 @@ let createRBTRepertoire (str: string): Repertoire  =
                                  
     checkUCSChar;;
     
-
-let createCREPDLRepertoire (schemaString: string) = 
-    XDocument.Parse( schemaString).Root

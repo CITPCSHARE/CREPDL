@@ -2,17 +2,10 @@
 
 open System;
 open System.IO;
-open System.Net
 open System.Xml.Linq;
-open System.Text.RegularExpressions;
-open System.Text;
 
-open Basics
 open ThreeValuedBoolean
 open SurrogateAwareTextReader
-open ActivePattern
-open Repertoire
-open Char
 open Validation
 open ReadingCREPDL
 open RepertoireCollection

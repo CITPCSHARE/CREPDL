@@ -4,7 +4,6 @@ open System
 open System.Text
 open System.IO
 open System.Reflection
-open Basics
 open RBT
 open Dewey
 open ThreeValuedBoolean
@@ -44,13 +43,6 @@ let createRepertoireCollection rbtCol dCol : RepertoireCollection =
                 addRepertoir i name lazyRepoirtore)
             dCol
 
-//    let addCREPDLRepertoires(repCpl: RepertoireCollection) =
-//        List.iter
-//            (fun (i, name, schemaStr) -> 
-//                    let lazyRepoirtore = lazy (createCREPDLRepertoire repCpl schemaStr)
-//                    addRepertoir i name lazyRepoirtore)
-//            crepdlCol
-
     let getRepertoire (collectionNumber: int option) (name: string option)  =
         match (name, collectionNumber) with
            | Some(nm), _ when nameDict.ContainsKey(nm) -> nameDict.[nm]
@@ -59,7 +51,6 @@ let createRepertoireCollection rbtCol dCol : RepertoireCollection =
     
     addRBTRepertoires()
     addDeweyRepertoires()
-//    addCREPDLRepertoires(getRepertoire)
     getRepertoire ;;
     
 

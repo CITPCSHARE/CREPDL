@@ -2,8 +2,6 @@
 
 
 open System.Xml.Linq;
-open System.Text.RegularExpressions;
-open System.Text;
 
 open Basics
 open ThreeValuedBoolean
