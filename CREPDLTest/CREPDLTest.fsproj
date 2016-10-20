@@ -52,6 +52,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <None Include="App.config" />
     <Compile Include="ConstructAllCollections.fs" />
+    <Compile Include="Kyouiku.fs" />
     <Compile Include="Test.fs" />
   </ItemGroup>
   <ItemGroup>
