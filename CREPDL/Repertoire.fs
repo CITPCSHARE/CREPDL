@@ -8,7 +8,7 @@ open RBT
 open Dewey
 
   
-type Repertoire = char -> bool
+type Repertoire = int32 -> bool
 
     
 let createDeweyRepertoire (sr: StreamReader): Repertoire  =
@@ -31,8 +31,8 @@ let createDeweyRepertoire (sr: StreamReader): Repertoire  =
     for ch in charList do
         pOrP := addPoint (!pOrP) (codeValue2RangeList ch)
     
-    let checkUCSChar (ch: char) =
-        checkPoint !pOrP (codeValue2RangeList (int ch))
+    let checkUCSChar (i: int32) =
+        checkPoint !pOrP (codeValue2RangeList i)
                                  
     checkUCSChar;;
 
@@ -78,8 +78,8 @@ let createRBTRepertoire (str: string): Repertoire  =
         let rangeList = simplify (string2RangeList str)
         List.fold (fun tree r -> insert r tree) init rangeList
 
-    let checkUCSChar (char: char) =
-        match find (int char) tree with 
+    let checkUCSChar (i: int32) =
+        match find i tree with 
         | Some(t) -> true
         | None -> false
                                  

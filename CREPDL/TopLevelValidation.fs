@@ -11,24 +11,24 @@ open ReadingCREPDL
 open RepertoireCollection
                           
 let validateTextReader (repCol: RepertoireCollection) (schema: XElement) (tr: TextReader) (sr: TextWriter): threeValuedBoolean =
-    let mutable character = readChar tr
+    let mutable strI = readChar tr
     let mutable result = True
     let mutable lineNumber = 1
     let mutable charNumber = 1
-    while (int character) <> 0xFFFF do
-        if (character = char '\n') || (character = char '\r') then 
+    while int (snd strI) <> 0xFFFF do
+        if (snd strI = int32 (char '\n')) || (snd strI =  int32 (char '\r')) then 
             lineNumber <- lineNumber + 1;
             charNumber <- 1
-        match checkCharWithMemo repCol schema character with
+        match checkCharWithMemo repCol schema strI with
             | True -> () 
             | False -> sr.Write("Line:" + lineNumber.ToString() + " Position: " + charNumber.ToString() + " ");
-                       sr.WriteLine(character.ToString() + "(U+" + (int character).ToString("X4") + "): incorrect");
+                       sr.WriteLine((fst strI) + "(U+" + (snd strI).ToString("X4") + "): incorrect");
                        result <- False
-            | Unknown -> sr.WriteLine(character.ToString() + ": unknown");
+            | Unknown -> sr.WriteLine((fst strI) + ": unknown");
                          result <- if result = True then  Unknown 
                                    else if result = False then False
                                    else Unknown
-        character <- readChar tr
+        strI <- readChar tr
         charNumber <- charNumber + 1
     result
 

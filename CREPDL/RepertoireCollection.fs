@@ -55,23 +55,23 @@ let createRepertoireCollection rbtCol dCol : RepertoireCollection =
     
 
     
-let checkCharAgainst10646Collection char (repCpl: RepertoireCollection) name  collectionNumber  version: threeValuedBoolean =
+let checkCharAgainst10646Collection (strI: string * int32) (repCpl: RepertoireCollection) name  collectionNumber  version: threeValuedBoolean =
     let repertoire = repCpl  collectionNumber name
     let validator = repertoire.Force()
-    if validator char then True else False
+    if validator (snd strI) then True else False
     
-let checkCharAgainstCLDR  charn name version: threeValuedBoolean =
+let checkCharAgainstCLDR  (strI: string * int32) name version: threeValuedBoolean =
     System.Console.WriteLine("CLDR is not supported yet")
     Unknown
 
-let checkCharAgainstIANA ch encName miBenum version: threeValuedBoolean =
+let checkCharAgainstIANA (strI: string * int32) encName miBenum version: threeValuedBoolean =
     match encName, miBenum with
     | Some(strEncName: string), _ -> 
         try
             let enc = Encoding.GetEncoding(strEncName, new EncoderExceptionFallback(), 
                                                        new DecoderExceptionFallback())
-            let chars = enc.GetChars(enc.GetBytes(string ch))
-            if chars.[0] = ch then True else False
+            let chars = enc.GetChars(enc.GetBytes(fst strI))
+            if chars.[0] = char (snd strI) then True else False
         with | :? EncoderFallbackException -> False
              | :? System.ArgumentException -> 
                 System.Console.WriteLine("The charset name \"" 
@@ -82,11 +82,11 @@ let checkCharAgainstIANA ch encName miBenum version: threeValuedBoolean =
         Unknown
     | _,_ -> failwith "Both number and name are missing"
 
-let checkCharAgainstRepertoire char (repCpl: RepertoireCollection) (registry: Registry) 
+let checkCharAgainstRepertoire (strI: string * int32) (repCpl: RepertoireCollection) (registry: Registry) 
                                (minUV, maxUV): threeValuedBoolean =
     match registry with
     | ISO10646(version, name, collectionNumber) -> 
-        checkCharAgainst10646Collection char repCpl  name collectionNumber version
-    | CLDR(version, name) -> checkCharAgainstCLDR char name version
+        checkCharAgainst10646Collection strI repCpl  name collectionNumber version
+    | CLDR(version, name) -> checkCharAgainstCLDR strI name version
     | IANA(version, name, mIBEnum)  -> 
-        checkCharAgainstIANA char name mIBEnum version
+        checkCharAgainstIANA strI name mIBEnum version

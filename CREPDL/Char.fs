@@ -4,9 +4,9 @@
 open System.Text.RegularExpressions;
 open ThreeValuedBoolean
 
-let checkCharAgainstChar (ch: char) (kernel:Regex option) (hull:Regex option) (minUV, maxUV): threeValuedBoolean =
+let checkCharAgainstChar (str: string) (kernel:Regex option) (hull:Regex option) (minUV, maxUV): threeValuedBoolean =
     let checkReg (reg:Regex) =
-        reg.Match(ch.ToString()).Success
+        reg.Match(str).Success
     match (kernel, hull) with
     | None, None -> failwith "cannot happen"
     | Some(kregex), None  -> if checkReg kregex then True else Unknown

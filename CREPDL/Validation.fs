@@ -62,31 +62,31 @@ and differenceHelp (repCol: RepertoireCollection) char (list: list<XElement>) (m
                 | True -> False 
                 | False | Unknown -> Unknown
                        
-and checkChar (repCol: RepertoireCollection) (crepdl: XElement) (char: char) (minUV, maxUV): threeValuedBoolean =
+and checkChar (repCol: RepertoireCollection) (crepdl: XElement) (strI: string * int32) (minUV, maxUV): threeValuedBoolean =
         let minMaxHelp  =
             function
                 | None ->       function None -> (minUV, maxUV) | Some(max) -> (minUV, max)
                 | Some(min) ->  function None -> (min, maxUV) | Some(max) -> (min, max)
         match crepdl with 
         | Union(mn, mx, children) -> 
-            unionHelp repCol char children (minMaxHelp mn mx)
+            unionHelp repCol strI children (minMaxHelp mn mx)
         | Intersection(mn, mx, children) -> 
-            intersectionHelp repCol char children  (minMaxHelp mn mx)
+            intersectionHelp repCol strI children  (minMaxHelp mn mx)
         | Difference(mn, mx, children) -> 
-            differenceHelp repCol char children (minMaxHelp mn mx)
+            differenceHelp repCol strI children (minMaxHelp mn mx)
         | Repertoire(mn, mx, registry)  -> 
             match registry with
             | ISO10646(_, name, number)  -> 
                 match getCollectionInCREPDL number name with
                 | Some(schemaString) ->
                     let crepdl = readOneCREPDLFromStringWithMemo schemaString
-                    checkChar repCol crepdl char (minMaxHelp mn mx)
-                | None -> checkCharAgainstRepertoire char repCol registry (minMaxHelp mn mx)
-            | _ -> checkCharAgainstRepertoire char repCol registry (minMaxHelp mn mx) 
+                    checkChar repCol crepdl strI (minMaxHelp mn mx)
+                | None -> checkCharAgainstRepertoire strI repCol registry (minMaxHelp mn mx)
+            | _ -> checkCharAgainstRepertoire strI repCol registry (minMaxHelp mn mx) 
         | Char(mn, mx, kernel, hull)  -> 
-            checkCharAgainstChar char kernel hull  (minMaxHelp mn mx)
+            checkCharAgainstChar (fst strI) kernel hull  (minMaxHelp mn mx)
         | Ref(mn, mx, absUri) -> 
-            checkChar repCol (readOneCREPDLWithMemo absUri) char  (minMaxHelp mn mx)
+            checkChar repCol (readOneCREPDLWithMemo absUri) strI (minMaxHelp mn mx)
         | Illegal -> failwith ("syntax error: " + crepdl.Name.ToString())
     
     

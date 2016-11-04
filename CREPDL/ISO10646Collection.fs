@@ -791,7 +791,7 @@ let collectionsInCREPDL =
        (270, "COMBINING CHARACTERS", 
             @"<intersection xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
               <char>[\p{Mc}|\p{Mn}|\p{Me}]</char>
-              <collection name=""BMP"" registry=""10646""/>
+              <repertoire name=""BMP"" registry=""10646""/>
             </intersection>");
     
 

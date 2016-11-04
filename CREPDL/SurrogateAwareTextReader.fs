@@ -15,11 +15,10 @@ let private surrogate2real (high: int16) (low: int16) =
 let readChar (tr: TextReader) =
     let ch = tr.Read()
     let character = char ch
-    character
-//    if Char.IsSurrogate(character) then
-//        let nextCh = tr.Read()
-//        (ch.ToString() + nextCh.ToString(), surrogate2real (int16 ch) (int16 nextCh))
-//    else (ch.ToString(), int32 ch)
+    if Char.IsSurrogate(character) then
+        let nextCh = tr.Read()
+        (ch.ToString() + nextCh.ToString(), surrogate2real (int16 ch) (int16 nextCh))
+    else (ch.ToString(), int32 ch)
 
     
 
