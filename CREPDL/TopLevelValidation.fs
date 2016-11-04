@@ -9,26 +9,27 @@ open SurrogateAwareTextReader
 open Validation
 open ReadingCREPDL
 open RepertoireCollection
+open Token
                           
 let validateTextReader (repCol: RepertoireCollection) (schema: XElement) (tr: TextReader) (sr: TextWriter): threeValuedBoolean =
-    let mutable strI = readChar tr
+    let mutable tkn = readChar tr
     let mutable result = True
     let mutable lineNumber = 1
     let mutable charNumber = 1
-    while snd strI <> 0xFFFFFFFF do
-        if (snd strI = int32 (char '\n')) || (snd strI =  int32 (char '\r')) then 
+    while getInt32FromToken tkn <> 0xFFFFFFFF do
+        if (getInt32FromToken tkn = int32 (char '\n')) || (getInt32FromToken tkn =  int32 (char '\r')) then 
             lineNumber <- lineNumber + 1;
             charNumber <- 1
-        match checkCharWithMemo repCol schema strI with
+        match checkCharWithMemo repCol schema tkn with
             | True -> () 
             | False -> sr.Write("Line:" + lineNumber.ToString() + " Position: " + charNumber.ToString() + " ");
-                       sr.WriteLine((fst strI) + "(U+" + (snd strI).ToString("X4") + "): incorrect");
+                       sr.WriteLine((getStringFromToken tkn) + "(U+" + (getInt32FromToken tkn).ToString("X4") + "): incorrect");
                        result <- False
-            | Unknown -> sr.WriteLine((fst strI) + ": unknown");
+            | Unknown -> sr.WriteLine((getStringFromToken tkn) + ": unknown");
                          result <- if result = True then  Unknown 
                                    else if result = False then False
                                    else Unknown
-        strI <- readChar tr
+        tkn <- readChar tr
         charNumber <- charNumber + 1
     result
 

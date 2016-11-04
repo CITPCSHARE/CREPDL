@@ -60,6 +60,7 @@
     <Compile Include="RedBlackTree.fs" />
     <Compile Include="Dewey.fs" />
     <Compile Include="Registry.fs" />
+    <Compile Include="Token.fs" />
     <Compile Include="Repertoire.fs" />
     <Compile Include="RepertoireCollection.fs" />
     <Compile Include="ActivePattern.fs" />

@@ -9,6 +9,7 @@ open Dewey
 open ThreeValuedBoolean
 open Registry
 open Repertoire
+open Token
 
 
 type RepertoireCollection = int option -> string option -> Lazy<Repertoire>
@@ -55,23 +56,23 @@ let createRepertoireCollection rbtCol dCol : RepertoireCollection =
     
 
     
-let checkCharAgainst10646Collection (strI: string * int32) (repCpl: RepertoireCollection) name  collectionNumber  version: threeValuedBoolean =
+let checkCharAgainst10646Collection (tkn: token) (repCpl: RepertoireCollection) name  collectionNumber  version: threeValuedBoolean =
     let repertoire = repCpl  collectionNumber name
     let validator = repertoire.Force()
-    if validator (snd strI) then True else False
+    if validator (getInt32FromToken tkn) then True else False
     
-let checkCharAgainstCLDR  (strI: string * int32) name version: threeValuedBoolean =
+let checkCharAgainstCLDR  (tkn: token) name version: threeValuedBoolean =
     System.Console.WriteLine("CLDR is not supported yet")
     Unknown
 
-let checkCharAgainstIANA (strI: string * int32) encName miBenum version: threeValuedBoolean =
+let checkCharAgainstIANA (tkn: token) encName miBenum version: threeValuedBoolean =
     match encName, miBenum with
     | Some(strEncName: string), _ -> 
         try
             let enc = Encoding.GetEncoding(strEncName, new EncoderExceptionFallback(), 
                                                        new DecoderExceptionFallback())
-            let chars = enc.GetChars(enc.GetBytes(fst strI))
-            if chars.[0] = char (snd strI) then True else False
+            let chars = enc.GetChars(enc.GetBytes(getStringFromToken tkn))
+            if chars.[0] = char (getInt32FromToken tkn) then True else False
         with | :? EncoderFallbackException -> False
              | :? System.ArgumentException -> 
                 System.Console.WriteLine("The charset name \"" 
@@ -82,11 +83,11 @@ let checkCharAgainstIANA (strI: string * int32) encName miBenum version: threeVa
         Unknown
     | _,_ -> failwith "Both number and name are missing"
 
-let checkCharAgainstRepertoire (strI: string * int32) (repCpl: RepertoireCollection) (registry: Registry) 
+let checkCharAgainstRepertoire (tkn: token) (repCpl: RepertoireCollection) (registry: Registry) 
                                (minUV, maxUV): threeValuedBoolean =
     match registry with
     | ISO10646(version, name, collectionNumber) -> 
-        checkCharAgainst10646Collection strI repCpl  name collectionNumber version
-    | CLDR(version, name) -> checkCharAgainstCLDR strI name version
+        checkCharAgainst10646Collection tkn repCpl  name collectionNumber version
+    | CLDR(version, name) -> checkCharAgainstCLDR tkn name version
     | IANA(version, name, mIBEnum)  -> 
-        checkCharAgainstIANA strI name mIBEnum version
+        checkCharAgainstIANA tkn name mIBEnum version
