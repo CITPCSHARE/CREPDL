@@ -18,7 +18,7 @@ let readChar (tr: TextReader) =
     if Char.IsSurrogate(character) then
         let nextCh = tr.Read()
         (ch.ToString() + nextCh.ToString(), surrogate2real (int16 ch) (int16 nextCh))
-    else (ch.ToString(), int32 ch)
+    else ((char ch).ToString(), int32 ch)
 
     
 

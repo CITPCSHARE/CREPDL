@@ -15,7 +15,7 @@ let validateTextReader (repCol: RepertoireCollection) (schema: XElement) (tr: Te
     let mutable result = True
     let mutable lineNumber = 1
     let mutable charNumber = 1
-    while int (snd strI) <> 0xFFFF do
+    while snd strI <> 0xFFFFFFFF do
         if (snd strI = int32 (char '\n')) || (snd strI =  int32 (char '\r')) then 
             lineNumber <- lineNumber + 1;
             charNumber <- 1
