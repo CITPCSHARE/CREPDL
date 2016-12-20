@@ -3,7 +3,7 @@
 open System
 open System.Text
 open System.IO
-open System.Reflection
+open Basics
 open RBT
 open Dewey
 open ThreeValuedBoolean
@@ -30,17 +30,12 @@ let createRepertoireCollection rbtCol dCol : RepertoireCollection =
                     addRepertoir i name lazyRepoirtore)
             rbtCol
     let addDeweyRepertoires() =
-        let asm = Assembly.GetExecutingAssembly()
-        let path = Path.GetDirectoryName(asm.Location)
         
         List.iter
             (fun (i, name, filename) ->
-                let fn = Path.Combine(path, filename)
                 let lazyRepoirtore = 
                     lazy (
-                        let textStreamReader = 
-                            new StreamReader(asm.GetManifestResourceStream(filename))
-                        createDeweyRepertoire textStreamReader)
+                        createDeweyRepertoire (getStreamReaderForEmbeddedResource filename))
                 addRepertoir i name lazyRepoirtore)
             dCol
 

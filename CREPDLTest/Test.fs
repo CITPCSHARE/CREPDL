@@ -73,15 +73,13 @@ validateString repCol (dir + "IICORE.crepdl") "\u4C83\u4EC2\u4F2D\u4FE2\u5084\u5
 System.Console.ReadKey() |> ignore;;
 
 System.Console.WriteLine "Non-BMP"
-validateString repCol (dir + "IICORE.crepdl") "𤸀𤸁𤸂𤸃" System.Console.Out |> writeThreeValuedBoolean
-
-
-System.Console.ReadKey() |> ignore;;
-
-System.Console.WriteLine "Should be true but ...."
+System.Console.WriteLine "Should be true"
+validateString repCol (dir + "IICORE.crepdl") "鷦鷲鷴鷸" System.Console.Out |> writeThreeValuedBoolean
 validateString repCol (dir + "IICORE.crepdl") "\U0002070E\U00022EB3\U000269FA\U00027A3E\U0002815D" System.Console.Out |> writeThreeValuedBoolean
 
-
+validateString repCol (dir + "IICORE.crepdl") "\U00029D98" System.Console.Out |> writeThreeValuedBoolean
+System.Console.WriteLine "Should be false"
+validateString repCol (dir + "IICORE.crepdl") "\U00029D99" System.Console.Out |> writeThreeValuedBoolean
 
 System.Console.ReadKey() |> ignore;;
 try
