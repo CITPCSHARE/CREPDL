@@ -2,6 +2,7 @@
 
 open System
 open System.IO
+open System.Reflection
 
 [<Literal>]
 let crepdlNamespace = "http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"
@@ -25,3 +26,14 @@ let createUri (schemaUri: string) =
     if schemaUri.StartsWith("http:") then Uri schemaUri
     else if schemaUri.Substring(1).StartsWith(":") then Uri ("file://" + schemaUri)
     else Uri ("file://" + System.IO.Directory.GetCurrentDirectory() + "/" + schemaUri)
+
+let getStreamReaderForEmbeddedResource fileName: StreamReader = 
+    let asm = Assembly.GetExecutingAssembly()
+    let names = asm.GetManifestResourceNames()
+    for name in names do
+        System.Console.WriteLine(name)
+    System.Console.ReadKey() |> ignore
+//    let path = Path.GetDirectoryName(asm.Location)
+//    let ffn = Path.Combine(path, fileName)
+    let ffn = fileName
+    new StreamReader(asm.GetManifestResourceStream(ffn))

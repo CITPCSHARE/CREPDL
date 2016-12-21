@@ -65,6 +65,32 @@ let insert (x: 'd) (tree: tree<'d, 'v>): tree<'d, 'v> =
          membershipFunc = mf; 
          top = insertHelp top}
 
+let height  (t: tree<'d, 'v>) =
+    let rec height_node nd =
+         match nd with
+             | E -> 0
+             | T(_, n1, d, n2) -> 1 + max (height_node n1)  (height_node n2) 
+    match t with 
+    | {comparisonFunc = _; membershipFunc = _; top = topNode}
+        -> height_node topNode
+
+let print_rbt_tree (t: tree<'d, 'v>) (tw: System.IO.TextWriter)=
+    let help indent = 
+        for i = 0 to indent do
+            tw.Write(" ")
+    let rec print_rbt_node (nd: node<'d>) indent =
+         match nd with
+             | E -> help indent;tw.Write("()")
+             | T(_, n1, d, n2) -> 
+                help indent;tw.WriteLine("(")
+                print_rbt_node (n1) (indent + 2)
+                help indent;tw.WriteLine(d)
+                print_rbt_node (n2) (indent + 2)
+                help indent;tw.WriteLine(")")
+    match t with 
+    | {comparisonFunc = _; membershipFunc = _; top= topNode}
+        -> print_rbt_node topNode 0
+
 //let cf (x:int) (y:int) =
 //    if x < y then -1
 //    else if x > y then 1

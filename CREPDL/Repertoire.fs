@@ -65,18 +65,24 @@ let createRBTRepertoire (str: string): Repertoire  =
             [] lines
 
     let simplify rangeList =
-        let rec simplify_help seed rl =
+        let rec simplify_help seed rl simplifiedInvertedList =
             match (seed, rl) with
             | ((ss, se), (s, e)::tail) ->
-                if se + 1 = s then simplify_help (ss, e) tail
-                else seed::(simplify_help (s, e) tail)
-            | (_, []) -> [seed]
-        List.tail (simplify_help (-1, -1) rangeList)
+                if se + 1 = s then simplify_help (ss, e) tail simplifiedInvertedList
+                else simplify_help (s, e) tail (seed::simplifiedInvertedList)
+            | (_, []) -> seed::simplifiedInvertedList
+        List.tail (List.rev (simplify_help (-1, -1) rangeList []))
     
     let tree =
         let init = empty_explicit collectionRangeComparer collectionRangeMemq
         let rangeList = simplify (string2RangeList str)
         List.fold (fun tree r -> insert r tree) init rangeList
+
+//    use sw = new StreamWriter(System.IO.File.Create("RBT.txt"))
+//    print_rbt_tree tree sw
+//
+//    System.Console.WriteLine(height tree)
+//    System.Console.ReadKey() |> ignore
 
     let checkUCSChar (i: int32) =
         match find i tree with 
