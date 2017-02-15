@@ -10,7 +10,7 @@ open CREPDL.ReadingCREPDL
 open CREPDL.TopLevelValidation
 
 let constructAll10646Collections repCol = 
-    let allCollections= List.append rbtCollections (List.append deweyCollections collectionsInCREPDL)
+    let allCollections= List.append inLineCollections (List.append outOfLineCollections collectionsInCREPDL)
     let all10646Collections =
         List.filter (fun x -> x > 0)
             (List.map (fun (x, _, _) -> x) allCollections)

@@ -10,7 +10,11 @@ open RepertoireCollection
 let main args =
     Dewey.checkShiftSizeCount()
     let startTime = System.DateTime.Now in
-    let repCol = createRepertoireCollection rbtCollections deweyCollections in
+    let repCol = 
+        createRepertoireCollection 
+            inLineCollections 
+            outOfLineCollections 
+            representationOfCollections
     System.Console.WriteLine(System.DateTime.Now - startTime)
     let returnCode = 
       try

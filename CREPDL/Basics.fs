@@ -29,11 +29,9 @@ let createUri (schemaUri: string) =
 
 let getStreamReaderForEmbeddedResource fileName: StreamReader = 
     let asm = Assembly.GetExecutingAssembly()
-    let names = asm.GetManifestResourceNames()
-    for name in names do
-        System.Console.WriteLine(name)
-    System.Console.ReadKey() |> ignore
+//    let names = asm.GetManifestResourceNames()
+//    for name in names do
+//        System.Console.WriteLine(name)
 //    let path = Path.GetDirectoryName(asm.Location)
 //    let ffn = Path.Combine(path, fileName)
-    let ffn = fileName
-    new StreamReader(asm.GetManifestResourceStream(ffn))
+    new StreamReader(asm.GetManifestResourceStream(fileName))

@@ -10,34 +10,56 @@ open ThreeValuedBoolean
 open Registry
 open Repertoire
 open Token
+open ISO10646Collection
+open  System.Collections.Generic
 
 
 type RepertoireCollection = int option -> string option -> Lazy<Repertoire>
 
-let createRepertoireCollection rbtCol dCol : RepertoireCollection =            
+
+
+     
+let createRepertoireCollection inLineCol outOfLineCol 
+        (repOfCol: IDictionary<int, RepresentationType>): RepertoireCollection =            
     let numberDict = 
-        System.Collections.Generic.Dictionary<int, Lazy<Repertoire>>()
+        Dictionary<int, Lazy<Repertoire>>()
     let nameDict = 
-        System.Collections.Generic.Dictionary<string, Lazy<Repertoire>>()
+        Dictionary<string, Lazy<Repertoire>>()
     let addRepertoir index name (rc: Lazy<Repertoire>) =
         numberDict.Add(index, rc)
         if name<>"" then nameDict.Add(name, rc)
-        ()
-    let addRBTRepertoires() =
+
+    let unifiedCollections =
+        List.append
+            (List.map
+                (fun (num, name, str) -> 
+                    let repType = 
+                        match repOfCol.TryGetValue num with 
+                        | (true, repType) -> repType
+                        | _ -> RBT
+                    let tr = new StringReader(str) :> TextReader
+                    (num, name, tr, repType)) 
+                inLineCol)
+            (List.map
+                (fun (num, name, filename) -> 
+                    let repType = 
+                        match repOfCol.TryGetValue num with 
+                        | (true, repType) -> repType
+                        | (false, _) -> Dewey
+                    let tr = getStreamReaderForEmbeddedResource filename :> TextReader
+                    (num, name, tr, repType)) 
+                outOfLineCol)
+
+    let addRepertoires() =
         List.iter
-            (fun (i, name, str) -> 
-                    let lazyRepoirtore = lazy (createRBTRepertoire str)
-                    addRepertoir i name lazyRepoirtore)
-            rbtCol
-    let addDeweyRepertoires() =
-        
-        List.iter
-            (fun (i, name, filename) ->
+            (fun (i, name, tr, repType) -> 
                 let lazyRepoirtore = 
-                    lazy (
-                        createDeweyRepertoire (getStreamReaderForEmbeddedResource filename))
+                    match repType with
+                    | RBT -> lazy (createRBTRepertoire tr) 
+                    | Dewey -> lazy (createDeweyRepertoire tr)
+                    | Set -> failwith "Set"
                 addRepertoir i name lazyRepoirtore)
-            dCol
+            unifiedCollections
 
     let getRepertoire (collectionNumber: int option) (name: string option)  =
         match (name, collectionNumber) with
@@ -45,8 +67,7 @@ let createRepertoireCollection rbtCol dCol : RepertoireCollection =
            | _, Some(cnum) when numberDict.ContainsKey(cnum) -> numberDict.[cnum]
            | _,_ -> failwith "Specify either a name or a number"
     
-    addRBTRepertoires()
-    addDeweyRepertoires()
+    addRepertoires()
     getRepertoire ;;
     
 

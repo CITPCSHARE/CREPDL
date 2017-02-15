@@ -24,7 +24,7 @@ let empty_explicit cf mf =
 
 let find (v: 'v)  (tree: tree<'d, 'v>): 'd option =
     match tree with 
-    {comparisonFunc = cf; membershipFunc = mf; top = top} ->
+    {comparisonFunc = _; membershipFunc = mf; top = top} ->
         let rec findHelp =
             function 
             | E -> None

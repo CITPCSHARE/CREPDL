@@ -10,7 +10,16 @@ module CREPDL.ISO10646Collection
 //be fast, although Red-Back trees might be good enough.  CREPDL
 //scripts can use pre-defined collections and regular expressions.
 
-let rbtCollections =
+type RepresentationType =
+  | Dewey
+  | RBT
+  | Set;; 
+
+let representationOfCollections = 
+    dict [1, Dewey; 281, RBT];
+    
+
+let inLineCollections =
       [(1, "BASIC LATIN",
         "0x0020, 0x007E")
        (2, "LATIN-1 SUPPLEMENT",
@@ -763,7 +772,7 @@ let rbtCollections =
             0x20000, 0x2FFFD
             0xE0000, 0xEFFFD")]
 
-let deweyCollections =
+let outOfLineCollections =
      [(281, "MES-1", "281.txt");
       (282, "MES-2", "282.txt");
       (-100285, "", "-100285.txt");
@@ -906,11 +915,12 @@ let collectionsInCREPDL =
                   <repertoire  registry=""10646"" number=""103""/>
                   <repertoire  registry=""10646"" number=""108""/>
                   <repertoire  registry=""10646"" number=""111""/>
-                  <repertoire  registry=""10646"" number=""-340 ""/>
+                  <repertoire  registry=""10646"" number=""-340""/>
                 </union>");
-      (4000, "UCS PART-2",
-            @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"">
-                  <repertoire  registry=""10646"" number=""1000""/>
-                  <repertoire  registry=""10646"" number=""2000""/>
-                  <repertoire  registry=""10646"" number=""3000""/>
-                </union>")];;
+      (4000, "UCS PART-2", """
+            <union xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0">
+                  <repertoire  registry="10646" number="1000"/>
+                  <repertoire  registry="10646" number="2000"/>
+                  <repertoire  registry="10646" number="3000"/>
+                </union>
+                """)];;

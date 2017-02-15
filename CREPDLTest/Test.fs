@@ -16,7 +16,11 @@ open Kyouiku
 let dir = @"H:\CREPDLScripts\examples\"
 
 let startTime = System.DateTime.Now in
-let repCol = createRepertoireCollection rbtCollections deweyCollections in
+let repCol = 
+        createRepertoireCollection 
+            inLineCollections 
+            outOfLineCollections 
+            representationOfCollections
 
 System.Console.WriteLine(System.DateTime.Now - startTime)
 
@@ -70,6 +74,7 @@ System.Console.WriteLine "Should be false"
 validateString repCol (dir + "IICORE.crepdl") "\u4C83\u4EC2\u4F2D\u4FE2\u5084\u5183\u51CA\u551F\u556F\u5BA8\u5E53\u6179\u8DA6\u8E4D\u9796\u9FAB" System.Console.Out |> writeThreeValuedBoolean
 
 
+
 System.Console.ReadKey() |> ignore;;
 
 System.Console.WriteLine "Non-BMP"
@@ -93,3 +98,7 @@ validateString repCol (dir + "jinmei2010.crepdl") "一二三四五征悟父暗�
 
 
 System.Console.ReadKey() |> ignore;;
+
+        
+//System.Console.WriteLine "named character"
+//validateString repCol (dir + "namedSequenceTest.crepdl") "あア" System.Console.Out |> writeThreeValuedBoolean

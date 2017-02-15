@@ -13,6 +13,7 @@ let createReg (regStr: string): Regex =
         || (regStr.StartsWith("\\") && regStr.Length = 2) //SingleCharEsc or MultiCharEsc
         || (let chReg = new Regex("\\\P{.+}") in chReg.Match(regStr).Success) //catExc or complEsc  "\\P{[\{\}]+}"
         || (let chReg = new Regex("\\\p{.+}") in chReg.Match(regStr).Success) //catExc or complEsc  "\\p{[\{\}]+}"
+//        || (let chReg = new Regex("\\\N{.+}") in chReg.Match(regStr).Success) //catExc or complEsc  "\\p{[\{\}]+}"
     then new Regex(regStr)
     else failwith  ("illegal regular expression: " +  regStr);
 

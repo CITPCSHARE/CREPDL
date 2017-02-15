@@ -7,28 +7,41 @@ open Basics
 open RBT
 open Dewey
 
-  
 type Repertoire = int32 -> bool
 
+let split (line: string) =
+    match line.Split(',') with
+    | [| s; e |] -> (int s, int e)
+    | [| x |] -> (int x, int x)
+    | _ -> failwith ("invalid line: " + line) 
+
+
+let endOfTextReader (tr:TextReader)=
+    tr.Peek() = -1;;
+//        match tr with 
+//        | :? StreamReader as sr -> sr.EndOfStream
+//        | :? StringReader as sr -> sr.Peek() = -1
+//        | _ -> failwith "should not happen"
+
+let charList (tr:TextReader) =
+    seq { while not(endOfTextReader tr) do
+             let line = tr.ReadLine()
+             yield!
+                 let (s, e) = split line in [s .. e]  };;
+
+let createSetRepertoire (tr: TextReader): Repertoire  =
+
+    let allCodePoints = Set.ofSeq (charList tr)
     
-let createDeweyRepertoire (sr: StreamReader): Repertoire  =
+    let checkUCSChar (i: int32) = allCodePoints.Contains i
+                       
+    checkUCSChar;;
+
+let createDeweyRepertoire (tr: TextReader): Repertoire  =
     
     let pOrP = ref NotAllocated
 
-    let rec readLines () =
-        if sr.EndOfStream then []
-        else
-           sr.ReadLine()::readLines()
-
-    let charList =  seq { for line in readLines() do
-                            yield!
-                                match line.Split(',') with
-                                | [| s; e |] ->[(int s) .. (int e)]
-                                | [| x |] -> if x.Length > 0 then [int x] else []
-                                | _ -> failwith ("invalid line: " + line) 
-                    }
-        
-    for ch in charList do
+    for ch in charList tr do
         pOrP := addPoint (!pOrP) (codeValue2RangeList ch)
     
     let checkUCSChar (i: int32) =
@@ -37,7 +50,7 @@ let createDeweyRepertoire (sr: StreamReader): Repertoire  =
     checkUCSChar;;
 
 
-let createRBTRepertoire (str: string): Repertoire  =
+let createRBTRepertoire (tr: TextReader): Repertoire  =
 
     let createRange x y =
         if x <= y then (x, y)
@@ -50,19 +63,27 @@ let createRBTRepertoire (str: string): Repertoire  =
         else failwith "Non-disjoint ranges"
             
     let collectionRangeMemq (x1, x2) v =
-        if x1 <= v && v <= x2 then 0
-        else if x2 < v then -1 else 1
+        if x2 < v then -1
+        elif v < x1 then 1
+        else 0
             
-    let string2RangeList (str: string) =
-        let lines = str.Split([|'\r'; '\n'|], StringSplitOptions.RemoveEmptyEntries)
-        Array.fold
-            (fun ls (line: string) -> 
-                let range = match line.Split(',') with
-                            | [| s; e |] -> createRange (int s) (int e)
-                            | [| x |] -> let pint = int x in createRange pint pint
-                            | _ -> failwith "invalid line"
-                range::ls)
-            [] lines
+    let string2RangeList (tr: TextReader) =
+        seq { while not(endOfTextReader tr) do
+                            let line = tr.ReadLine()
+                            yield
+                                let (s, e) = split line in createRange (int s) (int e) 
+        } |> Seq.toList
+        
+//    let string2RangeList (sr: StreamReader) =
+//        let lines = str.Split([|'\r'; '\n'|], StringSplitOptions.RemoveEmptyEntries)
+//        Array.fold
+//            (fun ls (line: string) -> 
+//                let range = match line.Split(',') with
+//                            | [| s; e |] -> createRange (int s) (int e)
+//                            | [| x |] -> let pint = int x in createRange pint pint
+//                            | _ -> failwith "invalid line"
+//                range::ls)
+//            [] lines
 
     let simplify rangeList =
         let rec simplify_help seed rl simplifiedInvertedList =
@@ -75,14 +96,12 @@ let createRBTRepertoire (str: string): Repertoire  =
     
     let tree =
         let init = empty_explicit collectionRangeComparer collectionRangeMemq
-        let rangeList = simplify (string2RangeList str)
+        let rangeList = simplify (string2RangeList tr)
         List.fold (fun tree r -> insert r tree) init rangeList
 
 //    use sw = new StreamWriter(System.IO.File.Create("RBT.txt"))
 //    print_rbt_tree tree sw
 //
-//    System.Console.WriteLine(height tree)
-//    System.Console.ReadKey() |> ignore
 
     let checkUCSChar (i: int32) =
         match find i tree with 

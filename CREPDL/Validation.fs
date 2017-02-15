@@ -24,10 +24,6 @@ let rec unionHelp (repCol: RepertoireCollection) (tkn: token) list (mn, mx) =
             match list with 
             | [] ->  False 
             | head::tail ->
-//                union
-//                    (checkChar rr head char (mn, mx))
-//                    (fun () -> unionHelp rr char tail (mn, mx))
-//                    
                 match checkChar repCol head tkn (mn, mx) with
                 | True -> True
                 | False -> unionHelp repCol tkn tail (mn, mx)
@@ -38,9 +34,6 @@ and intersectionHelp (repCol: RepertoireCollection) (tkn: token) list (mn, mx) =
             match list with 
             | [] ->  True 
             | head::tail ->
-//                intersection
-//                    (checkChar rr head char (mn, mx))
-//                    (fun () -> intersectionHelp rr char tail (mn, mx))
                 match checkChar repCol head tkn (mn, mx) with
                 | False -> False
                 | True -> intersectionHelp repCol tkn tail (mn, mx)  
@@ -48,9 +41,6 @@ and intersectionHelp (repCol: RepertoireCollection) (tkn: token) list (mn, mx) =
                 | _ ->  Unknown
                 
 and differenceHelp (repCol: RepertoireCollection) (tkn: token) (list: list<XElement>) (mn, mx)  =
-//            difference
-//                (checkChar rr list.Head char (mn, mx))
-//                (fun () -> unionHelp rr char list.Tail (mn, mx))
           match checkChar repCol list.Head tkn (mn, mx)  with
             | False -> False
             | True ->
