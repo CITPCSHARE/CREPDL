@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Unicode.fs" />
     <Compile Include="Test.fs" />
     <None Include="App.config" />
   </ItemGroup>

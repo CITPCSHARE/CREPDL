@@ -37,7 +37,7 @@ let createRepertoireCollection inLineCol outOfLineCol
                         match repOfCol.TryGetValue num with 
                         | (true, repType) -> repType
                         | _ -> RBT
-                    let tr = new StringReader(str) :> TextReader
+                    let tr = lazy (new StringReader(str) :> TextReader)
                     (num, name, tr, repType)) 
                 inLineCol)
             (List.map
@@ -45,19 +45,19 @@ let createRepertoireCollection inLineCol outOfLineCol
                     let repType = 
                         match repOfCol.TryGetValue num with 
                         | (true, repType) -> repType
-                        | (false, _) -> Dewey
-                    let tr = getStreamReaderForEmbeddedResource filename :> TextReader
+                        | (false, _) -> Set
+                    let tr = lazy (getStreamReaderForEmbeddedResource filename :> TextReader)
                     (num, name, tr, repType)) 
                 outOfLineCol)
 
     let addRepertoires() =
         List.iter
-            (fun (i, name, tr, repType) -> 
+            (fun (i, name, (tr: Lazy<TextReader>), repType) -> 
                 let lazyRepoirtore = 
                     match repType with
                     | RBT -> lazy (createRBTRepertoire tr) 
                     | Dewey -> lazy (createDeweyRepertoire tr)
-                    | Set -> failwith "Set"
+                    | Set -> lazy (createSetRepertoire tr)
                 addRepertoir i name lazyRepoirtore)
             unifiedCollections
 

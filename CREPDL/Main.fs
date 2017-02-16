@@ -14,7 +14,7 @@ let main args =
         createRepertoireCollection 
             inLineCollections 
             outOfLineCollections 
-            representationOfCollections
+            (dict [])
     System.Console.WriteLine(System.DateTime.Now - startTime)
     let returnCode = 
       try
@@ -38,12 +38,3 @@ let main args =
     System.Console.WriteLine(System.DateTime.Now - startTime)
     returnCode
 
-
-//    let currentEncoding = System.Console.OutputEncoding
-//    try 
-//    System.Console.OutputEncoding <- new UTF8Encoding();
-        
-
-
-//    finally 
- //       System.Console.OutputEncoding <- currentEncoding

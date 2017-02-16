@@ -15,9 +15,7 @@ type RepresentationType =
   | RBT
   | Set;; 
 
-let representationOfCollections = 
-    dict [1, Dewey; 281, RBT];
-    
+
 
 let inLineCollections =
       [(1, "BASIC LATIN",

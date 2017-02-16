@@ -20,7 +20,7 @@ let repCol =
         createRepertoireCollection 
             inLineCollections 
             outOfLineCollections 
-            representationOfCollections
+            (dict [])
 
 System.Console.WriteLine(System.DateTime.Now - startTime)
 
