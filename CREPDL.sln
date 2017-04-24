@@ -21,6 +21,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Expand10646Notation", "Expa
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PerformanceTest", "PerformanceTest\PerformanceTest.fsproj", "{DA2C942E-A81F-4DF3-BE8B-195671DDE256}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CREPDLUnitTest", "CREPDLUnitTest\CREPDLUnitTest.fsproj", "{C1468F69-994A-43FC-AD2E-88ED9F38BF99}"
+EndProject
 Global
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
@@ -54,6 +56,10 @@ Global
 		{DA2C942E-A81F-4DF3-BE8B-195671DDE256}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA2C942E-A81F-4DF3-BE8B-195671DDE256}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA2C942E-A81F-4DF3-BE8B-195671DDE256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1468F69-994A-43FC-AD2E-88ED9F38BF99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1468F69-994A-43FC-AD2E-88ED9F38BF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1468F69-994A-43FC-AD2E-88ED9F38BF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1468F69-994A-43FC-AD2E-88ED9F38BF99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
