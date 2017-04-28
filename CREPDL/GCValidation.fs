@@ -1,5 +1,4 @@
-﻿module CREPDL.Validation
-
+﻿module  CREPDL.GCValidation
 
 open System.Xml.Linq;
 
@@ -20,7 +19,7 @@ let checkCharWithMemoCount = 1000
 let defaultMinVersion = versionString2Int "2.0"
 let defaultMaxVersion = versionString2Int "5.9"
 
-let rec unionHelp (repCol: RepertoireCollection) (tkn: token) list (mn, mx) =
+let rec private unionHelp (repCol: RepertoireCollection) (tkn: token) list (mn, mx) =
             match list with 
             | [] ->  False 
             | head::tail ->
@@ -30,7 +29,7 @@ let rec unionHelp (repCol: RepertoireCollection) (tkn: token) list (mn, mx) =
                 | Unknown when unionHelp repCol tkn tail (mn, mx) = True -> True
                 | _ -> Unknown
                 
-and intersectionHelp (repCol: RepertoireCollection) (tkn: token) list (mn, mx) =
+and private intersectionHelp (repCol: RepertoireCollection) (tkn: token) list (mn, mx) =
             match list with 
             | [] ->  True 
             | head::tail ->
@@ -40,7 +39,7 @@ and intersectionHelp (repCol: RepertoireCollection) (tkn: token) list (mn, mx) =
                 | Unknown when intersectionHelp repCol tkn tail (mn, mx)  = False -> False
                 | _ ->  Unknown
                 
-and differenceHelp (repCol: RepertoireCollection) (tkn: token) (list: list<XElement>) (mn, mx)  =
+and private differenceHelp (repCol: RepertoireCollection) (tkn: token) (list: list<XElement>) (mn, mx)  =
           match checkChar repCol list.Head tkn (mn, mx)  with
             | False -> False
             | True ->

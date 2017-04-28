@@ -1,5 +1,4 @@
-﻿module CREPDL.Main
-
+﻿module CREPDL.Console
 
 open ISO10646Collection
 open ThreeValuedBoolean

@@ -3,9 +3,10 @@
 open System
 open System.IO
 open System.Reflection
+open System.Xml.Linq;
 
 [<Literal>]
-let crepdlNamespace = "http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0"
+let crepdlNamespaceV2 = "http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"
 
 let memoize (f: 'a -> 'b) (size: int) =
     let hashtable = new System.Collections.Generic.Dictionary<'a, 'b>(size)
@@ -35,3 +36,4 @@ let getStreamReaderForEmbeddedResource fileName: StreamReader =
 //    let path = Path.GetDirectoryName(asm.Location)
 //    let ffn = Path.Combine(path, fileName)
     new StreamReader(asm.GetManifestResourceStream(fileName))
+

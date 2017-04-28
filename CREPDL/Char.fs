@@ -1,10 +1,9 @@
 ﻿module CREPDL.Char
 
-
 open System.Text.RegularExpressions;
 open ThreeValuedBoolean
 
-let checkCharAgainstChar (str: string) (kernel:Regex option) (hull:Regex option) (minUV, maxUV): threeValuedBoolean =
+let checkStringAgainstChar (str: string) (kernel:Regex option) (hull:Regex option) (minUV, maxUV): threeValuedBoolean =
     let checkReg (reg:Regex) =
         reg.Match(str).Success
     match (kernel, hull) with

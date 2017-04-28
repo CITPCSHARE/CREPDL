@@ -5,25 +5,27 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>e38863e8-88ef-49ec-89ad-1ebbbbe3be21</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>CREPDL</RootNamespace>
-    <AssemblyName>CREPDL</AssemblyName>
+    <ProjectGuid>99581a8d-f6b8-4c91-9026-cc56c0c91a51</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GraphemeGetter</RootNamespace>
+    <AssemblyName>GraphemeGetter</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>CREPDL</Name>
+    <Name>GraphemeGetter</Name>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <Tailcalls>true</Tailcalls>
+    <Tailcalls>false</Tailcalls>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\CREPDL.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\GraphemeGetter.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +36,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\CREPDL.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\GraphemeGetter.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -55,47 +57,16 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Basics.fs" />
-    <Compile Include="ThreeValuedBoolean.fs" />
-    <Compile Include="RedBlackTree.fs" />
-    <Compile Include="Dewey.fs" />
-    <Compile Include="Registry.fs" />
-    <Compile Include="Token.fs" />
-    <Compile Include="Repertoire.fs" />
-    <Compile Include="IVSChecker.fs" />
-    <Compile Include="ISO10646Collection.fs" />
-    <Compile Include="RepertoireCollection.fs" />
-    <Compile Include="ActivePattern.fs" />
-    <Compile Include="Char.fs" />
-    <Compile Include="ExpandCollectionInCREPDL.fs" />
-    <Compile Include="ReadingCREPDL.fs" />
-    <Compile Include="SurrogateAwareTextReader.fs" />
-    <Compile Include="Validation.fs" />
-    <Compile Include="GCValidation.fs" />
+    <Compile Include="Program.fs" />
     <None Include="App.config" />
-    <EmbeddedResource Include="IICORE.txt" />
-    <EmbeddedResource Include="JIExt.txt" />
-    <EmbeddedResource Include="JAPANESE IDEOGRAPHICS SUPPLEMENT.txt" />
-    <EmbeddedResource Include="281.txt" />
-    <EmbeddedResource Include="282.txt" />
-    <EmbeddedResource Include="-100285.txt" />
-    <EmbeddedResource Include="-200285.txt" />
-    <EmbeddedResource Include="286.txt" />
-    <EmbeddedResource Include="288.txt" />
-    <EmbeddedResource Include="301.txt" />
-    <EmbeddedResource Include="302.txt" />
-    <EmbeddedResource Include="-303.txt" />
-    <EmbeddedResource Include="-304.txt" />
-    <EmbeddedResource Include="-306.txt" />
-    <EmbeddedResource Include="-307.txt" />
-    <EmbeddedResource Include="308.txt" />
-    <EmbeddedResource Include="309.txt" />
-    <EmbeddedResource Include="310.txt" />
-    <EmbeddedResource Include="311.txt" />
-    <EmbeddedResource Include="314.txt" />
-    <EmbeddedResource Include="-340.txt" />
+    <Content Include="packages.config" />
+    <None Include="icu4c.readme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="icu.net">
+      <HintPath>..\packages\icu.net.2.1.0\lib\net40\icu.net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
@@ -103,9 +74,16 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
+  <Import Project="..\packages\Icu4c.Win.Full.Lib.56.1.21\build\Icu4c.Win.Full.Lib.targets" Condition="Exists('..\packages\Icu4c.Win.Full.Lib.56.1.21\build\Icu4c.Win.Full.Lib.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Icu4c.Win.Full.Lib.56.1.21\build\Icu4c.Win.Full.Lib.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Icu4c.Win.Full.Lib.56.1.21\build\Icu4c.Win.Full.Lib.targets'))" />
+    <Error Condition="!Exists('..\packages\Icu4c.Win.Min.56.1.58\build\Icu4c.Win.Min.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Icu4c.Win.Min.56.1.58\build\Icu4c.Win.Min.targets'))" />
+  </Target>
+  <Import Project="..\packages\Icu4c.Win.Min.56.1.58\build\Icu4c.Win.Min.targets" Condition="Exists('..\packages\Icu4c.Win.Min.56.1.58\build\Icu4c.Win.Min.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
