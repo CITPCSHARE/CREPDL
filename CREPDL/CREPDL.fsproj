@@ -13,6 +13,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <Name>CREPDL</Name>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,21 +59,20 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Basics.fs" />
     <Compile Include="ThreeValuedBoolean.fs" />
-    <Compile Include="RedBlackTree.fs" />
-    <Compile Include="Dewey.fs" />
     <Compile Include="Registry.fs" />
-    <Compile Include="Token.fs" />
     <Compile Include="Repertoire.fs" />
     <Compile Include="IVSChecker.fs" />
     <Compile Include="ISO10646Collection.fs" />
-    <Compile Include="RepertoireCollection.fs" />
+    <Compile Include="CharMatcher.fs" />
     <Compile Include="ActivePattern.fs" />
-    <Compile Include="Char.fs" />
-    <Compile Include="ExpandCollectionInCREPDL.fs" />
-    <Compile Include="ReadingCREPDL.fs" />
-    <Compile Include="SurrogateAwareTextReader.fs" />
+    <Compile Include="ReadScript.fs" />
+    <Compile Include="ExpandRefAndRepertoire.fs" />
+    <Compile Include="CheckExpandedScript.fs" />
+    <Compile Include="Registry2Repertoire.fs" />
+    <Compile Include="StringValidation.fs" />
+    <Compile Include="ReadCharacter.fs" />
+    <Compile Include="ReadGraphemeCluster.fs" />
     <Compile Include="Validation.fs" />
-    <Compile Include="GCValidation.fs" />
     <None Include="App.config" />
     <EmbeddedResource Include="IICORE.txt" />
     <EmbeddedResource Include="JIExt.txt" />
@@ -94,18 +95,39 @@
     <EmbeddedResource Include="311.txt" />
     <EmbeddedResource Include="314.txt" />
     <EmbeddedResource Include="-340.txt" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.4.1.17\lib\net45\FSharp.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FSharp.Data.TypeProviders" />
+    <Reference Include="icu.net">
+      <HintPath>..\packages\icu.net.2.1.0\lib\net40\icu.net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Icu4c.Win.Full.Lib.56.1.21\build\Icu4c.Win.Full.Lib.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Icu4c.Win.Full.Lib.56.1.21\build\Icu4c.Win.Full.Lib.targets'))" />
+  </Target>
+  <Import Project="..\packages\Icu4c.Win.Full.Lib.56.1.21\build\Icu4c.Win.Full.Lib.targets" Condition="Exists('..\packages\Icu4c.Win.Full.Lib.56.1.21\build\Icu4c.Win.Full.Lib.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

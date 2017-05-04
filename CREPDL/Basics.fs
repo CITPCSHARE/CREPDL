@@ -3,10 +3,11 @@
 open System
 open System.IO
 open System.Reflection
-open System.Xml.Linq;
 
 [<Literal>]
 let crepdlNamespaceV2 = "http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"
+
+type mode = CharacterMode | GraphemeClusterMode;;
 
 let memoize (f: 'a -> 'b) (size: int) =
     let hashtable = new System.Collections.Generic.Dictionary<'a, 'b>(size)
@@ -26,14 +27,9 @@ let absolute (baseUri: Uri) (href: string): Uri =
 let createUri (schemaUri: string) =
     if schemaUri.StartsWith("http:") then Uri schemaUri
     else if schemaUri.Substring(1).StartsWith(":") then Uri ("file://" + schemaUri)
-    else Uri ("file://" + System.IO.Directory.GetCurrentDirectory() + "/" + schemaUri)
+    else Uri ("file://" + Directory.GetCurrentDirectory() + "/" + schemaUri)
 
 let getStreamReaderForEmbeddedResource fileName: StreamReader = 
     let asm = Assembly.GetExecutingAssembly()
-//    let names = asm.GetManifestResourceNames()
-//    for name in names do
-//        System.Console.WriteLine(name)
-//    let path = Path.GetDirectoryName(asm.Location)
-//    let ffn = Path.Combine(path, fileName)
     new StreamReader(asm.GetManifestResourceStream(fileName))
 
