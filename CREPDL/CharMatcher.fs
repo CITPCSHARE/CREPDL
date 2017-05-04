@@ -29,7 +29,7 @@ let createRegV2 (regStr: string) syntaxSugar: Regex =
     let x = if syntaxSugar then deSyntaxSugar regStr else regStr
     new Regex(x);
 
-let checkStringAgainstChar (str: string) (kernel:Regex option) (hull:Regex option) flag (minUV, maxUV): threeValuedBoolean =
+let checkStringAgainstChar (str: string) (kernel:Regex option) (hull:Regex option) flag (minUV, maxUV): ThreeValuedBoolean =
     let checkReg (reg:Regex) =
         let m = reg.Match(str)
         m.Success && m.Length = str.Length

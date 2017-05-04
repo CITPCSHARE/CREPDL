@@ -4,7 +4,7 @@ open System
 open System.IO
 open ThreeValuedBoolean
 
-type Repertoire = string -> threeValuedBoolean
+type Repertoire = string -> ThreeValuedBoolean
 
 let private split (line: string) =
     match line.Split(',') with

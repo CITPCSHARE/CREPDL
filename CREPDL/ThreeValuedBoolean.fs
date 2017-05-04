@@ -1,6 +1,6 @@
 ﻿module  CREPDL.ThreeValuedBoolean
 
-type threeValuedBoolean =
+type ThreeValuedBoolean =
   | True
   | False
   | Unknown 
@@ -30,6 +30,6 @@ let difference tvb tvbf =
         | Unknown -> Unknown
 
 
-let writeThreeValuedBoolean (tfu: threeValuedBoolean) =
+let writeThreeValuedBoolean (tfu: ThreeValuedBoolean) =
     System.Console.WriteLine 
       (match tfu with True -> "True" | False -> "False" | Unknown -> "Unknown")

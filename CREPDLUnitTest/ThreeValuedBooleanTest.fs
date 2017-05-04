@@ -21,7 +21,7 @@ module ThreeValuedBooleanTest =
 
     [<TestCaseSource("UnionCases")>]
     [<Category("ThreeValuedBoolean")>]
-    let unionTest (x, (y: unit -> threeValuedBoolean), z: threeValuedBoolean) =
+    let unionTest (x, (y: unit -> ThreeValuedBoolean), z: ThreeValuedBoolean) =
        Assert.AreEqual(union x y,  z)
 
     let IntersectionCases =
@@ -39,7 +39,7 @@ module ThreeValuedBooleanTest =
 
     [<TestCaseSource("IntersectionCases")>]
     [<Category("ThreeValuedBoolean")>]
-    let intersectionTest (x, (y: unit -> threeValuedBoolean), z: threeValuedBoolean) =
+    let intersectionTest (x, (y: unit -> ThreeValuedBoolean), z: ThreeValuedBoolean) =
        Assert.AreEqual(intersection x y,  z)
 
     let DifferenceCases =
@@ -57,5 +57,5 @@ module ThreeValuedBooleanTest =
 
     [<TestCaseSource("DifferenceCases")>]
     [<Category("ThreeValuedBoolean")>]
-    let differenceTest (x, (y: unit -> threeValuedBoolean), z: threeValuedBoolean) =
+    let differenceTest (x, (y: unit -> ThreeValuedBoolean), z: ThreeValuedBoolean) =
         Assert.AreEqual(difference x y,  z)

@@ -10,6 +10,7 @@ open CREPDL.ReadGraphemeCluster
 module ValidationTest =  
     let dir = @"H:\CREPDLScripts\examples\version2\characterMode\"
 
+
     let validateString (scriptFileName: string) str = 
             let x = System.DateTime.Now
             let validator = new Validator(dir + scriptFileName)
@@ -33,7 +34,7 @@ module ValidationTest =
     [<TestCase("IICORE.crepdl", "\U0002070E\U00022EB3\U000269FA\U00027A3E\U0002815D\U00029D98")>]
     [<TestCase("jinmei2010.crepdl",  "猪蕪禍淚")>]
     let completelyTrue scriptFileName str =
-        Assert.That(validateString scriptFileName str = ([], []))
+        Assert.That(validateString scriptFileName str = ([||], [||]))
 
         
     [<TestCase("ArmenianA.crepdl", "abc")>]
@@ -47,7 +48,7 @@ module ValidationTest =
     [<TestCase("IICORE.crepdl", "\U00029D99")>]
     let completelyFalse scriptFileName str =
         let unknowns, notIncluded = validateString scriptFileName str 
-        Assert.That(unknowns.IsEmpty && notIncluded.Length = numberOfCodePoints str)
+        Assert.That(unknowns.Length = 0 && notIncluded.Length = numberOfCodePoints str)
 
 
     [<TestCase("Kyouiku1a.crepdl", "一二三四五征悟父暗漁禁己" , "", "征悟父暗漁禁己" )>]
@@ -62,9 +63,9 @@ module ValidationTest =
     let testValidation scriptFileName str (unknownStr: string) (notIncludedStr: string) =
         let unknowns, notIncluded = validateString scriptFileName str 
         Assert.That(unknowns.Length = unknownStr.Length && 
-                        List.forall (fun u -> unknownStr.Contains(u)) unknowns)
+                        Array.forall (fun u -> unknownStr.Contains(u)) unknowns)
         Assert.That(notIncluded.Length = notIncludedStr.Length && 
-                        List.forall (fun n -> notIncludedStr.Contains(n)) notIncluded)
+                        Array.forall (fun n -> notIncludedStr.Contains(n)) notIncluded)
 
 
 

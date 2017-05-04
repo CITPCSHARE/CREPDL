@@ -47,7 +47,7 @@ and differenceHelp (rrd: RegistryRepertoireDictionary) (str: string) (list: list
                 | True -> False 
                 | False | Unknown -> Unknown
                        
-and checkString (rrd: RegistryRepertoireDictionary) (crepdl: XElement) (str: string) (minUV, maxUV): threeValuedBoolean =
+and checkString (rrd: RegistryRepertoireDictionary) (crepdl: XElement) (str: string) (minUV, maxUV): ThreeValuedBoolean =
         let minMaxHelp  =
             function
                 | None ->       function None -> (minUV, maxUV) | Some(max) -> (minUV, max)
