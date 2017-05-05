@@ -7,6 +7,7 @@ open Repertoire
 open ReadScript
 open ThreeValuedBoolean
 open ISO10646Collection
+open IVSChecker
 open System.Collections.Generic
 open System.Text
 open System.IO
@@ -41,6 +42,7 @@ let generateRepertoire (rgst: Registry) =
         createRepertoireFromTextReader textReader
     | CLDR(version, name)-> failwith"CLDR is not supported yet"
     | IANA(name, number)-> generateRepertoireFromIANACharset  name number 
+    | IVD(name) -> generateRepertoireFromIVD name
   
 let createRegistryRepertoireDictionary (crepdl: XElement): RegistryRepertoireDictionary =
     let dict = new Dictionary<Registry,Repertoire>()

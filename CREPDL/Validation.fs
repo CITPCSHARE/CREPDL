@@ -16,7 +16,7 @@ open System
 /// <summary>True (in the collection), False (not in the collection), or Unknown</summary>
 type ValidationResult = True = 0 | False = 1 | Unknown = 2;;
 
-/// <summary>This class provide an interface for invoking CREPDL validators.</summary>
+/// <summary>This class provides an interface for invoking CREPDL validators.</summary>
 type Validator private (crepdl: XElement, u:unit) =
     static let checkCharWithMemoCount = 3000
     static let defaultMinVersion = versionString2Int "2.0"
@@ -31,7 +31,8 @@ type Validator private (crepdl: XElement, u:unit) =
     let rootMode = getRootMode script
 
     let stringChecker = 
-        memoize (fun str -> checkString (createRegistryRepertoireDictionary crepdl) 
+        let rrd = createRegistryRepertoireDictionary crepdl
+        memoize (fun str -> checkString rrd 
                                 crepdl str (defaultMinVersion, defaultMaxVersion)) 
                                 checkCharWithMemoCount
                                 
@@ -45,7 +46,7 @@ type Validator private (crepdl: XElement, u:unit) =
         let x = (XDocument.Load(filename, LoadOptions.SetBaseUri)).Root
         Validator(x, ())
 
-/// <summary>Constructs a validator from a CREPDL TextReader.</summary>
+/// <summary>Constructs a validator.</summary>
 /// <param name="tr">A TextReader for a CREPDL script</param>
     new (tr: TextReader) =
         let x = (XDocument.Load(tr, LoadOptions.SetBaseUri)).Root
@@ -54,7 +55,7 @@ type Validator private (crepdl: XElement, u:unit) =
 /// <summary>Validates a string representing a Unicode character
 /// and report a three-valued boolean</summary>        
 /// <param name="charStr">A string representing a Unicode character</param>
-/// <returns>Either True, False, of Unknown</returns>
+/// <returns>Either True, False, or Unknown</returns>
     member this.validateCharacter (charStr: string): ValidationResult = 
         if rootMode <> CharacterMode then invalidOp "The root mode is not CharacterMode" 
         match stringChecker charStr with
@@ -62,8 +63,8 @@ type Validator private (crepdl: XElement, u:unit) =
 
 /// <summary>Validates a string representing a Unicode grapheme cluster
 /// and report a three-valued boolean</summary>        
-/// <param name="gcStr">a string representing a Unicode grapheme cluster</param>
-/// <returns>Either True, False, of Unknown</returns>
+/// <param name="gcStr">A string representing a Unicode grapheme cluster</param>
+/// <returns>Either True, False, or Unknown</returns>
     member this.validateGraphemeCluster(gcStr: string): ValidationResult= 
         if rootMode <> GraphemeClusterMode then invalidOp "The root mode is not GraphemeClusterMode" 
         match stringChecker gcStr with
@@ -71,7 +72,7 @@ type Validator private (crepdl: XElement, u:unit) =
         
 /// <summary>Performs validation</summary>
 /// <param name="tr">a TextReader for the content to be validated</param>
-/// <returns>An array pair. where the first list contains what may be or may not be included 
+/// <returns>An array pair, where the first array contains what may be or may not be included 
 /// and the second contains what is not included.</returns>
     member this.validateTextStream (tr: TextReader): string array * string array= 
         let mutable unknowns = []
@@ -91,16 +92,16 @@ type Validator private (crepdl: XElement, u:unit) =
 
         
 /// <summary>Performs validation</summary>
-/// <param name="str">a string to be validated</param>
-/// <returns>An array pair. where the first list contains what may be or may not be included 
+/// <param name="str">A string to be validated</param>
+/// <returns>An array pair, where the first array contains what may be or may not be included 
 /// and the second contains what is not included.</returns>
     member this.validateString (str: string): string array * string array= 
         this.validateTextStream(new StringReader(str))
         
 /// <summary>Performs validation</summary>
-/// <param name="filename">a file name to be validated</param>
-/// <param name="encName">an encoding name</param>
-/// <returns>An array pair. where the first list contains what may be or may not be included 
+/// <param name="filename">A file name to be validated</param>
+/// <param name="encName">An encoding name</param>
+/// <returns>An array pair, where the first array contains what may be or may not be included 
 /// and the second contains what is not included.</returns>
     member this.validateFile (filename: string) (encName: string): string array * string array = 
           let enc =

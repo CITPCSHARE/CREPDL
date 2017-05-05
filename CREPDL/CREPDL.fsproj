@@ -74,6 +74,7 @@
     <Compile Include="ReadGraphemeCluster.fs" />
     <Compile Include="Validation.fs" />
     <None Include="App.config" />
+    <EmbeddedResource Include="IVD_Sequences.txt" />
     <EmbeddedResource Include="IICORE.txt" />
     <EmbeddedResource Include="JIExt.txt" />
     <EmbeddedResource Include="JAPANESE IDEOGRAPHICS SUPPLEMENT.txt" />

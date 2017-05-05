@@ -86,6 +86,7 @@ let (|Union|Intersection|Difference|Ref|Repertoire|Char|GraphemeCluster|) (crepd
                 | Some("10646") -> ISO10646(name, Option.map int number)
                 | Some("CLDR") -> CLDR(getAndTrimAttributeValue "version", name)
                 | Some("IANA") -> IANA(name, Option.map int number)
+                | Some("IVD") -> if name<>None then IVD(name.Value) else failwith "@name is missing"
                 | Some(x) -> failwith ("undefined registry: " + x)
                 | None -> failwith "@registry is missing"
           Repertoire(mode, minUV, maxUV, registry)
