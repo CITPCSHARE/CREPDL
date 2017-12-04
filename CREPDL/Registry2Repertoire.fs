@@ -59,7 +59,7 @@ let createRegistryRepertoireDictionary (crepdl: XElement): RegistryRepertoireDic
                  let rep = generateRepertoire rgst
                  dict.[rgst] <- rep
                  
-        | Char(_,_, _, _, _, _) | GraphemeCluster(_,_, _, _, _, _) 
+        | Char(_,_, _, _, _, _) 
             -> () 
 
     scanRegistry crepdl

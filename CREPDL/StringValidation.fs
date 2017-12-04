@@ -64,8 +64,6 @@ and checkString (rrd: RegistryRepertoireDictionary) (crepdl: XElement) (str: str
             repertoire str
         | Char(_,mn, mx, kernel, hull, flag)  -> 
             checkStringAgainstChar str kernel hull flag (minMaxHelp mn mx)
-        | GraphemeCluster(_,mn, mx, kernel, hull, flag) ->
-            checkStringAgainstChar str kernel hull flag (minMaxHelp mn mx)
         | Ref(_,mn, mx, _, children) -> 
             if children.Length = 1 then
                 checkString rrd children.[0] str  (minMaxHelp mn mx)

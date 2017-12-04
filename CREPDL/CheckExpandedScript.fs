@@ -10,7 +10,7 @@ let getRootMode (crepdl: XElement): mode =
     match crepdl with
     | Union(Some(md),_, _, _) | Intersection(Some(md),_, _,  _) 
     | Difference(Some(md),_, _,  _) | Repertoire(Some(md),_, _, _) 
-    | Char(Some(md),_, _, _, _, _) | GraphemeCluster(Some(md),_, _, _, _, _)
+    | Char(Some(md),_, _, _, _, _) 
     | Ref(Some(md),_, _, _, _)
         -> md
             
@@ -19,8 +19,6 @@ let getRootMode (crepdl: XElement): mode =
     | Char(None,_, _, _, _, _) 
     | Ref(None,_, _, _, _) 
         ->   CharacterMode //Default is CharacterMode
-    | GraphemeCluster(None,_, _, _, _, _) 
-        ->  GraphemeClusterMode  //Default is GraphemeClusterMode
 
 let checkModeConsistency (crepdl: XElement): unit =
     let rec help (parentMode: mode) (crepdl: XElement): unit =
@@ -44,14 +42,5 @@ let checkModeConsistency (crepdl: XElement): unit =
         | Repertoire(None,_, _, _)
         | Char(None,_, _, _, _, _) 
             ->  ()
-                 
-        | GraphemeCluster(Some(md),_, _, _, _, _) 
-            -> if parentMode <> md then
-                    failwith "Different mode"
-                elif md = CharacterMode then
-                    failwith "GraphemeCluster is unusable in the character mode"
-        | GraphemeCluster(None,_, _, _, _, _)
-            ->  if parentMode = CharacterMode then
-                    failwith "GraphemeCluster is unusable in the character mode"
  
     help (getRootMode crepdl) crepdl;;

@@ -13,21 +13,8 @@ let private deSyntaxSugar str =
             reverseList <- ("(" + gc + ")")::reverseList
     List.fold (fun soFar y -> y+soFar) "" reverseList
 
-let createRegV1 (regStr: string): Regex =
-    if regStr.Length = 1 //Char or WildCardEsc
-        || (regStr.StartsWith("[") && regStr.EndsWith("]")) //charClassExpr
-        || (regStr.StartsWith("\\") && regStr.Length = 2) //SingleCharEsc or MultiCharEsc
-        || (let chReg = new Regex("^\\\P{.+}$") 
-            chReg.Match(regStr).Success) //catExc or complEsc  "\\P{[\{\}]+}"
-        || (let chReg = new Regex("^\\\p{.+}$") 
-            chReg.Match(regStr).Success) //catExc or complEsc  "\\p{[\{\}]+}"
-//        || (let chReg = new Regex("\\\N{.+}") in chReg.Match(regStr).Success) //catExc or complEsc  "\\p{[\{\}]+}"
-    then new Regex(regStr)
-    else failwith  ("illegal regular expression: " +  regStr);
-
-let createRegV2 (regStr: string) syntaxSugar: Regex =
-    let x = if syntaxSugar then deSyntaxSugar regStr else regStr
-    new Regex(x);
+let createReg (regStr: string): Regex =
+    new Regex(regStr)
 
 let checkStringAgainstChar (str: string) (kernel:Regex option) (hull:Regex option) flag (minUV, maxUV): ThreeValuedBoolean =
     let checkReg (reg:Regex) =

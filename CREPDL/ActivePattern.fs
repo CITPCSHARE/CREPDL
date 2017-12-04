@@ -11,13 +11,12 @@ open Basics;
 
     
 
-let (|Union|Intersection|Difference|Ref|Repertoire|Char|GraphemeCluster|) (crepdl: XElement):
+let (|Union|Intersection|Difference|Ref|Repertoire|Char|) (crepdl: XElement):
       Choice<mode option * int option * int option * XElement list, 
              mode option * int option * int option * XElement list, 
              mode option * int option * int option * XElement list, 
              mode option * int option * int option * Uri * XElement list, 
              mode option * int option * int option * Registry , 
-             mode option * int option * int option * Regex option * Regex option * bool, 
              mode option * int option * int option * Regex option * Regex option * bool> =
 
   let crepdlChildren =
@@ -94,41 +93,18 @@ let (|Union|Intersection|Difference|Ref|Repertoire|Char|GraphemeCluster|) (crepd
       ->  hasDisallowedLocalAttribute [] 
           let (k,h, flag) = 
             match crepdlChildren with
-            | [] -> (Some(createRegV1 crepdl.Value), Some(createRegV1 crepdl.Value), true) 
+            | [] -> (Some(createReg crepdl.Value), Some(createReg crepdl.Value), true) 
             | [kernel] when crepdlChildren.[0].Name.LocalName = "kernel" 
-                    -> (Some(createRegV1 crepdlChildren.[0].Value), None,false)
+                    -> (Some(createReg crepdlChildren.[0].Value), None,false)
             | [hull] when crepdlChildren.[0].Name.LocalName = "hull" 
-                -> (None, Some(createRegV1 crepdlChildren.[0].Value),false)
+                -> (None, Some(createReg crepdlChildren.[0].Value),false)
             | [kernel; hull] when crepdlChildren.[0].Name.LocalName = "kernel" 
                         && crepdlChildren.[1].Name.LocalName = "hull" 
-                -> (Some(createRegV1 crepdlChildren.[0].Value), 
-                    Some(createRegV1 crepdlChildren.[1].Value),
+                -> (Some(createReg crepdlChildren.[0].Value), 
+                    Some(createReg crepdlChildren.[1].Value),
                     crepdlChildren.[0].Value = crepdlChildren.[1].Value)
             | _ -> failwith "Illegal content of a char element";
           Char(mode, minUV, maxUV, k, h, flag)
-    | "gc" | "graphemeCluster"
-      ->  hasDisallowedLocalAttribute ["syntaxSugar"] 
-          let ssf = 
-            match getAndTrimAttributeValue "syntaxSugar" with
-            | Some("true") | None -> true
-            | Some("false") -> false
-            | _ -> failwith "Illegal value of @syntaxSugar"
-          let (k,h, flag) =
-            match crepdlChildren with
-            | [] -> (Some(createRegV2 crepdl.Value ssf), 
-                     Some(createRegV2 crepdl.Value ssf),
-                     true) 
-            | [kernel] when crepdlChildren.[0].Name.LocalName = "kernel" 
-                    -> (Some(createRegV2 crepdlChildren.[0].Value ssf), None, false)
-            | [hull] when crepdlChildren.[0].Name.LocalName = "hull" 
-                -> (None, Some(createRegV2 crepdlChildren.[0].Value ssf), false)
-            | [kernel; hull] when crepdlChildren.[0].Name.LocalName = "kernel" 
-                        && crepdlChildren.[1].Name.LocalName = "hull" 
-                -> (Some(createRegV2 crepdlChildren.[0].Value ssf), 
-                    Some(createRegV2 crepdlChildren.[1].Value ssf),
-                    crepdlChildren.[0].Value = crepdlChildren.[1].Value)
-            | _ -> failwith "Illegal content of a graphemeCluster element";
-          GraphemeCluster(mode, minUV, maxUV, k, h, flag)
     | _ -> failwith ("Illegal element" + crepdl.Name.LocalName);
 
 

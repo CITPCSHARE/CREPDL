@@ -15,7 +15,6 @@ let rec expandRefAndRepertoire (parents: List<System.Uri>) (crepdl: XElement): u
     | Difference(_,_, _, children)
         -> List.iter (expandRefAndRepertoire parents) children
     | Char(_,_, _, _, _, _) 
-    | GraphemeCluster(_,_, _, _, _, _) 
         -> ()
     | Repertoire(_, _, _, ISO10646(name, number) )
         ->  match expandRepertoireFromISOCollection name number with
