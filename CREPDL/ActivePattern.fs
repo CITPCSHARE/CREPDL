@@ -6,6 +6,7 @@ open System.Text.RegularExpressions;
 open System.Text;
 open Registry;
 open CharMatcher
+open Icu
 
 open Basics;
 
@@ -17,7 +18,7 @@ let (|Union|Intersection|Difference|Ref|Repertoire|Char|) (crepdl: XElement):
              mode option * int option * int option * XElement list, 
              mode option * int option * int option * Uri * XElement list, 
              mode option * int option * int option * Registry , 
-             mode option * int option * int option * Regex option * Regex option * bool> =
+             mode option * int option * int option * RegexMatcher option * RegexMatcher option * bool> =
 
   let crepdlChildren =
     List.filter (fun (c: XElement) -> 
@@ -93,15 +94,15 @@ let (|Union|Intersection|Difference|Ref|Repertoire|Char|) (crepdl: XElement):
       ->  hasDisallowedLocalAttribute [] 
           let (k,h, flag) = 
             match crepdlChildren with
-            | [] -> (Some(createReg crepdl.Value), Some(createReg crepdl.Value), true) 
+            | [] -> (Some(createRegexMatcher crepdl.Value), Some(createRegexMatcher crepdl.Value), true) 
             | [kernel] when crepdlChildren.[0].Name.LocalName = "kernel" 
-                    -> (Some(createReg crepdlChildren.[0].Value), None,false)
+                    -> (Some(createRegexMatcher crepdlChildren.[0].Value), None,false)
             | [hull] when crepdlChildren.[0].Name.LocalName = "hull" 
-                -> (None, Some(createReg crepdlChildren.[0].Value),false)
+                -> (None, Some(createRegexMatcher crepdlChildren.[0].Value),false)
             | [kernel; hull] when crepdlChildren.[0].Name.LocalName = "kernel" 
                         && crepdlChildren.[1].Name.LocalName = "hull" 
-                -> (Some(createReg crepdlChildren.[0].Value), 
-                    Some(createReg crepdlChildren.[1].Value),
+                -> (Some(createRegexMatcher crepdlChildren.[0].Value), 
+                    Some(createRegexMatcher crepdlChildren.[1].Value),
                     crepdlChildren.[0].Value = crepdlChildren.[1].Value)
             | _ -> failwith "Illegal content of a char element";
           Char(mode, minUV, maxUV, k, h, flag)
