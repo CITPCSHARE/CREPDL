@@ -17,7 +17,8 @@ let private deSyntaxSugar str =
 
 let createRegexMatcher  =
 
-    memoize (fun regStr -> new RegexMatcher(regStr, RegexMatcher.URegexpFlag.COMMENTS)) 100
+    memoize (fun regStr -> 
+                new RegexMatcher(regStr, RegexMatcher.URegexpFlag.COMMENTS)) 100
 
 let createReg (regStr: string): Regex =
     new Regex(regStr)
