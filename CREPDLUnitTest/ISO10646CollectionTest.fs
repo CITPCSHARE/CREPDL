@@ -32,3 +32,13 @@ module ISO10646CollectionTest =
     let createRepertoireFromTextReaderOutofLineNameTest name content  =
       let tr = generateRepertoireFromISOCollection (Some(name)) None 
       Assert.That(tr.ReadToEnd().StartsWith(content))
+
+    [<TestCase("UNICODE 6.3", "<union")>]
+    let expandRepertoireCREPDLNameTest name startStr  =
+      let tr = expandRepertoireFromISOCollection (Some(name)) None 
+      Assert.That(tr.ReadToEnd().StartsWith(startStr))
+
+    [<TestCase(306, "<union")>]
+    let expandRepertoireCREPDLNumTest num startStr  =
+      let tr = expandRepertoireFromISOCollection None (Some(num)) 
+      Assert.That(tr.ReadToEnd().StartsWith(startStr))
