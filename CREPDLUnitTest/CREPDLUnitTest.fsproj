@@ -60,6 +60,7 @@
     <Compile Include="RepertoireTest.fs" />
     <Compile Include="ISO10646CollectionTest.fs" />
     <Compile Include="CharMatcherTest.fs" />
+    <Compile Include="CheckExpandedScriptTest.fs" />
     <Compile Include="ActivePatternTest.fs" />
     <Compile Include="ReadGraphemeClusterTest.fs" />
     <Compile Include="ValidationTest.fs" />
