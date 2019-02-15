@@ -62,6 +62,7 @@
     <Compile Include="CharMatcherTest.fs" />
     <Compile Include="CheckExpandedScriptTest.fs" />
     <Compile Include="ActivePatternTest.fs" />
+    <Compile Include="ReadCharacterTest.fs" />
     <Compile Include="ReadGraphemeClusterTest.fs" />
     <Compile Include="ValidationTest.fs" />
     <None Include="Script.fsx" />
