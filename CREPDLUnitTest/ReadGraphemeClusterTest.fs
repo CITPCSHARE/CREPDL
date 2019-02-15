@@ -9,8 +9,8 @@ open CREPDL.ReadGraphemeCluster
 module ReadGraphemeClusterTest =  
 
 
-    let str = "\u3402\U000E0103,,あ　ば ,a"
-    let l = ["\u3402\U000E0103"; ","; ","; "あ"; "　"; "ば"; " "; ","; "a"]
+    let str = "\u3402\U000E0103,,あ　ば ,a\u3402\U000E0103"
+    let l = ["\u3402\U000E0103"; ","; ","; "あ"; "　"; "ば"; " "; ","; "a";"\u3402\U000E0103"]
 
     [<Test>]
     let readGCTest1() =
@@ -22,7 +22,7 @@ module ReadGraphemeClusterTest =
 
     [<Test>]
     let readGCTest2() =
-        let sr = new StringReader(str + "\n" + str)
+        let sr = new StringReader(str  + str)
         let x = getGraphemeClusterEnumerator sr
         let mutable result = []
         for gc in x do result <- gc::result
