@@ -64,6 +64,7 @@
     <Compile Include="Registry.fs" />
     <Compile Include="Repertoire.fs" />
     <Compile Include="IVSChecker.fs" />
+    <Compile Include="ISO10646CollectionsDefinitions.fs" />
     <Compile Include="ISO10646Collection.fs" />
     <Compile Include="CharMatcher.fs" />
     <Compile Include="ActivePattern.fs" />

@@ -8,9 +8,6 @@ open CREPDL.ISO10646Collection
 [<TestFixture>]
 [<Category("ISO10646Collection")>]
 module ISO10646CollectionTest =  
-    [<SetUp>]
-    let init() =
-        initializeCollections()
 
     [<TestCase(96, "0x1760, 0x177F")>]
     let createRepertoireFromTextReaderInlineNumTest num content  =
@@ -35,10 +32,12 @@ module ISO10646CollectionTest =
 
     [<TestCase("UNICODE 6.3", "<union")>]
     let expandRepertoireCREPDLNameTest name startStr  =
-      let tr = expandRepertoireFromISOCollection (Some(name)) None 
-      Assert.That(tr.ReadToEnd().StartsWith(startStr))
+      match expandRepertoireFromISOCollection (Some(name)) None with
+      | Some(tr) -> Assert.That(tr.ReadToEnd().StartsWith(startStr))
+      | _ -> Assert.Fail()
 
     [<TestCase(306, "<union")>]
     let expandRepertoireCREPDLNumTest num startStr  =
-      let tr = expandRepertoireFromISOCollection None (Some(num)) 
-      Assert.That(tr.ReadToEnd().StartsWith(startStr))
+      match  expandRepertoireFromISOCollection None (Some(num))  with
+      | Some(tr) -> Assert.That(tr.ReadToEnd().StartsWith(startStr))
+      | _ -> Assert.Fail()

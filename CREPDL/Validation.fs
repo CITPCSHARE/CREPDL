@@ -26,7 +26,6 @@ type Validator private (crepdl: XElement, u:unit) =
     let script = crepdl
     do expandRefAndRepertoire [] script
        checkModeConsistency script
-       initializeCollections ()
 
     let rootMode = getRootMode script
 
