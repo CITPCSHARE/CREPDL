@@ -45,22 +45,21 @@ let generateRepertoireFromISOCollection  (name: string option) (collectionNumber
         | _,_ -> failwith "Specify either a name or a number"
 
         
-let expandRepertoireFromISOCollection  (name: string option) (collectionNumber: int option): TextReader  = 
+let expandRepertoireFromISOCollection  (name: string option) (collectionNumber: int option): TextReader option = 
     match name, collectionNumber with
         | Some(cname), _ ->  
             try
                 let (_,  _ , str) = List.find (fun (_, x, _) -> x = cname) collectionsInCREPDL 
-                (new StringReader(str)) :> TextReader
+                Some((new StringReader(str)) :> TextReader)
             with 
-              | :? KeyNotFoundException -> failwith "No such collection"
+              | :? KeyNotFoundException -> None
         | _, Some(cnumber)  ->
             try
                 let (_,  _ , str) = List.find (fun (x, _, _) -> x = cnumber) collectionsInCREPDL 
-                (new StringReader(str)) :> TextReader
+                Some((new StringReader(str)) :> TextReader)
             with 
-              | :? KeyNotFoundException ->   failwith "No such collection"
-        | _, _  -> failwith "No such collection"
-
+              | :? KeyNotFoundException ->   None
+        | _, _  -> None
 
 
 let initializeCollections () =

@@ -17,18 +17,20 @@ let rec expandRefAndRepertoire (parents: List<System.Uri>) (crepdl: XElement): u
     | Char(_,_, _, _, _, _) 
         -> ()
     | Repertoire(_, _, _, ISO10646(name, number) )
-        ->  let tr = expandRepertoireFromISOCollection name number 
-            let newRef = new XElement(XNamespace.Get(crepdlNamespaceV2) + "ref")
-            let minA = crepdl.Attribute(XNamespace.None + "minUcsVersion")
-            let maxA = crepdl.Attribute(XNamespace.None + "maxUcsVersion")
-            let modeA = crepdl.Attribute(XNamespace.None + "mode")
-            if minA <> null then newRef.Add(minA)
-            if maxA <> null then newRef.Add(maxA)
-            if modeA <> null then newRef.Add(modeA)
-            let node = readScriptFromString (tr.ReadToEnd())
-            crepdl.ReplaceWith(newRef)
-            newRef.AddFirst(node)
-            expandRefAndRepertoire parents node
+        ->  match expandRepertoireFromISOCollection name number with
+            | Some(tr) -> 
+                let newRef = new XElement(XNamespace.Get(crepdlNamespaceV2) + "ref")
+                let minA = crepdl.Attribute(XNamespace.None + "minUcsVersion")
+                let maxA = crepdl.Attribute(XNamespace.None + "maxUcsVersion")
+                let modeA = crepdl.Attribute(XNamespace.None + "mode")
+                if minA <> null then newRef.Add(minA)
+                if maxA <> null then newRef.Add(maxA)
+                if modeA <> null then newRef.Add(modeA)
+                let node = readScriptFromString (tr.ReadToEnd())
+                crepdl.ReplaceWith(newRef)
+                newRef.AddFirst(node)
+                expandRefAndRepertoire parents node
+            | None -> ()
     | Repertoire(_, _, _, _ ) -> ()
     | Ref(_, _, _,absUri, []) ->  
             if List.contains absUri parents then 
