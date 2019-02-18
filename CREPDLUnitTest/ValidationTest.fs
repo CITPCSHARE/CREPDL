@@ -54,6 +54,11 @@ module ValidationTest =
     [<TestCase("IICORE.crepdl", "\U00029D99", true)>]
     [<TestCase("IVDAdobe-Japan1.crepdl",  "\u36C7\U000E0100", false)>]
     [<TestCase("IVDMoji_Joho.crepdl",  "\u34BC\U000E0100\u34DB\U000E0100\u351F\U000E0100\u353E\U000E0100\u355D\U000E0100", false)>]
+    [<TestCase("IVDMoji_Joho.crepdl",  "ab", false)>]
+    [<TestCase("IVDMoji_Joho.crepdl",  "\n", false)>]
+    [<TestCase("IVDMoji_Joho.crepdl",  "\r", false)>]
+    [<TestCase("IVDMoji_Joho.crepdl",  "\r\n", false)>]
+    [<TestCase("IVDMoji_Joho.crepdl",  "\u0065\u0301", false)>]
     let completelyFalse scriptFileName str characterMode =
         let unknowns, notIncluded = validateString scriptFileName str characterMode
         Assert.That(unknowns.Length = 0 && notIncluded.Length = numberOfCodePoints str)

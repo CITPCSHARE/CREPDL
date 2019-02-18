@@ -27,7 +27,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Debug\CREPDL.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
-    <StartArguments>"h:\Temp\test1.crepdl" "h:\Temp\test3.crepdl"</StartArguments>
+    <StartArguments>h:/CREPDLScripts/examples/version2/graphemeClusterMode/IDVAdobe-Japan1.crepdl h:/CREPDLScripts/examples/version2/graphemeClusterMode/IDVAdobe-Japan1.crepdl</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
-      <HintPath>..\packages\FSharp.Core.4.6.1\lib\net45\FSharp.Core.dll</HintPath>
+      <HintPath>..\packages\FSharp.Core.4.6.2\lib\net45\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="icu.net">
       <HintPath>..\packages\icu.net.2.5.4\lib\net451\icu.net.dll</HintPath>

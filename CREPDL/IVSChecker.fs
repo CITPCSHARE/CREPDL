@@ -47,10 +47,13 @@ let generateBaseSetPerSelector ivsColName =
 let generateRepertoireFromIVD ivsColName: Repertoire =
     let baseSetPerSelector = generateBaseSetPerSelector ivsColName
     fun (str: string) ->
-        if str.Length = 1 then False
-            else 
+        if str.Length < 3 then False
+        else 
             let selector = System.Char.ConvertToUtf32(str, str.Length-2)
-            let bas = System.Char.ConvertToUtf32(str, 0)
-            let baseSet = snd (Seq.find (fun (x, y) -> selector = x)  baseSetPerSelector)
-            if baseSet.Contains(bas) then True else False
+            if selector >= 0xE0100 && selector <= 0xE0120 then
+                let bas = System.Char.ConvertToUtf32(str, 0)
+                if baseSetPerSelector 
+                    |> List.exists (fun (x,y) -> selector = x && y.Contains(bas))  then True
+                else False
+            else False
 
