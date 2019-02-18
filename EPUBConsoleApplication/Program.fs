@@ -36,7 +36,7 @@ let scanZip (filePath: string) (validator: Validator) =
             let mutable unknowns = set []
             let mutable notIncluded = set []
             let htmlDocument = new HtmlDocument()
-            htmlDocument.Load(entry.Open())
+            htmlDocument.Load(entry.Open(), System.Text.Encoding.UTF8)
             printfn "Checking File name: %s" entry.FullName
             for node in htmlDocument.DocumentNode.SelectNodes("//*/text()") do
                 let (unknowns1, notIncluded1) = validator.validateTextStream(new StringReader(node.InnerText))
