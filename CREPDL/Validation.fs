@@ -23,16 +23,14 @@ type Validator private (crepdl: XElement, u:unit) =
     static let defaultMaxVersion = versionString2Int "5.9"
     
 
-    let script = crepdl
-    do expandRefAndRepertoire [] script
-       checkModeConsistency script
+    let script = expandRefAndRepertoire [] crepdl
 
     let rootMode = getRootMode script
 
     let stringChecker = 
-        let rrd = createRegistryRepertoireDictionary crepdl
+        let rrd = createRegistryRepertoireDictionary script
         memoize (fun str -> checkString rrd 
-                                crepdl str (defaultMinVersion, defaultMaxVersion)) 
+                                script str (defaultMinVersion, defaultMaxVersion)) 
                                 checkCharWithMemoCount
                                 
 /// <summary>Constructs a validator.</summary>
