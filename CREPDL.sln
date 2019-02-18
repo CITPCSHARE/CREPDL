@@ -13,6 +13,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConsoleApplication", "Conso
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{0C2C3FC6-37AA-4E75-A315-4D03E9F8B2E3}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "EPUBConsoleApplication", "EPUBConsoleApplication\EPUBConsoleApplication.fsproj", "{D4679316-3735-468C-96AD-A6383BC1C456}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EpubConsoleApplicationSetup", "EpubConsoleApplicationSetup\EpubConsoleApplicationSetup.vdproj", "{27455602-17B2-49FB-ADB1-7F6032454C4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,12 @@ Global
 		{D5CF3F82-45C0-4C0B-9DE4-1F441824C6AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0C2C3FC6-37AA-4E75-A315-4D03E9F8B2E3}.Debug|Any CPU.ActiveCfg = Debug
 		{0C2C3FC6-37AA-4E75-A315-4D03E9F8B2E3}.Release|Any CPU.ActiveCfg = Release
+		{D4679316-3735-468C-96AD-A6383BC1C456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4679316-3735-468C-96AD-A6383BC1C456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4679316-3735-468C-96AD-A6383BC1C456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4679316-3735-468C-96AD-A6383BC1C456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27455602-17B2-49FB-ADB1-7F6032454C4A}.Debug|Any CPU.ActiveCfg = Debug
+		{27455602-17B2-49FB-ADB1-7F6032454C4A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
