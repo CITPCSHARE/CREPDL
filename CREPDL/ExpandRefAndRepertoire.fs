@@ -19,16 +19,8 @@ let rec expandRefAndRepertoire (parents: List<System.Uri>) (crepdl: XElement): u
     | Repertoire(_, _, _, ISO10646(name, number) )
         ->  match expandRepertoireFromISOCollection name number with
             | Some(tr) -> 
-                let newRef = new XElement(XNamespace.Get(crepdlNamespaceV2) + "ref")
-                let minA = crepdl.Attribute(XNamespace.None + "minUcsVersion")
-                let maxA = crepdl.Attribute(XNamespace.None + "maxUcsVersion")
-                let modeA = crepdl.Attribute(XNamespace.None + "mode")
-                if minA <> null then newRef.Add(minA)
-                if maxA <> null then newRef.Add(maxA)
-                if modeA <> null then newRef.Add(modeA)
                 let node = readScriptFromString (tr.ReadToEnd())
-                crepdl.ReplaceWith(newRef)
-                newRef.AddFirst(node)
+                crepdl.ReplaceWith(node)
                 expandRefAndRepertoire parents node
             | None -> ()
     | Repertoire(_, _, _, _ ) -> ()
