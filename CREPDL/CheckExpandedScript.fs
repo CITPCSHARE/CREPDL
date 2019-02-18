@@ -20,27 +20,3 @@ let getRootMode (crepdl: XElement): mode =
     | Ref(None,_, _, _, _) 
         ->   CharacterMode //Default is CharacterMode
 
-let checkModeConsistency (crepdl: XElement): unit =
-    let rec help (parentMode: mode) (crepdl: XElement): unit =
-        match crepdl with
-        | Union(Some(md),_, _, children) 
-        | Intersection(Some(md),_, _, children) 
-        | Difference(Some(md),_, _, children)
-        | Ref(Some(md), _, _,_, children)    
-            -> if parentMode = md then
-                    List.iter (help md) children
-                else failwith  "Different mode";
-        | Union(None,_, _, children) 
-        | Intersection(None,_, _, children) 
-        | Difference(None,_, _, children)
-        | Ref(None, _, _,_, children)
-            -> List.iter (help parentMode) children
-
-        | Repertoire(Some(md),_, _, _) 
-        | Char(Some(md), _, _,  _, _, _) 
-            -> if parentMode <> md then failwith "Different mode"
-        | Repertoire(None,_, _, _)
-        | Char(None,_, _, _, _, _) 
-            ->  ()
- 
-    help (getRootMode crepdl) crepdl;;
