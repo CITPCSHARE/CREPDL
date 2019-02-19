@@ -41,7 +41,7 @@ let scanZip (filePath: string) (validator: Validator) =
             for node in htmlDocument.DocumentNode.SelectNodes("//*/text()") do
                 let (unknowns1, notIncluded1) = validator.validateTextStream(new StringReader(node.InnerText))
                 unknowns <- Set.union unknowns (Set.ofArray(unknowns1))
-                notIncluded <- Set.union unknowns (Set.ofArray(notIncluded1))
+                notIncluded <- Set.union notIncluded (Set.ofArray(notIncluded1))
             if unknowns.Count <> 0 then
                 System.Console.WriteLine("Unknowns:")
             for u in unknowns do
@@ -54,6 +54,7 @@ let scanZip (filePath: string) (validator: Validator) =
 
 [<EntryPoint>]
 let main argv = 
+    Console.OutputEncoding <- System.Text.Encoding.UTF8;
     match argv with 
     | [|epubFileName; crepdlFileName |] -> 
         let validator = new Validator(new StreamReader(crepdlFileName))
