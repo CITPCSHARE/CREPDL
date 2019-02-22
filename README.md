@@ -25,3 +25,14 @@ The .Net API for this implementation idescribed in a [help file](https://github.
 ## History
 
 Converted to a repository of CITPC on 2017-05-22.
+
+## Lincse 
+
+- F#, MIT License https://github.com/Microsoft/visualfsharp/blob/master/License.txt
+- .Net libraries, .Net License https://github.com/dotnet/core-setup/blob/master/LICENSE.TXT
+- HTML Aagility Pack, MIT License https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
+- icu.net MIT License https://licenses.nuget.org/MIT
+- ICU4C https://github.com/sillsdev/icu4c/blob/trunk/LICENSE
+  - data Unicode Consritum License 
+  - code ICU License
+- NewtonSoft.Json MIT License https://licenses.nuget.org/MIT
