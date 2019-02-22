@@ -6,7 +6,9 @@ Implementation of ISO/IEC 19757-7 (CREPDL) in F#
 
 This is a .Net library. It is usable from any .Net programming language such as C# and Visual Basic.
 
-There is a command-line program for invoking this library. But it is rudimentary.
+A rudimentary command-line program for invoking this library is provided.
+
+Another rudimentary command-line program for examining EPUB publications is provided.
 
 This does not contain any examples of CREPDL scripts. See another repository CREPDLScripts for a collection of CREPDL scripts.
 
