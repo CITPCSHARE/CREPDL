@@ -30,6 +30,8 @@ Converted to a repository of CITPC on 2017-05-22.
 
 ## Lincse 
 
+The license of CREPDL is MIT License.  License of used libraries are shown below:
+
 - F#, MIT License https://github.com/Microsoft/visualfsharp/blob/master/License.txt
 - .Net libraries, .Net License https://github.com/dotnet/core-setup/blob/master/LICENSE.TXT
 - HTML Aagility Pack, MIT License https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
