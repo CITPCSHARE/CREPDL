@@ -3,28 +3,30 @@ open HtmlAgilityPack
 open CREPDL.Validation
 open System.IO
 open System.IO.Compression
+open System.Web
 
 let crepdlSource = 
     @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"" mode=""graphemeCluster"">
     <repertoire 
-      registry=""10646"" number=""371""/>
+      registry=""10646"" number=""371""/> <!-- JIS2004 IDEOGRAPHICS EXTENSION -->
     <repertoire 
-      registry=""10646"" number=""285""/>
+      registry=""10646"" number=""285""/> <!-- BASIC JAPANESE (or JIS X 0208) -->
     <repertoire 
-      registry=""10646"" number=""286""/>
-    <char>[\n|\r|\t]|(\r\n)</char>  
-    <char>[[ｰﾀﾐ｡ｱﾁﾑ｢ｲﾂﾒ｣ｳﾃﾓ､ｴﾄﾔ･ｵﾅﾕｦｶﾆﾖｧｷﾇﾗｨｸﾈﾘｩｹﾉﾙｪｺﾊﾚｫｻﾋﾛｬｼﾌﾜｭｽﾍﾝｮｾﾎﾞｯｿﾏﾟ]]</char>
-    <char>[￠￡]</char>
-    <char>[、。「」（），．、！・　：；]</char>
-    <char>[１２３４５６７８９０]</char>
-    <char>[ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ]</char>
-    <char>[ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ]</char>
-    <char>[&#x2015;&#xFF3C;&#xFF5E;&#xFFE2;&#xFF0D;]</char>
-    <char>[『』”＃＄％＆’＞＜〜−〜｜？αβ＾？●〜…＋←→―]</char>
-    <char>[￥／\‐〒◎○〇■△×＠＊↓［］〔〕《》±≠＝≒〈〉−※★“‘【】〓]</char>
+      registry=""10646"" number=""286""/> <!-- JAPANESE NON IDEOGRAPHICS EXTENSION -->
+    <repertoire 
+      registry=""10646"" number=""287""/> <!--  COMMON JAPANESE -->
+    <char>[\n|\r|\t]|(\r\n)</char>
     </union>"
 
-
+let printCharacter (str: string) =
+    printf "%s (" str
+    for i = 0 to str.Length - 1 do
+            let v = str.Chars i |> int
+            v.ToString("x4") |>
+                if i = str.Length - 1 then
+                 printf "U+%s" 
+                else printf "%s, "
+    printfn ")"
 
 let scanZip (filePath: string) (validator: Validator) = 
     let zipFile = ZipFile.OpenRead(filePath)
@@ -39,17 +41,18 @@ let scanZip (filePath: string) (validator: Validator) =
             htmlDocument.Load(entry.Open(), System.Text.Encoding.UTF8)
             printfn "Checking File name: %s" entry.FullName
             for node in htmlDocument.DocumentNode.SelectNodes("//*/text()") do
-                let (unknowns1, notIncluded1) = validator.validateTextStream(new StringReader(node.InnerText))
+                let decodedText = HttpUtility.HtmlDecode( node.InnerText)
+                let (unknowns1, notIncluded1) = validator.validateTextStream(new StringReader(decodedText))
                 unknowns <- Set.union unknowns (Set.ofArray(unknowns1))
                 notIncluded <- Set.union notIncluded (Set.ofArray(notIncluded1))
             if unknowns.Count <> 0 then
                 System.Console.WriteLine("Unknowns:")
             for u in unknowns do
-                System.Console.WriteLine(u)
+                printCharacter u
             if notIncluded.Count <> 0 then
                 System.Console.WriteLine("Not Included:")
             for n in notIncluded do
-                System.Console.WriteLine(n)
+                printCharacter n
 
 
 [<EntryPoint>]
