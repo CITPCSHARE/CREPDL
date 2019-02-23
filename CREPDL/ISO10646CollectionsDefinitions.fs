@@ -760,6 +760,7 @@ let outOfLineCollections =
           (282, "MES-2", "282.txt");
           (-100285, "", "-100285.txt");
           (-200285, "", "-200285.txt");
+          (-287, "", "-287.txt");
           (286, "JAPANESE NON IDEOGRAPHICS EXTENSION", "286.txt");
           (288, "MULTILINGUAL LATIN SUBSET", "288.txt");
           (301, "BMP-AMD.7", "301.txt");
@@ -853,6 +854,11 @@ let collectionsInCREPDL =
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
                       <repertoire  registry=""10646"" number=""-100285""/>
                       <repertoire  registry=""10646"" number=""-200285""/>
+                    </union>");
+          (287,  "COMMON JAPANESE",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                      <repertoire  registry=""10646"" number=""285""/>
+                      <repertoire  registry=""10646"" number=""-287""/>
                     </union>");
           (303, "UNICODE 3.1 ",
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">

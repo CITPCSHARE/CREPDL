@@ -74,6 +74,7 @@
     <EmbeddedResource Include="286.txt" />
     <EmbeddedResource Include="282.txt" />
     <EmbeddedResource Include="281.txt" />
+    <EmbeddedResource Include="-287.txt" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>

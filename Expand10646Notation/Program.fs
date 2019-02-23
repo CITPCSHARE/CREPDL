@@ -64,7 +64,7 @@ let main argv =
     let prepFiles =
         ["281.txt"; "282.txt"; "-200285.txt"; "286.txt"; "288.txt";
         "301.txt"; "302.txt"; "-303.txt"; "-304.txt"; "-306.txt"; 
-        "-307.txt"; "308.txt"; "309.txt"; "310.txt"; "311.txt"; "314.txt"; "-340.txt"];
+        "-307.txt"; "308.txt"; "309.txt"; "310.txt"; "311.txt"; "314.txt"; "-340.txt"; "-287.txt"];
 
     let asm = Assembly.GetExecutingAssembly()
     let path = Path.GetDirectoryName(asm.Location)
