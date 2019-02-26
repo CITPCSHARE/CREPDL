@@ -6,17 +6,17 @@ open System.IO.Compression
 open System.Web
 
 let crepdlSource = 
-    @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"" mode=""graphemeCluster"">
-    <repertoire 
-      registry=""10646"" number=""371""/> <!-- JIS2004 IDEOGRAPHICS EXTENSION -->
-    <repertoire 
-      registry=""10646"" number=""285""/> <!-- BASIC JAPANESE (or JIS X 0208) -->
-    <repertoire 
-      registry=""10646"" number=""286""/> <!-- JAPANESE NON IDEOGRAPHICS EXTENSION -->
-    <repertoire 
-      registry=""10646"" number=""287""/> <!--  COMMON JAPANESE -->
-    <char>[\n|\r|\t]|(\r\n)</char>
-    </union>"
+        @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"" mode=""graphemeCluster"">
+        <repertoire 
+          registry=""10646"" number=""371""/> <!-- JIS2004 IDEOGRAPHICS EXTENSION -->
+        <repertoire 
+          registry=""10646"" number=""285""/> <!-- BASIC JAPANESE (or JIS X 0208) -->
+        <repertoire 
+          registry=""10646"" number=""286""/> <!-- JAPANESE NON IDEOGRAPHICS EXTENSION -->
+        <repertoire 
+          registry=""10646"" number=""287""/> <!--  COMMON JAPANESE -->
+        <char>[\n|\r|\t]|(\r\n)</char>
+        </union>"
 
 let printCharacter (str: string) =
     printf "%s (" str
