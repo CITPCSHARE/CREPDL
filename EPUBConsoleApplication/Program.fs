@@ -30,6 +30,7 @@ let printCharacter (str: string) =
 
 let scanZip (filePath: string) (validator: Validator) = 
     let zipFile = ZipFile.OpenRead(filePath)
+    printfn "UnZipping"
     for entry in zipFile.Entries do
         if entry.Name.EndsWith(".xhtml") 
             || entry.Name.EndsWith(".html") 
@@ -60,10 +61,14 @@ let main argv =
     Console.OutputEncoding <- System.Text.Encoding.UTF8;
     match argv with 
     | [|epubFileName; crepdlFileName |] -> 
+        printfn "Started"
         let validator = new Validator(new StreamReader(crepdlFileName))
+        printfn "Validator created"
         scanZip epubFileName validator
     | [|epubFileName|] -> 
+        printfn "Started"
         let validator = new Validator(new StringReader(crepdlSource))
+        printfn "Validator created"
         scanZip epubFileName validator
     | _ -> Console.WriteLine("Specify an EPUB file name")
     0 // return an integer exit code
