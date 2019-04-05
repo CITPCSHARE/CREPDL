@@ -6,11 +6,22 @@ open Validation
 open System.IO
 open System.Text
 
+
+let printCharacter (str: string) =
+    printf "%s (" str
+    for i = 0 to str.Length - 1 do
+            let v = str.Chars i |> int
+            v.ToString("x4") |>
+                if i = str.Length - 1 then
+                 printf "U+%s" 
+                else printf "%s, "
+    printfn ")"
+
 [<EntryPoint>]
 let main args =
+    System.Console.OutputEncoding <- System.Text.Encoding.UTF8;
     let startTime = System.DateTime.Now in
     System.Console.WriteLine(System.DateTime.Now - startTime)
-    
     let returnCode = 
       try
         match args with
@@ -22,11 +33,14 @@ let main args =
                     else Encoding.UTF8
                   let (unknowns, notIncluded) = validator.validateTextStream(new StreamReader(textFile, encoding ))
                   System.Console.WriteLine("Unknowns:")
+                  if unknowns.Length <> 0 then
+                      System.Console.WriteLine("Unknowns:")
                   for u in unknowns do
-                    System.Console.WriteLine(u)
-                  System.Console.WriteLine("Not Included:")
+                      printCharacter u
+                  if notIncluded.Length <> 0 then
+                      System.Console.WriteLine("Not Included:")
                   for n in notIncluded do
-                    System.Console.WriteLine(n)
+                      printCharacter n
                   0
             | _ -> System.Console.WriteLine "Specify a CREPDL file and a text file"
                    1
