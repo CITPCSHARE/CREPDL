@@ -240,3 +240,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/EPUBConsoleApplicationSetup/EPUBConsoleApplicationSetup-cache
+/ConsoleApplicationSetup/ConsoleApplicationSetup-SetupFiles
+/ConsoleApplicationSetup
+/EPUBConsoleApplicationSetup/EPUBConsoleApplicationSetup-SetupFiles
