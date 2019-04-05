@@ -242,5 +242,5 @@ ModelManifest.xml
 .fake/
 /EPUBConsoleApplicationSetup/EPUBConsoleApplicationSetup-cache
 /ConsoleApplicationSetup/ConsoleApplicationSetup-SetupFiles
-/ConsoleApplicationSetup
 /EPUBConsoleApplicationSetup/EPUBConsoleApplicationSetup-SetupFiles
+/ConsoleApplicationSetup/ConsoleApplicationSetup-cache
