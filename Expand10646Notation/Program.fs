@@ -44,7 +44,7 @@ let private parseLine (prefix: string) (line: string): seq<string> =
     check -1 (Seq.toList parsedLine)
     Seq.map snd parsedLine
 
-let expandedLines (str: StreamReader) =
+let private expandedLines (str: StreamReader) =
     let mutable planePrefix = ""
     let mutable previousRow = -1
     seq{ while not(str.EndOfStream) do
