@@ -2,7 +2,7 @@
 
 open NUnit.Framework
 open System.IO
-open CREPDL.Validation
+open CREPDL
 open CREPDL.ReadGraphemeCluster
 
 [<TestFixture>]
@@ -15,8 +15,8 @@ module ValidationTest =
     let validateString (scriptFileName: string) str  characterMode = 
             let x = System.DateTime.Now
             let validator = 
-                if characterMode then  new Validator(dir + scriptFileName)
-                else new Validator(gcdir + scriptFileName)
+                if characterMode then  new CREPDLValidator(dir + scriptFileName)
+                else new CREPDLValidator(gcdir + scriptFileName)
             let y = System.DateTime.Now
             printfn "%A" (y - x)
             let res = validator.validateString(str)

@@ -1,4 +1,4 @@
-﻿module CREPDL.Validation
+﻿namespace CREPDL
 
 open Basics
 open ThreeValuedBoolean
@@ -14,10 +14,10 @@ open System.IO
 open System
 
 /// <summary>True (in the collection), False (not in the collection), or Unknown</summary>
-type ValidationResult = True = 0 | False = 1 | Unknown = 2;;
+type CREPDLValidationResult = True = 0 | False = 1 | Unknown = 2;;
 
 /// <summary>This class provides an interface for invoking CREPDL validators.</summary>
-type Validator private (crepdl: XElement, u:unit) =
+type CREPDLValidator private (crepdl: XElement, u:unit) =
     static let checkCharWithMemoCount = 3000
     static let defaultMinVersion = versionString2Int "2.0"
     static let defaultMaxVersion = versionString2Int "5.9"
@@ -27,6 +27,7 @@ type Validator private (crepdl: XElement, u:unit) =
 
     let rootMode = getRootMode script
 
+
     let stringChecker = 
         let rrd = createRegistryRepertoireDictionary script
         memoize (fun str -> checkString rrd 
@@ -35,37 +36,37 @@ type Validator private (crepdl: XElement, u:unit) =
                                 
 /// <summary>Constructs a validator.</summary>
 /// <param name="crepdl">An XElement representing a CREPDL script</param>
-    new (crepdl: XElement) = Validator(crepdl, ())
+    new (crepdl: XElement) = CREPDLValidator(crepdl, ())
 
 /// <summary>Constructs a validator.</summary>
 /// <param name="filename">A CREPDL file name</param>
     new (filename: string) =
         let x = (XDocument.Load(filename, LoadOptions.SetBaseUri)).Root
-        Validator(x, ())
+        CREPDLValidator(x, ())
 
 /// <summary>Constructs a validator.</summary>
 /// <param name="tr">A TextReader for a CREPDL script</param>
     new (tr: TextReader) =
         let x = (XDocument.Load(tr, LoadOptions.SetBaseUri)).Root
-        Validator(x, ())
+        CREPDLValidator(x, ())
 
 /// <summary>Validates a string representing a Unicode character
 /// and report a three-valued boolean</summary>        
 /// <param name="charStr">A string representing a Unicode character</param>
 /// <returns>Either True, False, or Unknown</returns>
-    member this.validateCharacter (charStr: string): ValidationResult = 
+    member this.validateCharacter (charStr: string): CREPDLValidationResult = 
         if rootMode <> CharacterMode then invalidOp "The root mode is not CharacterMode" 
         match stringChecker charStr with
-        | True -> ValidationResult.True | False -> ValidationResult.False | Unknown -> ValidationResult.Unknown
+        | True -> CREPDLValidationResult.True | False -> CREPDLValidationResult.False | Unknown -> CREPDLValidationResult.Unknown
 
 /// <summary>Validates a string representing a Unicode grapheme cluster
 /// and report a three-valued boolean</summary>        
 /// <param name="gcStr">A string representing a Unicode grapheme cluster</param>
 /// <returns>Either True, False, or Unknown</returns>
-    member this.validateGraphemeCluster(gcStr: string): ValidationResult= 
+    member this.validateGraphemeCluster(gcStr: string): CREPDLValidationResult= 
         if rootMode <> GraphemeClusterMode then invalidOp "The root mode is not GraphemeClusterMode" 
         match stringChecker gcStr with
-        | True -> ValidationResult.True | False -> ValidationResult.False | Unknown -> ValidationResult.Unknown
+        | True -> CREPDLValidationResult.True | False -> CREPDLValidationResult.False | Unknown -> CREPDLValidationResult.Unknown
         
 /// <summary>Performs validation</summary>
 /// <param name="tr">a TextReader for the content to be validated</param>

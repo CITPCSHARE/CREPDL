@@ -2,12 +2,12 @@
 
 open ISO10646Collection
 open ThreeValuedBoolean
-open Validation
+open CREPDL
 open System.IO
 open System.Text
 
 
-let printCharacter (str: string) =
+let private printCharacter (str: string) =
     printf "%s (" str
     for i = 0 to str.Length - 1 do
             let v = str.Chars i |> int
@@ -27,7 +27,7 @@ let main args =
         match args with
             | [|crepdlFile; textFile|]
             | [|crepdlFile; textFile; _|]
-              ->  let validator = new Validator(crepdlFile)
+              ->  let validator = new CREPDLValidator(crepdlFile)
                   let encoding =
                     if args.Length = 3 then Encoding.GetEncoding(args.[2])
                     else Encoding.UTF8
