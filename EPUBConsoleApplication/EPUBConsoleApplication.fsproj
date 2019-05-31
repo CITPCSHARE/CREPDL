@@ -25,7 +25,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
-    <StartArguments>"C:\Users\MURATA Makoto\Downloads\epub30-test-0320-20160325.epub"</StartArguments>
+    <StartArguments>h:/Temp/ivstest.crepdl "C:\Users\MURATA Makoto\Downloads\20190517-AJ16kanji-test.epub"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +37,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
+    <StartArguments>h:/Temp/ivstest.crepdl "C:\Users\MURATA Makoto\Downloads\20190517-AJ16kanji-test.epub"</StartArguments>
   </PropertyGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
@@ -56,7 +57,7 @@
       <HintPath>..\packages\FSharp.Core.4.6.2\lib\net45\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack">
-      <HintPath>..\packages\HtmlAgilityPack.1.9.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <HintPath>..\packages\HtmlAgilityPack.1.11.4\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
@@ -80,6 +81,11 @@
     <ProjectReference Include="..\CREPDL\CREPDL.fsproj">
       <Name>CREPDL</Name>
       <Project>{e38863e8-88ef-49ec-89ad-1ebbbbe3be21}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\EPUBValidation\EPUBValidation.fsproj">
+      <Name>EPUBValidation</Name>
+      <Project>{aaa6a18d-bb8e-4a02-89f6-e290ad067dde}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

@@ -76,12 +76,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
     <ProjectReference Include="..\CREPDL\CREPDL.fsproj">
       <Name>CREPDL</Name>
       <Project>{e38863e8-88ef-49ec-89ad-1ebbbbe3be21}</Project>
       <Private>True</Private>
     </ProjectReference>
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
