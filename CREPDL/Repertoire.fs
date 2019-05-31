@@ -4,7 +4,7 @@ open System
 open System.IO
 open ThreeValuedBoolean
 
-type Repertoire = string -> ThreeValuedBoolean
+type internal Repertoire = string -> ThreeValuedBoolean
 
 let private split (line: string) =
     match line.Split(',') with
@@ -19,7 +19,7 @@ let private charList (tr:TextReader) =
              yield!
                  let (s, e) = split line in [s .. e]  };;
 
-let createRepertoireFromTextReader (tr: TextReader): Repertoire =
+let internal createRepertoireFromTextReader (tr: TextReader): Repertoire =
     let allCodePoints = Set.ofSeq (Seq.map (fun x -> Char.ConvertFromUtf32 x) (charList tr))
     let checkString (s: string) = 
         if allCodePoints.Contains s then True

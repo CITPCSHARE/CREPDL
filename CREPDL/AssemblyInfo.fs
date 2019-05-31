@@ -4,6 +4,9 @@ open System.Reflection
 open System.Runtime.CompilerServices
 open System.Runtime.InteropServices
 
+[<assembly: InternalsVisibleTo("CREPDLUnitTest")>]
+
+
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.

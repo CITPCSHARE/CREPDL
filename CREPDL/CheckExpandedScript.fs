@@ -6,7 +6,7 @@ open System.Xml.Linq;
 open Basics
 open ActivePattern
 
-let getRootMode (crepdl: XElement): mode =
+let internal getRootMode (crepdl: XElement): mode =
     match crepdl with
     | Union(Some(md),_, _, _) | Intersection(Some(md),_, _,  _) 
     | Difference(Some(md),_, _,  _) | Repertoire(Some(md),_, _, _) 

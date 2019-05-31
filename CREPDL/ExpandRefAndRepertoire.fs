@@ -7,7 +7,7 @@ open ISO10646Collection
 open Registry
 open System.Xml.Linq
 
-let copyElement (elem: XElement): XElement = 
+let internal copyElement (elem: XElement): XElement = 
     let copy = new XElement( elem.Name)
     let minA = elem.Attribute(XNamespace.None + "minUcsVersion")
     let maxA = elem.Attribute(XNamespace.None + "maxUcsVersion")
@@ -19,7 +19,7 @@ let copyElement (elem: XElement): XElement =
     if hrefA <> null then copy.Add(hrefA)
     copy
 
-let rec expandRefAndRepertoire (parents: List<System.Uri>) (crepdl: XElement): XElement =
+let rec internal expandRefAndRepertoire (parents: List<System.Uri>) (crepdl: XElement): XElement =
 
     match crepdl with
     | Union(_,_, _, children) 

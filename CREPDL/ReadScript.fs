@@ -8,7 +8,7 @@ open Basics
 open ActivePattern
 
 
-let readScriptFromUri (absUri: Uri): XElement =
+let internal readScriptFromUri (absUri: Uri): XElement =
     try
         let doc = XDocument.Load(absUri.ToString(), LoadOptions.SetBaseUri)
         doc.Root
@@ -17,7 +17,7 @@ let readScriptFromUri (absUri: Uri): XElement =
             failwith ("file not found: " + absUri.ToString())
 
 
-let readScriptFromString (schemaString: string): XElement =
+let internal readScriptFromString (schemaString: string): XElement =
     XDocument.Parse(schemaString, LoadOptions.SetBaseUri).Root
 
 

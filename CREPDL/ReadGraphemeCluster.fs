@@ -3,7 +3,7 @@
 open System.IO
 open Icu
 
-let getGraphemeClusterEnumerator (tr: TextReader) =
+let internal getGraphemeClusterEnumerator (tr: TextReader) =
     seq {
         while tr.Peek() <> -1 do
             let content = tr.ReadToEnd()

@@ -12,7 +12,7 @@ open Basics;
 
     
 
-let (|Union|Intersection|Difference|Ref|Repertoire|Char|) (crepdl: XElement):
+let internal (|Union|Intersection|Difference|Ref|Repertoire|Char|) (crepdl: XElement):
       Choice<mode option * int option * int option * XElement list, 
              mode option * int option * int option * XElement list, 
              mode option * int option * int option * XElement list, 

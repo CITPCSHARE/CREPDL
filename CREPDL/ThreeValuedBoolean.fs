@@ -1,18 +1,18 @@
 ﻿module  CREPDL.ThreeValuedBoolean
 
-type ThreeValuedBoolean =
+type internal ThreeValuedBoolean =
   | True
   | False
   | Unknown 
 
-let union tvb tvbf =
+let internal union tvb tvbf =
     match tvb with
     | True -> True
     | False -> tvbf ()
     | Unknown when tvbf () = True -> True 
     | _ -> Unknown
 
-let intersection tvb tvbf =
+let internal intersection tvb tvbf =
     match tvb with
     | False -> False
     | True -> tvbf ()
@@ -20,7 +20,7 @@ let intersection tvb tvbf =
     | _ -> Unknown
   
 
-let difference tvb tvbf =
+let internal difference tvb tvbf =
     match tvb with
     | False -> False
     | _ ->
@@ -30,6 +30,6 @@ let difference tvb tvbf =
         | Unknown -> Unknown
 
 
-let writeThreeValuedBoolean (tfu: ThreeValuedBoolean) =
+let internal writeThreeValuedBoolean (tfu: ThreeValuedBoolean) =
     System.Console.WriteLine 
       (match tfu with True -> "True" | False -> "False" | Unknown -> "Unknown")

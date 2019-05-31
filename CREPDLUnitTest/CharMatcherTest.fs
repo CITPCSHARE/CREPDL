@@ -62,5 +62,5 @@ module CharMatcherTest =
                    TestCaseData(s, kr, hr, flag, min, max, res))
         
     [<TestCaseSource("CheckStringAgainstCharTestCases")>]
-    let checkStringAgainstCharTest str kr hr flag min max res =
+    let internal checkStringAgainstCharTest str kr hr flag min max res =
          Assert.That(checkStringAgainstChar str kr hr flag (min, max) = res)

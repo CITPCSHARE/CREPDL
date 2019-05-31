@@ -3,7 +3,7 @@
 
 open NUnit.Framework
 open System.IO
-open CREPDL.Validation
+open CREPDL
 open CREPDL.ReadGraphemeCluster
 open System.Xml
 open System.Xml.Linq
@@ -19,7 +19,7 @@ module CollectionValidationTest =
             + num.ToString()
             + @""" registry=""10646"" />"
 
-        new Validator(XElement.Load(new StringReader(crepdlScript)))
+        new CREPDLValidator(XElement.Load(new StringReader(crepdlScript)))
         
     [<TestCase(371,"\u8173", false)>]
     [<TestCase(372,"\u8173", false)>]

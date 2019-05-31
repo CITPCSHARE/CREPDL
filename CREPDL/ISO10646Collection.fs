@@ -15,7 +15,7 @@ open CREPDL.ISO10646CollectionsDefinitions
 //be fast, although Red-Back trees might be good enough.  CREPDL
 //scripts can use pre-defined collections and regular expressions.
 
-let generateRepertoireFromISOCollection  (name: string option) (collectionNumber: int option) = 
+let internal generateRepertoireFromISOCollection  (name: string option) (collectionNumber: int option) = 
     match name, collectionNumber with
         | Some(cname), _ ->  
             try
@@ -42,7 +42,7 @@ let generateRepertoireFromISOCollection  (name: string option) (collectionNumber
         | _,_ -> failwith "Specify either a name or a number"
 
         
-let expandRepertoireFromISOCollection  (name: string option) (collectionNumber: int option): TextReader option = 
+let internal expandRepertoireFromISOCollection  (name: string option) (collectionNumber: int option): TextReader option = 
     match name, collectionNumber with
         | Some(cname), _ ->  
             try

@@ -15,15 +15,15 @@ let private deSyntaxSugar str =
             reverseList <- ("(" + gc + ")")::reverseList
     List.fold (fun soFar y -> y+soFar) "" reverseList
 
-let createRegexMatcher  =
+let internal createRegexMatcher  =
 
     memoize (fun regStr -> 
                 new RegexMatcher(regStr, RegexMatcher.URegexpFlag.COMMENTS)) 100
 
-let createReg (regStr: string): Regex =
+let internal createReg (regStr: string): Regex =
     new Regex(regStr)
 
-let checkStringAgainstChar (str: string) (kernel:RegexMatcher option) (hull:RegexMatcher option) flag (minUV, maxUV): ThreeValuedBoolean =
+let internal checkStringAgainstChar (str: string) (kernel:RegexMatcher option) (hull:RegexMatcher option) flag (minUV, maxUV): ThreeValuedBoolean =
     let checkReg (regexMatcher:RegexMatcher) =
         regexMatcher.Matches(str)
     match kernel, hull, flag with

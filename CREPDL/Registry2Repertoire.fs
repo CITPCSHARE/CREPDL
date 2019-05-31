@@ -12,9 +12,9 @@ open System.Collections.Generic
 open System.Text
 open System.IO
 
-type RegistryRepertoireDictionary = Registry -> Repertoire
+type internal RegistryRepertoireDictionary = Registry -> Repertoire
 
-let generateRepertoireFromIANACharset encName miBenum: Repertoire =
+let internal generateRepertoireFromIANACharset encName miBenum: Repertoire =
     match encName, miBenum with
     | Some(strEncName: string), _ -> 
         try
@@ -35,7 +35,7 @@ let generateRepertoireFromIANACharset encName miBenum: Repertoire =
     | _,_ -> failwith "Both number and name are missing"
 
 
-let generateRepertoire (rgst: Registry) =
+let internal generateRepertoire (rgst: Registry) =
     match rgst with
     | ISO10646(name, number) -> 
         let textReader = generateRepertoireFromISOCollection  name number 
@@ -44,7 +44,7 @@ let generateRepertoire (rgst: Registry) =
     | IANA(name, number)-> generateRepertoireFromIANACharset  name number 
     | IVD(name) -> generateRepertoireFromIVD name
   
-let createRegistryRepertoireDictionary (crepdl: XElement): RegistryRepertoireDictionary =
+let internal createRegistryRepertoireDictionary (crepdl: XElement): RegistryRepertoireDictionary =
     let dict = new Dictionary<Registry,Repertoire>()
     let rec scanRegistry  (crepdl: XElement): unit =
         match crepdl with

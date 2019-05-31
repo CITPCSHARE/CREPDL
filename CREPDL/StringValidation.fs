@@ -14,7 +14,7 @@ open Registry2Repertoire
 
 
 
-let rec unionHelp (rrd: RegistryRepertoireDictionary) (str: string) list (mn, mx) =
+let rec internal unionHelp (rrd: RegistryRepertoireDictionary) (str: string) list (mn, mx) =
             match list with 
             | [] ->  False 
             | head::tail ->
@@ -24,7 +24,7 @@ let rec unionHelp (rrd: RegistryRepertoireDictionary) (str: string) list (mn, mx
                 | Unknown when unionHelp rrd str tail (mn, mx) = True -> True
                 | _ -> Unknown
                 
-and intersectionHelp (rrd: RegistryRepertoireDictionary)  (str: string) list (mn, mx) =
+and internal intersectionHelp (rrd: RegistryRepertoireDictionary)  (str: string) list (mn, mx) =
             match list with 
             | [] ->  True 
             | head::tail ->
@@ -34,7 +34,7 @@ and intersectionHelp (rrd: RegistryRepertoireDictionary)  (str: string) list (mn
                 | Unknown when intersectionHelp rrd str tail (mn, mx)  = False -> False
                 | _ ->  Unknown
                 
-and differenceHelp (rrd: RegistryRepertoireDictionary) (str: string) (list: list<XElement>) (mn, mx)  =
+and internal differenceHelp (rrd: RegistryRepertoireDictionary) (str: string) (list: list<XElement>) (mn, mx)  =
           match checkString rrd list.Head str (mn, mx)  with
             | False -> False
             | True ->
@@ -47,7 +47,7 @@ and differenceHelp (rrd: RegistryRepertoireDictionary) (str: string) (list: list
                 | True -> False 
                 | False | Unknown -> Unknown
                        
-and checkString (rrd: RegistryRepertoireDictionary) (crepdl: XElement) (str: string) (minUV, maxUV): ThreeValuedBoolean =
+and internal checkString (rrd: RegistryRepertoireDictionary) (crepdl: XElement) (str: string) (minUV, maxUV): ThreeValuedBoolean =
         let minMaxHelp  =
             function
                 | None ->       function None -> (minUV, maxUV) | Some(max) -> (minUV, max)

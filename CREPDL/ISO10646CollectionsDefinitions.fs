@@ -2,7 +2,7 @@
 
 
 
-let inLineCollections =
+let internal inLineCollections =
           [(1, "BASIC LATIN",
             "0x0020, 0x007E")
            (2, "LATIN-1 SUPPLEMENT",
@@ -755,7 +755,7 @@ let inLineCollections =
                 0x20000, 0x2FFFD
                 0xE0000, 0xEFFFD")]
             
-let outOfLineCollections =
+let internal outOfLineCollections =
          [(281, "MES-1", "281.txt");
           (282, "MES-2", "282.txt");
           (-100285, "", "-100285.txt");
@@ -779,7 +779,7 @@ let outOfLineCollections =
           (372, "JAPANESE IDEOGRAPHICS SUPPLEMENT", "JAPANESE IDEOGRAPHICS SUPPLEMENT.txt");
           (-340, "", "-340.txt")]
 
-let collectionsInCREPDL =
+let internal collectionsInCREPDL =
         [
            (270, "COMBINING CHARACTERS", 
                 @"<intersection xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">

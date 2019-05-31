@@ -3,7 +3,7 @@
 open System;
 open System.IO;
 
-let getCharacterEnumerator (tr: TextReader) =
+let internal getCharacterEnumerator (tr: TextReader) =
     seq { while tr.Peek() <> -1 do
             let character = tr.Read() |> char 
             if Char.IsSurrogate(character) then
