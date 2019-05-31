@@ -1,0 +1,36 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Left"  MaxWidth="430">
+                <TextBlock  FontSize="20" FontWeight="Bold" Height="30" HorizontalAlignment="Center" >どの文字を許容するか</TextBlock>
+                <StackPanel Height="80">
+                    <RadioButton Name="CP932And0213" Content="シフトJIS (CP932)にある文字にJIS X 0213を加えたもの" IsChecked="true" Checked="CP932And0213_Checked"  />
+                    <RadioButton Name="CP932And0213AndIVSAdobeJapan1" Content="シフトJIS (CP932)にある文字にJIS X 0213とIVS(Adobe-Japan1)を加えたもの" Checked="CP932And0213AndIVSAdobeJapan1_Checked"  />
+                    <RadioButton Name="CP932And0213AndIVSHanyoDenshi" Content="シフトJIS (CP932)にある文字にJIS X 0213とIVS(Hanyo-Denshi)を加えたもの" Checked="CP932And0213AndIVSHanyoDenshi_Checked"  />
+                    <RadioButton Name="CrepdlSelectionButton" Content="選択したCREPDLスクリプトが許容する文字" Checked="CrepdlSelectionButton_Checked"  />
+                    <TextBlock Name="selectedCREPDLscript"  TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <TextBlock  FontSize="20" FontWeight="Bold" Height="30" HorizontalAlignment="Center">どのEPUB文書を検査するか</TextBlock>
+                    <Button Name="EPUBSelectionButton" Content="選択"  Width="50" Click="EPUBSelectionButton_Click" ></Button>
+                    <TextBlock Name="selectedEPUB" TextWrapping="Wrap"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" MaxWidth="450" Margin="0,0,0,3">
+                <Button Name="ValidationButton"  HorizontalAlignment="Center" Click="ValidationButton_Click">検証</Button>
+                <Border BorderThickness="1"  BorderBrush="Black">
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" Height="380" >
+                        <TextBox Name="message" TextWrapping="Wrap" IsReadOnly="True" />
+                    </ScrollViewer>
+                </Border>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>
