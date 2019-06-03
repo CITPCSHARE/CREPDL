@@ -21,9 +21,10 @@ let internal (|Union|Intersection|Difference|Ref|Repertoire|Char|) (crepdl: XEle
              mode option * int option * int option * RegexMatcher option * RegexMatcher option * bool> =
 
   let crepdlChildren =
-    List.filter (fun (c: XElement) -> 
+    crepdl.Elements() 
+    |> Seq.toList
+    |> List.filter (fun (c: XElement) -> 
                     c.Name.NamespaceName.Equals crepdlNamespaceV2) 
-                (Seq.toList (crepdl.Elements()))  
   let getAndTrimAttributeValue (name: string): string option =
     match crepdl.Attribute(XNamespace.None + name) with
     | null ->  None
