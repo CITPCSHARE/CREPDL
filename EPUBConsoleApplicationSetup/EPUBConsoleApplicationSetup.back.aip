@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="15.5.1" version="15.9" Modules="simple" RootPath="." Language="en" Id="{37D3DF58-29A7-4AE2-9D61-BEE5819F1141}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="15.5.1" version="15.5.1" Modules="simple" RootPath="." Language="en" Id="{37D3DF58-29A7-4AE2-9D61-BEE5819F1141}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
     <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent"/>
   </COMPONENT>
@@ -9,16 +9,14 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPUBConsoleApplication.exe" Value="..\EPUBConsoleApplication\bin\Release"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPUBConsoleApplication.exe.config" Value="..\EPUBConsoleApplication\bin\Release"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_FSharp.Core.dll" Value="..\packages\FSharp.Core.4.6.2\lib\net45"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll" Value="C:\Users\MURATA Makoto\.nuget\packages\htmlagilitypack\1.11.7\lib\netstandard2.0"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll_1" Value="..\packages\HtmlAgilityPack.1.11.7\lib\Net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll" Value="..\packages\HtmlAgilityPack.1.11.4\lib\Net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll" Value="..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyModel.dll" Value="..\packages\Microsoft.Extensions.DependencyModel.2.0.4\lib\net451"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Newtonsoft.Json.dll" Value="..\packages\Newtonsoft.Json.12.0.2\lib\net45"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.Compression.ZipFile.dll" Value="..\EPUBValidation\bin\Release\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.Compression.ZipFile.dll" Value="..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll" Value="..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll" Value="C:\Users\MURATA Makoto\.nuget\packages\fsharp.core\4.6.2\lib\netstandard1.6"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll" Value="..\packages\System.ValueTuple.4.5.0\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll_1" Value="..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Xml.XPath.XmlDocument.dll" Value="C:\Users\MURATA Makoto\.nuget\packages\system.xml.xpath.xmldocument\4.3.0\ref\netstandard1.3"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_icu.net.dll" Value="..\packages\icu.net.2.5.4\lib\net451"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x86"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll_1" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x64"/>
@@ -37,15 +35,13 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EPUBConsoleApplication.exe.config" Value="EPUBConsoleApplication.exe.config"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_FSharp.Core.dll" Value="FSharp.Core.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_HtmlAgilityPack.dll" Value="HtmlAgilityPack.dll"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_HtmlAgilityPack.dll_1" Value="HtmlAgilityPack.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll" Value="Microsoft.DotNet.PlatformAbstractions.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyModel.dll" Value="Microsoft.Extensions.DependencyModel.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll" Value="Newtonsoft.Json.dll"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.Compression.ZipFile.dll" Value="EPUBValidation.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.Compression.ZipFile.dll" Value="System.IO.Compression.ZipFile.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll" Value="System.Runtime.InteropServices.RuntimeInformation.dll"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll" Value="FSharp.Core.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll" Value="System.ValueTuple.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll_1" Value="System.ValueTuple.dll"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Xml.XPath.XmlDocument.dll" Value="System.Xml.XPath.XmlDocument.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_icu.net.dll" Value="icu.net.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_icudt59.dll" Value="icudt59.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_icudt59.dll_1" Value="icudt59.dll"/>
@@ -105,15 +101,13 @@
     <ROW File="EPUBConsoleApplication.exe.config" Component_="EPUBConsoleApplication_PrimaryOutput" FileName="EPUBCO~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_EPUBConsoleApplication.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EPUBConsoleApplication.exe.config&gt;" SelfReg="false" NextFile="FSharp.Core.dll"/>
     <ROW File="FSharp.Core.dll" Component_="EPUBConsoleApplication_References" FileName="FSHARP~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_FSharp.Core.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_FSharp.Core.dll&gt;" SelfReg="false" NextFile="HtmlAgilityPack.dll"/>
     <ROW File="HtmlAgilityPack.dll" Component_="EPUBConsoleApplication_References" FileName="HTMLAG~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_HtmlAgilityPack.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_HtmlAgilityPack.dll&gt;" SelfReg="false" NextFile="System.IO.Compression.ZipFile.dll"/>
-    <ROW File="HtmlAgilityPack.dll_1" Component_="EPUBConsoleApplication_References" FileName="HTMLAG~1.DLL|HtmlAgilityPack.dll" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_HtmlAgilityPack.dll_1&gt;" SelfReg="false" NextFile="System.Xml.XPath.XmlDocument.dll"/>
     <ROW File="Microsoft.DotNet.PlatformAbstractions.dll" Component_="EPUBConsoleApplication_References" FileName="MICROS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.DependencyModel.dll"/>
     <ROW File="Microsoft.Extensions.DependencyModel.dll" Component_="EPUBConsoleApplication_References" FileName="MICROS~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyModel.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.DependencyModel.dll&gt;" SelfReg="false" NextFile="System.Runtime.InteropServices.RuntimeInformation.dll"/>
-    <ROW File="Newtonsoft.Json.dll" Component_="EPUBConsoleApplication_References" FileName="NEWTON~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Newtonsoft.Json.dll&gt;" SelfReg="false" NextFile="HtmlAgilityPack.dll_1"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="EPUBConsoleApplication_References" FileName="NEWTON~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Newtonsoft.Json.dll&gt;" SelfReg="false"/>
     <ROW File="System.IO.Compression.ZipFile.dll" Component_="EPUBConsoleApplication_References" FileName="SYSTEM~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.Compression.ZipFile.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.IO.Compression.ZipFile.dll&gt;" SelfReg="false" NextFile="System.ValueTuple.dll"/>
     <ROW File="System.Runtime.InteropServices.RuntimeInformation.dll" Component_="EPUBConsoleApplication_References" FileName="SYSTEM~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll&gt;" SelfReg="false" NextFile="System.ValueTuple.dll_1"/>
     <ROW File="System.ValueTuple.dll" Component_="EPUBConsoleApplication_References" FileName="SYSTEM~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ValueTuple.dll&gt;" SelfReg="false" NextFile="icudt59.dll"/>
     <ROW File="System.ValueTuple.dll_1" Component_="EPUBConsoleApplication_References" FileName="SYSTEM~1.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ValueTuple.dll_1&gt;" SelfReg="false" NextFile="Newtonsoft.Json.dll"/>
-    <ROW File="System.Xml.XPath.XmlDocument.dll" Component_="EPUBConsoleApplication_References" FileName="SYSTEM~6.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.XPath.XmlDocument.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Xml.XPath.XmlDocument.dll&gt;" SelfReg="false"/>
     <ROW File="icu.net.dll" Component_="EPUBConsoleApplication_References" FileName="ICUNET~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_icu.net.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_icu.net.dll&gt;" SelfReg="false" NextFile="Microsoft.DotNet.PlatformAbstractions.dll"/>
     <ROW File="icudt59.dll" Component_="EPUBConsoleApplication_ContentOutput_lib_winx86" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_icudt59.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_icudt59.dll&gt;" SelfReg="false" NextFile="icuin59.dll"/>
     <ROW File="icudt59.dll_1" Component_="EPUBConsoleApplication_ContentOutput_lib_winx64" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_icudt59.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_icudt59.dll_1&gt;" SelfReg="false" NextFile="icuin59.dll_1"/>
@@ -134,7 +128,6 @@
     <ROW Name="AI_APPPATH_PERBUILD_EPUBConsoleApplication.exe.config" Path="[|AI_PROPPATH_DIR_PERBUILD_EPUBConsoleApplication.exe.config]\[|AI_PROPPATH_FILENAME_PERBUILD_EPUBConsoleApplication.exe.config]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_FSharp.Core.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_FSharp.Core.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_FSharp.Core.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_HtmlAgilityPack.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_HtmlAgilityPack.dll]" Type="2" Content="0"/>
-    <ROW Name="AI_APPPATH_PERBUILD_HtmlAgilityPack.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_HtmlAgilityPack.dll_1]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.DependencyModel.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyModel.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyModel.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_Newtonsoft.Json.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Newtonsoft.Json.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll]" Type="2" Content="0"/>
@@ -142,7 +135,6 @@
     <ROW Name="AI_APPPATH_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_System.ValueTuple.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_System.ValueTuple.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll_1]" Type="2" Content="0"/>
-    <ROW Name="AI_APPPATH_PERBUILD_System.Xml.XPath.XmlDocument.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Xml.XPath.XmlDocument.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.XPath.XmlDocument.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_icu.net.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_icu.net.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_icu.net.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_icudt59.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_icudt59.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_icudt59.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_icudt59.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_icudt59.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_icudt59.dll_1]" Type="2" Content="0"/>
@@ -285,7 +277,5 @@
     <ROW ProjectId="{d4679316-3735-468c-96ad-a6383bc1c456}" ProjectName="EPUBConsoleApplication" OutputGroup="References" OutputFile="System.Runtime.InteropServices.RuntimeInformation.dll"/>
     <ROW ProjectId="{d4679316-3735-468c-96ad-a6383bc1c456}" ProjectName="EPUBConsoleApplication" OutputGroup="References" OutputFile="System.ValueTuple.dll_1"/>
     <ROW ProjectId="{d4679316-3735-468c-96ad-a6383bc1c456}" ProjectName="EPUBConsoleApplication" OutputGroup="References" OutputFile="Newtonsoft.Json.dll"/>
-    <ROW ProjectId="{d4679316-3735-468c-96ad-a6383bc1c456}" ProjectName="EPUBConsoleApplication" OutputGroup="References" OutputFile="HtmlAgilityPack.dll_1"/>
-    <ROW ProjectId="{d4679316-3735-468c-96ad-a6383bc1c456}" ProjectName="EPUBConsoleApplication" OutputGroup="References" OutputFile="System.Xml.XPath.XmlDocument.dll"/>
   </COMPONENT>
 </DOCUMENT>

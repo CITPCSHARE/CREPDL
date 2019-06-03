@@ -246,3 +246,5 @@ ModelManifest.xml
 /ConsoleApplicationSetup/ConsoleApplicationSetup-cache
 /CREPDL/FSharp.Core.dll
 /CREPDL/Basics.dll
+/EPUBValidatorGUIInstaller/EPUBValidatorGUIInstaller-SetupFiles
+/EPUBValidatorGUIInstaller/EPUBValidatorGUIInstaller-cache
