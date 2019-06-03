@@ -17,11 +17,11 @@ Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "ConsoleApplicationSetup", "
 EndProject
 Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "EPUBConsoleApplicationSetup", "EPUBConsoleApplicationSetup\EPUBConsoleApplicationSetup.aiproj", "{C2A4D588-184A-4B46-ADD0-8556A052A966}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPUBValidatorGUI", "GUI\EPUBValidatorGUI.csproj", "{6D73089C-C5ED-457B-B767-B073414E0907}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "EPUBValidation", "EPUBValidation\EPUBValidation.fsproj", "{AAA6A18D-BB8E-4A02-89F6-E290AD067DDE}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "EPUBValidation", "EPUBValidation\EPUBValidation.fsproj", "{AAA6A18D-BB8E-4A02-89F6-E290AD067DDE}"
 EndProject
 Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "EPUBValidatorGUIInstaller", "EPUBValidatorGUIInstaller\EPUBValidatorGUIInstaller.aiproj", "{43790554-4710-463B-9409-48483C57EAC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPUBValidatorGUI", "EPUBValidatorGUI\EPUBValidatorGUI.csproj", "{6D73089C-C5ED-457B-B767-B073414E0907}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,12 +72,6 @@ Global
 		{C2A4D588-184A-4B46-ADD0-8556A052A966}.Debug|Any CPU.Build.0 = DefaultBuild
 		{C2A4D588-184A-4B46-ADD0-8556A052A966}.Release|Any CPU.ActiveCfg = DefaultBuild
 		{C2A4D588-184A-4B46-ADD0-8556A052A966}.Release|Any CPU.Build.0 = DefaultBuild
-		{6D73089C-C5ED-457B-B767-B073414E0907}.All|Any CPU.ActiveCfg = Release|Any CPU
-		{6D73089C-C5ED-457B-B767-B073414E0907}.All|Any CPU.Build.0 = Release|Any CPU
-		{6D73089C-C5ED-457B-B767-B073414E0907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D73089C-C5ED-457B-B767-B073414E0907}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D73089C-C5ED-457B-B767-B073414E0907}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D73089C-C5ED-457B-B767-B073414E0907}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AAA6A18D-BB8E-4A02-89F6-E290AD067DDE}.All|Any CPU.ActiveCfg = Debug|Any CPU
 		{AAA6A18D-BB8E-4A02-89F6-E290AD067DDE}.All|Any CPU.Build.0 = Debug|Any CPU
 		{AAA6A18D-BB8E-4A02-89F6-E290AD067DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -90,6 +84,12 @@ Global
 		{43790554-4710-463B-9409-48483C57EAC4}.Debug|Any CPU.Build.0 = DefaultBuild
 		{43790554-4710-463B-9409-48483C57EAC4}.Release|Any CPU.ActiveCfg = DefaultBuild
 		{43790554-4710-463B-9409-48483C57EAC4}.Release|Any CPU.Build.0 = DefaultBuild
+		{6D73089C-C5ED-457B-B767-B073414E0907}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{6D73089C-C5ED-457B-B767-B073414E0907}.All|Any CPU.Build.0 = Release|Any CPU
+		{6D73089C-C5ED-457B-B767-B073414E0907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D73089C-C5ED-457B-B767-B073414E0907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D73089C-C5ED-457B-B767-B073414E0907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D73089C-C5ED-457B-B767-B073414E0907}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
