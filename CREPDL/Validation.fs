@@ -8,7 +8,7 @@ open CheckExpandedScript
 open ReadCharacter
 open ExpandRefAndRepertoire
 open ReadGraphemeCluster
-open ISO10646Collection
+open ReadScript
 open System.Xml.Linq
 open System.IO
 open System
@@ -21,12 +21,10 @@ type CREPDLValidator private (crepdl: XElement, u:unit) =
     static let checkCharWithMemoCount = 3000
     static let defaultMinVersion = versionString2Int "2.0"
     static let defaultMaxVersion = versionString2Int "5.9"
-    
 
     let script = expandRefAndRepertoire [] crepdl
 
     let rootMode = getRootMode script
-
 
     let stringChecker = 
         let rrd = createRegistryRepertoireDictionary script
@@ -36,18 +34,33 @@ type CREPDLValidator private (crepdl: XElement, u:unit) =
                                 
 /// <summary>Constructs a validator.</summary>
 /// <param name="crepdl">An XElement representing a CREPDL script</param>
-    new (crepdl: XElement) = CREPDLValidator(crepdl, ())
+    new (crepdl: XElement) = 
+        if not(crepdl.Name.NamespaceName.Equals crepdlNamespaceV2) then
+            failwith "Illegal namespace"
+        CREPDLValidator(crepdl, ())
+
+/// <summary>Constructs a validator.</summary>
+/// <param name="uri">A CREPDL file URI</param>
+    new (uri: Uri) =
+        let x = readScriptFromUri uri
+        if not(x.Name.NamespaceName.Equals crepdlNamespaceV2) then
+            failwith "Illegal namespace"
+        CREPDLValidator(x, ())
 
 /// <summary>Constructs a validator.</summary>
 /// <param name="filename">A CREPDL file name</param>
     new (filename: string) =
-        let x = (XDocument.Load(filename, LoadOptions.SetBaseUri)).Root
+        let x = readScriptFromUri (Uri(filename))
+        if not(x.Name.NamespaceName.Equals crepdlNamespaceV2) then
+            failwith "Illegal namespace"
         CREPDLValidator(x, ())
 
 /// <summary>Constructs a validator.</summary>
 /// <param name="tr">A TextReader for a CREPDL script</param>
     new (tr: TextReader) =
         let x = (XDocument.Load(tr, LoadOptions.SetBaseUri)).Root
+        if not(x.Name.NamespaceName.Equals crepdlNamespaceV2) then
+            failwith "Illegal namespace"
         CREPDLValidator(x, ())
 
 /// <summary>Validates a string representing a Unicode character
