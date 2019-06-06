@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DOCUMENT Type="Advanced Installer" CreateVersion="15.5.1" version="15.9" Modules="simple" RootPath="." Language="en" Id="{863C6207-8504-4D3C-9870-117C685465D7}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
-    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent"/>
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_CREPDL.dll" Value="..\CREPDL\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_ConsoleApplication.exe" Value="..\ConsoleApplication\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_ConsoleApplication.exe.config" Value="..\ConsoleApplication\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_CREPDL.dll" Value="..\CREPDL\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_ConsoleApplication.XML" Value="..\ConsoleApplication\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_ConsoleApplication.exe" Value="..\ConsoleApplication\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_ConsoleApplication.exe.config" Value="..\ConsoleApplication\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_FSharp.Core.dll" Value="..\packages\FSharp.Core.4.6.2\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll" Value="..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyModel.dll" Value="..\packages\Microsoft.Extensions.DependencyModel.2.0.4\lib\net451"/>
@@ -15,19 +16,20 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll" Value="..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll" Value="..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_icu.net.dll" Value="..\packages\icu.net.2.5.4\lib\net451"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll" Value="..\ConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll_1" Value="..\ConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuin59.dll" Value="..\ConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuin59.dll_1" Value="..\ConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuio59.dll" Value="..\ConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuio59.dll_1" Value="..\ConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutest59.dll" Value="..\ConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutest59.dll_1" Value="..\ConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutu59.dll" Value="..\ConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutu59.dll_1" Value="..\ConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuuc59.dll" Value="..\ConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuuc59.dll_1" Value="..\ConsoleApplication\bin\Release\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll" Value="..\ConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll_1" Value="..\ConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuin59.dll" Value="..\ConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuin59.dll_1" Value="..\ConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuio59.dll" Value="..\ConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuio59.dll_1" Value="..\ConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutest59.dll" Value="..\ConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutest59.dll_1" Value="..\ConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutu59.dll" Value="..\ConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutu59.dll_1" Value="..\ConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuuc59.dll" Value="..\ConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuuc59.dll_1" Value="..\ConsoleApplication\bin\Debug\lib\win-x64"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_CREPDL.dll" Value="CREPDL.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_ConsoleApplication.XML" Value="ConsoleApplication.XML"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_ConsoleApplication.exe" Value="ConsoleApplication.exe"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_ConsoleApplication.exe.config" Value="ConsoleApplication.exe.config"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_FSharp.Core.dll" Value="FSharp.Core.dll"/>
@@ -49,14 +51,15 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_icutu59.dll_1" Value="icutu59.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_icuuc59.dll" Value="icuuc59.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_icuuc59.dll_1" Value="icuuc59.dll"/>
-    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="AI_RUN_AS_ADMIN" Value="0"/>
+    <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:2"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPHELPLINK" Value="https://github.com/CITPCSHARE/CREPDL"/>
     <ROW Property="Manufacturer" Value="CITPC"/>
     <ROW Property="ProductCode" Value="1033:{DDDDA16B-42A5-46DD-A097-6D25008ECB94} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Text CREPDL Checker"/>
-    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.0.1" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{64324F01-5B8A-42AF-AB14-E3EEA168F9AF}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -80,23 +83,25 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="ConsoleApplication_ContentOutput_lib_winx64" ComponentId="{C6067511-5161-44BD-92E5-BAADB03E7A3A}" Directory_="winx64_Dir" Attributes="0" KeyPath="icuuc59.dll_1"/>
     <ROW Component="ConsoleApplication_ContentOutput_lib_winx86" ComponentId="{F45BC7BF-F7B4-4CE3-9213-802EDFE11E17}" Directory_="winx86_Dir" Attributes="0" KeyPath="icuuc59.dll"/>
+    <ROW Component="ConsoleApplication_DocumentationOutput" ComponentId="{C4A4A6B8-6813-4238-92CA-DFDCDD8590D5}" Directory_="ConsoleApplication_Dir" Attributes="0" KeyPath="ConsoleApplication.XML" Type="0"/>
     <ROW Component="ConsoleApplication_PrimaryOutput" ComponentId="{FCEE1995-B5D1-4B5F-A8B2-35EEE199336D}" Directory_="ConsoleApplication_Dir" Attributes="0" KeyPath="ConsoleApplication.exe"/>
     <ROW Component="ConsoleApplication_References" ComponentId="{B876864E-7766-4B3B-B49A-05D3EE7286A8}" Directory_="ConsoleApplication_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
     <ROW Component="ProductInformation" ComponentId="{C3927CC7-BCC2-48AD-88F9-7C62773A1140}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{89DC8EBE-F58A-44C2-8192-ABD84EF48A27}" Directory_="SHORTCUTDIR" Attributes="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
-    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="ConsoleApplication_ContentOutput_lib_winx64 ConsoleApplication_ContentOutput_lib_winx86 ConsoleApplication_PrimaryOutput ConsoleApplication_References ProductInformation SHORTCUTDIR"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="ConsoleApplication_ContentOutput_lib_winx64 ConsoleApplication_ContentOutput_lib_winx86 ConsoleApplication_DocumentationOutput ConsoleApplication_PrimaryOutput ConsoleApplication_References ProductInformation SHORTCUTDIR"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="CREPDL.dll" Component_="ConsoleApplication_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_CREPDL.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_CREPDL.dll&gt;" SelfReg="false" NextFile="FSharp.Core.dll"/>
+    <ROW File="ConsoleApplication.XML" Component_="ConsoleApplication_DocumentationOutput" FileName="CONSOL~2.XML|[|AI_PROPPATH_FILENAME_PERBUILD_ConsoleApplication.XML]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_ConsoleApplication.XML&gt;" SelfReg="false"/>
     <ROW File="ConsoleApplication.exe" Component_="ConsoleApplication_PrimaryOutput" FileName="CONSOL~2.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_ConsoleApplication.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_ConsoleApplication.exe&gt;" SelfReg="false" NextFile="ConsoleApplication.exe.config" DigSign="true"/>
     <ROW File="ConsoleApplication.exe.config" Component_="ConsoleApplication_PrimaryOutput" FileName="CONSOL~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_ConsoleApplication.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_ConsoleApplication.exe.config&gt;" SelfReg="false" NextFile="CREPDL.dll"/>
     <ROW File="FSharp.Core.dll" Component_="ConsoleApplication_References" FileName="FSHARP~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_FSharp.Core.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_FSharp.Core.dll&gt;" SelfReg="false" NextFile="icu.net.dll"/>
     <ROW File="Microsoft.DotNet.PlatformAbstractions.dll" Component_="ConsoleApplication_References" FileName="MICROS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.DependencyModel.dll"/>
     <ROW File="Microsoft.Extensions.DependencyModel.dll" Component_="ConsoleApplication_References" FileName="MICROS~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyModel.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.DependencyModel.dll&gt;" SelfReg="false" NextFile="System.Runtime.InteropServices.RuntimeInformation.dll"/>
-    <ROW File="Newtonsoft.Json.dll" Component_="ConsoleApplication_References" FileName="NEWTON~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Newtonsoft.Json.dll&gt;" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="ConsoleApplication_References" FileName="NEWTON~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Newtonsoft.Json.dll&gt;" SelfReg="false" NextFile="ConsoleApplication.XML"/>
     <ROW File="System.Runtime.InteropServices.RuntimeInformation.dll" Component_="ConsoleApplication_References" FileName="SYSTEM~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll&gt;" SelfReg="false" NextFile="System.ValueTuple.dll"/>
     <ROW File="System.ValueTuple.dll" Component_="ConsoleApplication_References" FileName="SYSTEM~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ValueTuple.dll&gt;" SelfReg="false" NextFile="icudt59.dll"/>
     <ROW File="icu.net.dll" Component_="ConsoleApplication_References" FileName="ICUNET~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_icu.net.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_icu.net.dll&gt;" SelfReg="false" NextFile="Microsoft.DotNet.PlatformAbstractions.dll"/>
@@ -115,6 +120,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
     <ROW Name="AI_APPPATH_PERBUILD_CREPDL.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_CREPDL.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_CREPDL.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_ConsoleApplication.XML" Path="[|AI_PROPPATH_DIR_PERBUILD_ConsoleApplication.XML]\[|AI_PROPPATH_FILENAME_PERBUILD_ConsoleApplication.XML]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_ConsoleApplication.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_ConsoleApplication.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_ConsoleApplication.exe]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_ConsoleApplication.exe.config" Path="[|AI_PROPPATH_DIR_PERBUILD_ConsoleApplication.exe.config]\[|AI_PROPPATH_FILENAME_PERBUILD_ConsoleApplication.exe.config]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_FSharp.Core.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_FSharp.Core.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_FSharp.Core.dll]" Type="2" Content="0"/>
@@ -199,9 +205,10 @@
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SETMIXINSTLOCATION" Type="1" Source="aicustact.dll" Target="MixedAllUsersInstallLocation"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[AI_UserProgramFiles][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
@@ -212,12 +219,14 @@
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_SETMIXINSTLOCATION" Sequence="748"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
     <ROW Action="AI_DpiContentScale" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_SETMIXINSTLOCATION" Sequence="748"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
@@ -262,5 +271,6 @@
     <ROW ProjectId="{d5cf3f82-45c0-4c0b-9de4-1f441824c6af}" ProjectName="ConsoleApplication" OutputGroup="ContentOutput" OutputFile="icutu59.dll_1"/>
     <ROW ProjectId="{d5cf3f82-45c0-4c0b-9de4-1f441824c6af}" ProjectName="ConsoleApplication" OutputGroup="ContentOutput" OutputFile="icuuc59.dll_1"/>
     <ROW ProjectId="{d5cf3f82-45c0-4c0b-9de4-1f441824c6af}" ProjectName="ConsoleApplication" OutputGroup="References" OutputFile="Newtonsoft.Json.dll"/>
+    <ROW ProjectId="{d5cf3f82-45c0-4c0b-9de4-1f441824c6af}" ProjectName="ConsoleApplication" OutputGroup="DocumentationOutput" OutputFile="ConsoleApplication.XML"/>
   </COMPONENT>
 </DOCUMENT>

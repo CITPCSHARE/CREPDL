@@ -5,33 +5,33 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_CREPDL.dll" Value="..\CREPDL\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPUBConsoleApplication.exe" Value="..\EPUBConsoleApplication\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPUBConsoleApplication.exe.config" Value="..\EPUBConsoleApplication\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_CREPDL.dll" Value="..\CREPDL\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPUBConsoleApplication.exe" Value="..\EPUBConsoleApplication\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPUBConsoleApplication.exe.config" Value="..\EPUBConsoleApplication\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_FSharp.Core.dll" Value="..\packages\FSharp.Core.4.6.2\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll" Value="C:\Users\MURATA Makoto\.nuget\packages\htmlagilitypack\1.11.7\lib\netstandard2.0"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll_1" Value="..\packages\HtmlAgilityPack.1.11.7\lib\Net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.DotNet.PlatformAbstractions.dll" Value="..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyModel.dll" Value="..\packages\Microsoft.Extensions.DependencyModel.2.0.4\lib\net451"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Newtonsoft.Json.dll" Value="..\packages\Newtonsoft.Json.12.0.2\lib\net45"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.Compression.ZipFile.dll" Value="..\EPUBValidation\bin\Release\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.Compression.ZipFile.dll" Value="..\EPUBValidation\bin\Debug\netstandard2.0"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll" Value="..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll" Value="C:\Users\MURATA Makoto\.nuget\packages\fsharp.core\4.6.2\lib\netstandard1.6"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll_1" Value="..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Xml.XPath.XmlDocument.dll" Value="C:\Users\MURATA Makoto\.nuget\packages\system.xml.xpath.xmldocument\4.3.0\ref\netstandard1.3"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_icu.net.dll" Value="..\packages\icu.net.2.5.4\lib\net451"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll_1" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuin59.dll" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuin59.dll_1" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuio59.dll" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuio59.dll_1" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutest59.dll" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutest59.dll_1" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutu59.dll" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutu59.dll_1" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x64"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuuc59.dll" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x86"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuuc59.dll_1" Value="..\EPUBConsoleApplication\bin\Release\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icudt59.dll_1" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuin59.dll" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuin59.dll_1" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuio59.dll" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuio59.dll_1" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutest59.dll" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutest59.dll_1" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutu59.dll" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icutu59.dll_1" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x64"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuuc59.dll" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x86"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_icuuc59.dll_1" Value="..\EPUBConsoleApplication\bin\Debug\lib\win-x64"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_CREPDL.dll" Value="CREPDL.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EPUBConsoleApplication.exe" Value="EPUBConsoleApplication.exe"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EPUBConsoleApplication.exe.config" Value="EPUBConsoleApplication.exe.config"/>
