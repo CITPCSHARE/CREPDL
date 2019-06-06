@@ -8,54 +8,57 @@ module ThreeValuedBooleanTest =
 
     let UnionCases =
             [
-                True, (function () -> True), True
-                True, (function () -> Unknown), True
-                True, (function () -> False), True
-                False, (function () -> True), True
-                False, (function () -> Unknown), Unknown
-                False, (function () -> False), False
-                Unknown, (function () -> True), True
-                Unknown, (function () -> Unknown), Unknown
-                Unknown, (function () -> False), Unknown
-            ] |> List.map (fun (q, n, d) -> TestCaseData(q,n,d))
+                True, True, True
+                True, Unknown, True
+                True, False, True
+                False, True, True
+                False, Unknown, Unknown
+                False, False, False
+                Unknown, True, True
+                Unknown, Unknown, Unknown
+                Unknown, False, Unknown
+            ] |> List.map (fun (q, n, d) -> TestCaseData(box q, box n, box d))
 
     [<TestCaseSource("UnionCases")>]
     [<Category("ThreeValuedBoolean")>]
-    let internal unionTest (x, (y: unit -> ThreeValuedBoolean), z: ThreeValuedBoolean) =
-       Assert.AreEqual(union x y,  z)
+    let unionTest (x, y, z) =
+        let ly = function() -> (unbox y)
+        Assert.AreEqual(union (unbox x) ly, unbox z)
 
     let IntersectionCases =
             [
-                True, (function () -> True), True
-                True, (function () -> Unknown), Unknown
-                True, (function () -> False), False
-                False, (function () -> True), False
-                False, (function () -> Unknown), False
-                False, (function () -> False), False
-                Unknown, (function () -> True), Unknown
-                Unknown, (function () -> Unknown), Unknown
-                Unknown, (function () -> False), False
-            ] |> List.map (fun (q, n, d) -> TestCaseData(q,n,d))
+                True, True, True
+                True, Unknown, Unknown
+                True, False, False
+                False, True, False
+                False, Unknown, False
+                False, False, False
+                Unknown, True, Unknown
+                Unknown, Unknown, Unknown
+                Unknown, False, False
+            ] |> List.map (fun (q, n, d) -> TestCaseData(box q, box n, box d))
 
     [<TestCaseSource("IntersectionCases")>]
     [<Category("ThreeValuedBoolean")>]
-    let internal intersectionTest (x, (y: unit -> ThreeValuedBoolean), z: ThreeValuedBoolean) =
-       Assert.AreEqual(intersection x y,  z)
+    let intersectionTest (x, y, z) =
+       let ly = function() -> (unbox y)
+       Assert.AreEqual(intersection (unbox x) ly,  (unbox z))
 
     let DifferenceCases =
             [
-                True, (function () -> True), False
-                True, (function () -> Unknown), Unknown
-                True, (function () -> False), True
-                False, (function () -> True), False
-                False, (function () -> Unknown), False
-                False, (function () -> False), False
-                Unknown, (function () -> True), False
-                Unknown, (function () -> Unknown), Unknown
-                Unknown, (function () -> False), Unknown
-            ] |> List.map (fun (q, n, d) -> TestCaseData(q,n,d))
+                True, True, False
+                True,  Unknown, Unknown
+                True, False, True
+                False, True, False
+                False, Unknown, False
+                False, False, False
+                Unknown, True, False
+                Unknown, Unknown, Unknown
+                Unknown, False, Unknown
+            ] |> List.map (fun (q, n, d) -> TestCaseData(box q, box n, box d))
 
     [<TestCaseSource("DifferenceCases")>]
     [<Category("ThreeValuedBoolean")>]
-    let internal differenceTest (x, (y: unit -> ThreeValuedBoolean), z: ThreeValuedBoolean) =
-        Assert.AreEqual(difference x y,  z)
+    let  differenceTest (x , y, z) =
+        let ly = function() -> (unbox y)
+        Assert.AreEqual(difference (unbox x) ly,  unbox z)
