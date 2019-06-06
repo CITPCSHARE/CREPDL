@@ -17,7 +17,7 @@ using CREPDL;
 using System.IO;
 
 
-namespace GUI
+namespace EPUBValidatorGUI
 {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
