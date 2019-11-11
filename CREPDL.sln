@@ -23,6 +23,10 @@ Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "EPUBValidatorGUIInstaller",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPUBValidatorGUI", "EPUBValidatorGUI\EPUBValidatorGUI.csproj", "{6D73089C-C5ED-457B-B767-B073414E0907}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Import Registry from Kanji Database Project", "Import Registry from Kanji Database Project\Import Registry from Kanji Database Project.fsproj", "{B38651C6-9D7B-481F-BF23-10A533E2DB1F}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "DerivedAgePreprocessor", "DerivedAgePreprocessor\DerivedAgePreprocessor.fsproj", "{DD13DE57-986F-41AA-9693-C3A55C3892FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|Any CPU = All|Any CPU
@@ -90,6 +94,18 @@ Global
 		{6D73089C-C5ED-457B-B767-B073414E0907}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D73089C-C5ED-457B-B767-B073414E0907}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D73089C-C5ED-457B-B767-B073414E0907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B38651C6-9D7B-481F-BF23-10A533E2DB1F}.All|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38651C6-9D7B-481F-BF23-10A533E2DB1F}.All|Any CPU.Build.0 = Debug|Any CPU
+		{B38651C6-9D7B-481F-BF23-10A533E2DB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38651C6-9D7B-481F-BF23-10A533E2DB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B38651C6-9D7B-481F-BF23-10A533E2DB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B38651C6-9D7B-481F-BF23-10A533E2DB1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD13DE57-986F-41AA-9693-C3A55C3892FC}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{DD13DE57-986F-41AA-9693-C3A55C3892FC}.All|Any CPU.Build.0 = Release|Any CPU
+		{DD13DE57-986F-41AA-9693-C3A55C3892FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD13DE57-986F-41AA-9693-C3A55C3892FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD13DE57-986F-41AA-9693-C3A55C3892FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD13DE57-986F-41AA-9693-C3A55C3892FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

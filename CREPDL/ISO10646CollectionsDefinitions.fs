@@ -353,6 +353,14 @@ let internal inLineCollections =
                "0xA9E0,0xA9FF");
            (165,"LATIN EXTENDED-E",
                "0xAB30,0xAB6F");
+           (166,"CHEROKEE SUPPLEMENT",
+               "0xAB70,0xABBF");
+           (167,"CYRILLIC EXTENDED-C",
+               "0x1C80,0x1C8F");
+           (168,"SYRIAC SUPPLEMENT",
+               "0x0860,0x086F");
+           (169,"GEORGIAN EXTENDED",
+               "0x1C90,0x1CBF");
            (1001, "OLD ITALIC",
                 "0x10300, 0x1032F");
            (1002, "GOTHIC",
@@ -501,7 +509,7 @@ let internal inLineCollections =
                 "0x1F650,0x1F67F");
            (1074, "GEOMETRIC SHAPES EXTENDED",
                 "0x1F780,0x1F7FF");
-           (1075, "SUPPLEMEMENTAL ARROWS-C",
+           (1075, "SUPPLEMENTAL ARROWS-C",
                 "0x1F800,0x1F8FF");
            (1076, "OLD PERMIC",
                 "0x10350,0x1037F");
@@ -537,6 +545,74 @@ let internal inLineCollections =
                 "0x14400,0x1467F");
            (1092, "SUTTON SIGNWRITING",
                 "0x1D800,0x1DAAF");
+           (1093, "OSAGE",
+                "0x04B0,0x104FF");
+           (1094, "MONGOLIAN SUPPLEMENT",
+                "0x1660,0x1167F");
+           (1095, "BHAIKSUKI",
+                "0x1C00,0x11C6F");
+           (1096, "MARCHEN",
+                "0x1C70,0x11CBF");
+           (1097, "IDEOGRAPHIC SYMBOLS AND PUNCTUATION",
+                "0x6FE0,0x16FFF");
+           (1098, "TANGUT",
+                "0x7000,0x187EF");
+           (1099, "TANGUT COMPONENTS",
+                "0x8800,0x18AFF");
+           (1100, "GLAGOLITIC SUPPLEMENT",
+                "0xE000,0x1E02F");
+           (1101, "SUPPLEMENTAL SYMBOLS AND PICTOGRAPHS",
+                "0xF900,0x1F9FF");
+           (1102, "HANIFI ROHINGGYA",
+                "0x10D00,0x10D3F");
+           (1103, "NEWA",
+                "0x1400,0x1147F");
+           (1104, "ZANABAZAR SQUARE",
+                "0x1A00,0x11A4F");
+           (1105, "SOYOMBO",
+                "0x1A50,0x11AAF");
+           (1106, "MASARAM GONDI",
+                "0x1D00,0x11D5F");
+           (1107, "NUSHU",
+                "0xB170,0x1B2FF");
+           (1108, "ADLAM",
+                "0xE900,0x1E95F");
+           (1109, "OLD SOGDIAN",
+                "0x10F00,0x10F2F");
+           (1110, "SOGDIAN",
+                "0x10F30,0x10F6F");
+           (1111, "DOGRA",
+                "0x11800,0x1184F");
+           (1112, "GUNJALA GONDI",
+                "0x11D60,0x11DAF");
+           (1113, "MAKASAR",
+                "0x11EE0,0x11EFF");
+           (1114, "MEDEFAIDRIN",
+                "0x16E40,0x16E9F");
+           (1115, "KANA EXTENDED-A",
+                "0x1B100,0x1B12F");
+           (1116, "MAYAN NUMERALS",
+                "0x1D2E0,0x1D2FF");
+           (1117, "INDIC SIYAQ NUMBERS",
+                "0x1EC70,0x1ECBF");
+           (1118, "CHESS SYMBOLS",
+                "0x1FA00,0x1FA6F");
+           (1120, "ELYMAIC",
+                 "0x10FE0,0x10FFF");
+           (1121, "NANDINAGARI",
+                 "0x119A0,0x119FF");
+           (1122, "TAMIL SUPPLEMENT",
+                 "0x11FC0,0x11FFF");
+           (1123, "EGYPTIAN HIEROGLYPHS FORMAT CONTROLS",
+                 "0x13430,0x1343F");
+           (1124, "SMALL KANA EXTENSION",
+                 "0x1B130,0x1B16F");
+           (1125, "NYIAKENG PUACHUE HMONG",
+                 "0x1E100,0x1E14F");
+           (1126, "WANCHO",
+                 "0x1E2C0,0x1E2FF");
+           (1127, "OTTOMAN SIYAQ NUMBERS",
+                 "0x1ED00,0x1ED4F");
            (2001, "CJK UNIFIED IDEOGRAPHS EXTENSION B",
                 "0x20000, 0x2A6DF");
            (2002, "CJK COMPATIBILITY IDEOGRAPHS SUPPLEMENT",
@@ -547,6 +623,8 @@ let internal inLineCollections =
                 "0x2B740,0x2B81F");
            (2005, "CJK UNIFIED IDEOGRAPHS EXTENSION E",
                 "0x2B820,0x2CEAF");
+           (2006, "CJK UNIFIED IDEOGRAPHS EXTENSION F",
+                "0x2CEB0,0x2EBEF");
            (3001, "TAGS",
                 "0xE0000, 0xE007F");
            (3003, "VARIATION SELECTORS SUPPLEMENT",
@@ -765,19 +843,38 @@ let internal outOfLineCollections =
           (288, "MULTILINGUAL LATIN SUBSET", "288.txt");
           (301, "BMP-AMD.7", "301.txt");
           (302, "BMP SECOND EDITION", "302.txt");
-          (-303, "", "-303.txt");
-          (-304, "", "-304.txt");
-          (-306, "", "-306.txt");
-          (-307, "", "-307.txt");
-          (308, "UNICODE 5.1", "308.txt");
-          (309, "UNICODE 5.2", "309.txt");
-          (310, "UNICODE 6.0", "310.txt");
-          (311, "UNICODE 6.1", "311.txt");
-          (314, "UNICODE 7.0", "314.txt");
+          (0, "Age1-1", "Age1-1.txt");
+          (0, "Age2-0", "Age2-0.txt");
+          (0, "Age2-1", "Age2-1.txt");
+          (0, "Age3-0", "Age3-0.txt");
+          (0, "Age3-1", "Age3-1.txt");
+          (0, "Age3-2", "Age3-2.txt");
+          (0, "Age4-0", "Age4-0.txt");
+          (0, "Age4-1", "Age4-1.txt");
+          (0, "Age5-0", "Age5-0.txt");
+          (0, "Age5-1", "Age5-1.txt");
+          (0, "Age5-2", "Age5-2.txt");
+          (0, "Age6-0", "Age6-0.txt");
+          (0, "Age6-1", "Age6-1.txt");
+          (0, "Age6-2", "Age6-2.txt");
+          (0, "Age6-3", "Age6-3.txt");
+          (0, "Age7-0", "Age7-0.txt");
+          (0, "Age8-0", "Age8-0.txt");
+          (0, "Age9-0", "Age9-0.txt");
+          (0, "Age10-0", "Age10-0.txt");
+          (0, "Age11-0", "Age11-0.txt");
+          (0, "Age12-0", "Age12-0.txt");
+          (0, "Age12-1", "Age12-1.txt");
+          (-340, "", "-340.txt");
           (370, "IICORE", "IICORE.txt");
           (371, "JIS2004 IDEOGRAPHICS EXTENSION", "JIExt.txt");
           (372, "JAPANESE IDEOGRAPHICS SUPPLEMENT", "JAPANESE IDEOGRAPHICS SUPPLEMENT.txt");
-          (-340, "", "-340.txt")]
+          (373, "JAPANESE IT VENDORS CONTEMPORARY IDEOGRAPHS-1993", 
+                "JAPANESE IT VENDORS CONTEMPORARY IDEOGRAPHS-1993.txt");
+          (374, "JAPANESE JIS X 0213:2004 IDEOGRAPHS FROM PREVIOUS JIS STANDARDS",
+                "JAPANESE JIS X 0213-2004 IDEOGRAPHS FROM PREVIOUS JIS STANDARDS.txt");
+          (375, "JAPANESE CORE KANJI", 
+                 "JapaneseCoreKanji.txt")]
 
 let internal collectionsInCREPDL =
         [
@@ -860,39 +957,109 @@ let internal collectionsInCREPDL =
                       <repertoire  registry=""10646"" number=""285""/>
                       <repertoire  registry=""10646"" number=""-287""/>
                     </union>");
-          (303, "UNICODE 3.1 ",
+
+
+            (303, "UNICODE 3.1",
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
-                      <repertoire  registry=""10646"" number=""302""/>
-                      <repertoire  registry=""10646"" number=""-303""/>
+                        <repertoire  registry=""10646"" name=""Age1-1""/>
+                        <repertoire  registry=""10646"" name=""Age2-0""/>
+                        <repertoire  registry=""10646"" name=""Age2-1""/>
+                        <repertoire  registry=""10646"" name=""Age3-0""/>
+                        <repertoire  registry=""10646"" name=""Age3-1""/>
                     </union>");
-          (304, "UNICODE 3.2",
+
+            (304, "UNICODE 3.2",
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
-                      <repertoire  registry=""10646"" number=""303""/>
-                      <repertoire  registry=""10646"" number=""-304""/>
+                        <repertoire  registry=""10646"" number=""303""/>
+                        <repertoire  registry=""10646"" name=""Age3-2""/>
                     </union>");
-          (305, "UNICODE 4.0",
-                @"<repertoire xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0""
-                      registry=""10646"" number=""340""/>");
-          (306, "UNICODE 4.1",
+
+            (305, "UNICODE 4.0",
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
-                      <repertoire  registry=""10646"" number=""305""/>
-                      <repertoire  registry=""10646"" number=""-306""/>
+                        <repertoire  registry=""10646"" number=""304""/>
+                        <repertoire  registry=""10646"" name=""Age4-0""/>
                     </union>");
-          (307, "UNICODE 4.1",
+
+            (306, "UNICODE 4.1",
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
-                      <repertoire  registry=""10646"" number=""306""/>
-                      <repertoire  registry=""10646"" number=""-307""/>
+                        <repertoire  registry=""10646"" number=""305""/>
+                        <repertoire  registry=""10646"" name=""Age4-1""/>
                     </union>");
-          (312, "UNICODE 6.2",
+
+
+            (307, "UNICODE 5.0",
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
-                      <repertoire  registry=""10646"" number=""311""/>
-                      <char>&#x20BA;</char>
+                        <repertoire  registry=""10646"" number=""306""/>
+                        <repertoire  registry=""10646"" name=""Age5-0""/>
                     </union>");
-          (313, "UNICODE 6.3",
+    
+            (308, "UNICODE 5.1",
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
-                      <repertoire  registry=""10646"" number=""311""/>
-                      <char>[&#x061C;&#x2066;-&#x2069;&#x20BA;]</char>
+                        <repertoire  registry=""10646"" number=""307""/>
+                        <repertoire  registry=""10646"" name=""Age5-1""/>
                     </union>");
+
+            (309, "UNICODE 5.2",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""308""/>
+                        <repertoire  registry=""10646"" name=""Age5-2""/>
+                    </union>");
+
+            (310, "UNICODE 6.0",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""309""/>
+                        <repertoire  registry=""10646"" name=""Age6-0""/>
+                    </union>");
+
+            (311, "UNICODE 6.1",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""310""/>
+                        <repertoire  registry=""10646"" name=""Age6-1""/>
+                    </union>");
+
+            (312, "UNICODE 6.2",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""311""/>
+                        <repertoire  registry=""10646"" name=""Age6-2""/>
+                    </union>");
+
+            (313, "UNICODE 6.3",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""312""/>
+                        <repertoire  registry=""10646"" name=""Age6-3""/>
+                    </union>");
+
+            (314, "UNICODE 7.0",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""313""/>
+                        <repertoire  registry=""10646"" name=""Age7-0""/>
+                    </union>"); 
+
+            (315, "UNICODE 8.0",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""314""/>
+                        <repertoire  registry=""10646"" name=""Age8-0""/>
+                    </union>");
+
+            (316, "UNICODE 9.0",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""315""/>
+                        <repertoire  registry=""10646"" name=""Age9-0""/>
+                    </union>");
+
+            (317, "UNICODE 10.0",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""316""/>
+                        <repertoire  registry=""10646"" name=""Age10-0""/>
+                    </union>");
+
+            (318, "UNICODE 11.0",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""317""/>
+                        <repertoire  registry=""10646"" name=""Age11-0""/>
+                    </union>");
+
+
           (340, "COMBINED FIRST EDITION",
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
                       <repertoire  registry=""10646"" number=""302""/>

@@ -20,7 +20,7 @@ type CREPDLValidationResult = True = 0 | False = 1 | Unknown = 2;;
 type CREPDLValidator private (crepdl: XElement, u:unit) =
     static let checkCharWithMemoCount = 3000
     static let defaultMinVersion = versionString2Int "2.0"
-    static let defaultMaxVersion = versionString2Int "5.9"
+    static let defaultMaxVersion = versionString2Int "11.0"
 
     let script = expandRefAndRepertoire [] crepdl
 

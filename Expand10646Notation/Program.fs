@@ -75,7 +75,7 @@ let main argv =
  
     let help (filename: string) =
         System.Console.WriteLine(filename)
-        let fn = Path.Combine(path, filename)
+     //   let fn = Path.Combine(path, filename)
         let textStreamReader = 
             new StreamReader(asm.GetManifestResourceStream(filename))
 
