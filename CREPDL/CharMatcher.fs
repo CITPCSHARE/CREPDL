@@ -18,7 +18,13 @@ let private deSyntaxSugar str =
 let internal createRegexMatcher  =
 
     memoize (fun regStr -> 
-                new RegexMatcher(regStr, RegexMatcher.URegexpFlag.COMMENTS)) 100
+                try
+                    new RegexMatcher(regStr, RegexMatcher.URegexpFlag.COMMENTS)
+                with
+                | :? System.ArgumentException as ae 
+                    -> raise ( System.ArgumentException (regStr + " is an illegal regular expression."))
+                | e  ->  failwith (e.Message)
+             ) 100
 
 let internal createReg (regStr: string): Regex =
     new Regex(regStr)
