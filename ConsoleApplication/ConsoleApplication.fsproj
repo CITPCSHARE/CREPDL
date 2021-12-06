@@ -25,7 +25,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Debug\ConsoleApplication.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
-    <StartArguments>h:/CREPDLScripts/examples/version2/graphemeClusterMode/IVDHanyo-Denshi.crepdl h:/CREPDLScripts/examples/version2/graphemeClusterMode/IVDHanyo-Denshi.crepdl</StartArguments>
+    <StartArguments>h:/home/makoto/HiraKanaTouyou.crepdl h:/home/makoto/jlreq.html</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

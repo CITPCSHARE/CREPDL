@@ -35,11 +35,11 @@ let main args =
                   System.Console.WriteLine("Unknowns:")
                   if unknowns.Length <> 0 then
                       System.Console.WriteLine("Unknowns:")
-                  for u in unknowns do
+                  for u in (Set.ofArray unknowns) do
                       printCharacter u
                   if notIncluded.Length <> 0 then
                       System.Console.WriteLine("Not Included:")
-                  for n in notIncluded do
+                  for n in (Set.ofArray notIncluded) do
                       printCharacter n
                   0
             | _ -> System.Console.WriteLine "Specify a CREPDL file and a text file"
@@ -48,9 +48,15 @@ let main args =
             | Failure msg 
                 -> System.Console.WriteLine(msg)
                    1
-            | :?  System.IO.FileNotFoundException 
-               -> System.Console.WriteLine "File not found"
+            | :? System.ArgumentException as ae 
+                -> System.Console.WriteLine ("Argument Exception: " + ae.Message)   
+                   1
+            | :?  System.IO.FileNotFoundException as fe
+               -> System.Console.WriteLine ("File not found" + fe.FileName)
                   1
+            |  e 
+                -> System.Console.WriteLine ("Exception" + e.Message)
+                   1
 
     System.Console.WriteLine(System.DateTime.Now - startTime)
     returnCode
