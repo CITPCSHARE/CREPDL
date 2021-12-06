@@ -8,8 +8,8 @@ open CREPDL.ReadGraphemeCluster
 [<TestFixture>]
 [<Category("ReadGraphemeCluster")>]
 module ValidationTest =  
-    let dir = @"H:\CREPDLScripts\examples\version2\characterMode\"
-    let gcdir = @"H:\CREPDLScripts\examples\version2\graphemeClusterMode\"
+    let dir = @"G:\CREPDLScripts\examples\version2\characterMode\"
+    let gcdir = @"G:\CREPDLScripts\examples\version2\graphemeClusterMode\"
 
 
     let validateString (scriptFileName: string) str  characterMode = 
@@ -22,6 +22,15 @@ module ValidationTest =
             let res = validator.validateString(str)
             printfn "%A" (System.DateTime.Now - y)
             res
+
+    let validateStringAginst10646Collection (number: int) str  = 
+            let script = 
+                sprintf 
+                    @"<repertoire registry=""10646"" number=""%d"" xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0""/>"
+                    number
+            let validator = new CREPDLValidator(new StringReader(script))
+            validator.validateString(str)
+
     let numberOfCodePoints x = 
         let l = getGraphemeClusterEnumerator (new StringReader(x))
         Seq.length l
@@ -80,7 +89,28 @@ module ValidationTest =
         Assert.That(notIncluded.Length = notIncludedStr.Length && 
                         Array.forall (fun n -> notIncludedStr.Contains(n)) notIncluded)
 
-
+    [<TestCase(303, "\u0560", "", "\u0560")>]
+    [<TestCase(304, "\u0560", "", "\u0560")>]
+    [<TestCase(305, "\u0560", "", "\u0560")>]
+    [<TestCase(306, "\u0560", "", "\u0560")>]
+    [<TestCase(307, "\u0560", "", "\u0560")>]
+    [<TestCase(308, "\u0560", "", "\u0560")>]
+    [<TestCase(309, "\u0560", "", "\u0560")>]
+    [<TestCase(310, "\u0560", "", "\u0560")>]
+    [<TestCase(311, "\u0560", "", "\u0560")>]
+    [<TestCase(312, "\u0560", "", "\u0560")>]
+    [<TestCase(313, "\u0560", "", "\u0560")>]
+    [<TestCase(314, "\u0560", "", "\u0560")>]
+    [<TestCase(315, "\u0560", "", "\u0560")>]
+    [<TestCase(316, "\u0560", "", "\u0560")>]
+    [<TestCase(317, "\u0560", "", "\u0560")>]
+    [<TestCase(318, "\u0560", "", "")>]
+    let test10646ColletionValidation number str (unknownStr: string) (notIncludedStr: string) =
+        let unknowns, notIncluded = validateStringAginst10646Collection number str 
+        Assert.That(unknowns.Length = unknownStr.Length && 
+                        Array.forall (fun u -> unknownStr.Contains(u)) unknowns)
+        Assert.That(notIncluded.Length = notIncludedStr.Length && 
+                        Array.forall (fun n -> notIncludedStr.Contains(n)) notIncluded)
 
     [<TestCase("8859-15b.crepdl","abc", true)>]
     let throwsAnMiBenumError scriptFileName str characterMode =
