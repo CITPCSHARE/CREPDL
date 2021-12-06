@@ -798,6 +798,27 @@ let internal inLineCollections =
              0x2B740,0x2B81D
              0x2B820,0x2CEA1");
 
+           (389,  "CJK UNIFIED IDEOGRAPHS-2016",
+                 "0x3400, 0x4DB5
+                 0x4E00, 0x9FA5
+              0x9FA6,0x9FBB
+              0x9FBC,0x9FC3
+              0x9FC4,0x9FC6
+              0x9FC7,0x9FCB
+              0x9FCC,0x9FE9
+                 0xFA0E, 0xFA0F
+                 0xFA11
+                 0xFA13, 0xFA14
+                 0xFA1F
+                 0xFA21
+                 0xFA23, 0xFA24
+                 0xFA27, 0xFA29
+                 0x20000, 0x2A6D6
+              0x2A700,0x2B734
+              0x2B740,0x2B81D
+              0x2B820,0x2CEA1
+              0x2CEB0,0x2EBE0");
+
     //284 CONTEMPORARY LITHUANIAN LETTERS see A.5.5 *
 
            (300, "BMP",
@@ -1073,6 +1094,9 @@ let internal collectionsInCREPDL =
                       <repertoire  registry=""10646"" number=""111""/>
                       <repertoire  registry=""10646"" number=""-340""/>
                     </union>");
+          (390, "MOJI-JOHO-KIBAN IDEOGRAPHS-2016",
+            @"<repertoire xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"" 
+                registry=""IVD"" name=""""/>");
           (4000, "UCS PART-2", """
                 <union xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0">
                       <repertoire  registry="10646" number="1000"/>
