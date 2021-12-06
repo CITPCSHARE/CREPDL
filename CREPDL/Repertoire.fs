@@ -20,7 +20,11 @@ let private charList (tr:TextReader) =
                  let (s, e) = split line in [s .. e]  };;
 
 let internal createRepertoireFromTextReader (tr: TextReader): Repertoire =
-    let allCodePoints = Set.ofSeq (Seq.map (fun x -> Char.ConvertFromUtf32 x) (charList tr))
+    let allCodePoints = Set.ofSeq (Seq.map
+                                        (fun x -> 
+                                            let y = x
+                                            Char.ConvertFromUtf32 x) 
+                                        (charList tr))
     let checkString (s: string) = 
         if allCodePoints.Contains s then True
         else False

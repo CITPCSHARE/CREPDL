@@ -27,12 +27,11 @@ let internal readIVS (tsr: TextReader) =
 
 
 let internal getBaseIVSPairs (tripletSeq: seq<int * int * string>) ivsColName  =
-    seq { for (b, ivs, str) in tripletSeq do
-            if str = ivsColName then yield (b, ivs)
-         }
-    |> fun x -> 
-        if Seq.isEmpty x then failwith ("IVD Collection " + ivsColName + " is not registered.") 
-        else Set.ofSeq x
+    let baseIVSPairs = seq { for (b, ivs, str) in tripletSeq do
+                     if str = ivsColName then yield (b, ivs) }
+    if Seq.isEmpty baseIVSPairs then 
+        failwith ("IVD Collection " + ivsColName + " is not registered.") 
+    else Set.ofSeq baseIVSPairs
 
 let internal generateBaseSetPerSelector ivsColName =
     let tr = ((getStreamReaderForEmbeddedResource IVD_Sequences_file) :> TextReader)
