@@ -24,7 +24,7 @@ let createOutputStreamWriter (age: string) =
  let createDescriptors (sr: StreamReader)  =
     [ while not (sr.EndOfStream) do
             let line = sr.ReadLine().Trim()
-            if line.StartsWith("#") |> not && line.Length > 1 then 
+            if not(line.StartsWith("#")) && line.Length > 1 && not(line.Contains("surrogate")) then 
                let choppedLine = line.Remove(line.IndexOf("#"))
                match choppedLine.Split([|".."; ";"; "#"|], StringSplitOptions.None) with
                | [|st; ed; age|] -> yield ("0x" + st.Trim() + ",0x" + ed.Trim(), age.Trim())
@@ -35,8 +35,8 @@ let createOutputStreamWriter (age: string) =
 [<EntryPoint>]
 let main argv =
     let descriptors = createDescriptors (createInputStreamReader ())
-    for  (desc, age) in descriptors do 
-        printfn "%s %s" desc age
+//    for  (desc, age) in descriptors do 
+//        printfn "%s %s" desc age
         
     let ages = ["1.1"; "2.0"; "2.1"; "3.0"; "3.1"; "3.2"; "4.0"; "4.1"; "5.0"; "5.1";
                 "5.2"; "6.0"; "6.1"; "6.2"; "6.3"; "7.0"; "8.0"; "9.0"; "10.0";
