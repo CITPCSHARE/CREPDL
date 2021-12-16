@@ -27,8 +27,9 @@ let internal readIVS (tsr: TextReader) =
 
 
 let internal getBaseIVSPairs (tripletSeq: seq<int * int * string>) ivsColName  =
-    let baseIVSPairs = seq { for (b, ivs, str) in tripletSeq do
-                     if str = ivsColName then yield (b, ivs) }
+    let baseIVSPairs = 
+        seq { for (b, ivs, str) in tripletSeq do
+                if str = ivsColName then yield (b, ivs) }
     if Seq.isEmpty baseIVSPairs then 
         failwith ("IVD Collection " + ivsColName + " is not registered.") 
     else Set.ofSeq baseIVSPairs
