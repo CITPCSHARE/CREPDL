@@ -25,6 +25,9 @@ module CollectionValidationTest =
     [<TestCase(372,"\u8173", false)>]
     [<TestCase(285,"\u8173", false)>]
     [<TestCase(286,"\u8173", false)>]
+    [<TestCase(285,"\u3099", false)>]
+    [<TestCase(285,"\u309A", false)>]
+    [<TestCase(285,"\u3100", false)>]
     let testValidationAgainstCollection annexACollectionNumber str result  =
         let validator = createValidator annexACollectionNumber
         if result then Assert.True(validator.validateString str = ([||], [||]))
