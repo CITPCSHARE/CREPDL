@@ -1,0 +1,13 @@
+﻿Is it possible to use the ICU regular expression engine from F# prgraoms on Mac?
+
+As a workaround, should we use repertoire for referencing Unicode code points or sequences?
+
+APIs need improvements.
+
+User interfaces
+- Web-based UI?
+- GUI for word documents?
+- GUI for HTML documents?
+= GUI for text?
+
+
