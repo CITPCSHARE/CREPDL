@@ -1,0 +1,39 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:電子化文書の日本語レパートリー検証.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		Width="640" Height="540"
+        mc:Ignorable="d"
+        x:Class="電子化文書の日本語レパートリー検証.Views.MainWindow"
+		Icon="/Assets/mumoji.ico"
+        Title="電子化文書の日本語レパートリー検証">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<StackPanel Orientation="Horizontal" Spacing="1" Width="630" Height="520" >
+	<StackPanel Orientation="Vertical" Spacing="8" Margin="20,10,10,10" Width="250" >
+		<Button Name="ValidateEpubFile">_EPUBファイルの検証</Button>
+		<Button Name="ValidateEpubDirectory">EPUB _Directoryの検証</Button>
+		<Button Name="ValidateDocxFile">_Word (docx)ファイルの検証</Button>
+		<Button Name="ValidateHtmlFile">_HTMLファイルの検証</Button>
+	</StackPanel>
+		<StackPanel Orientation="Vertical" Spacing="8" Margin="20,10,10,10">
+			<Border BorderThickness="1"
+					BorderBrush="{DynamicResource SystemControlHighlightBaseMediumLowBrush}" >
+
+				<ScrollViewer Height="500" Width="300"
+							  VerticalScrollBarVisibility="Visible"
+							  HorizontalScrollBarVisibility="Visible">
+				<TextBlock Text="{Binding Diagnostics}" 
+						   FontFamily="Arial Unicode MS" 
+						   Margin="20,10,20,10"  
+						   TextAlignment="Left" />
+				</ScrollViewer>
+		</Border>
+		</StackPanel>
+
+	</StackPanel>
+	</Window>
