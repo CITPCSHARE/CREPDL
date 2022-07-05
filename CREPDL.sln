@@ -21,7 +21,9 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "DerivedAgePreprocessor", "D
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "NFD", "NFD\NFD.fsproj", "{F5D143E1-CCB4-4D75-8090-3B98359D732D}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "電子化文書の日本語レパートリー検証", "電子化文書の日本語レパートリー検証\電子化文書の日本語レパートリー検証.fsproj", "{6DD41296-CDC0-40CF-BF25-8EA358CD7CAF}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "電子化文書の日本語レパートリー検証", "電子化文書の日本語レパートリー検証\電子化文書の日本語レパートリー検証.fsproj", "{6DD41296-CDC0-40CF-BF25-8EA358CD7CAF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer for CREPDL doc", "Installer for CREPDL doc\Installer for CREPDL doc.vdproj", "{7057B9AB-9547-42FD-9447-4398149638FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,6 +92,9 @@ Global
 		{6DD41296-CDC0-40CF-BF25-8EA358CD7CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DD41296-CDC0-40CF-BF25-8EA358CD7CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DD41296-CDC0-40CF-BF25-8EA358CD7CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7057B9AB-9547-42FD-9447-4398149638FC}.All|Any CPU.ActiveCfg = Debug
+		{7057B9AB-9547-42FD-9447-4398149638FC}.Debug|Any CPU.ActiveCfg = Debug
+		{7057B9AB-9547-42FD-9447-4398149638FC}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
