@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ConsoleApplication": {
+      "commandName": "Project",
+      "commandLineArgs": "n:/home/makoto/HiraKanaTouyou.crepdl n:/home/makoto/jlreq.html"
+    },
+    "Invalid encoding": {
+      "commandName": "Project",
+      "commandLineArgs": "n:/home/makoto/HiraKanaTouyou.crepdl n:/home/makoto/jlreq.html henohenomoheji"
+    }
+  }
+}

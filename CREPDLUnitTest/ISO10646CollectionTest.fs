@@ -21,23 +21,23 @@ module ISO10646CollectionTest =
       
 
     [<TestCase(301, "0x000020,0x00007E")>]
-    let createRepertoireFromTextReaderOutofLineNumTest num content  =
+    let createRepertoireFromTextReaderOutofLineNumTest num (content: string)  =
       let tr = generateRepertoireFromISOCollection None (Some(num))
       Assert.That(tr.ReadToEnd().StartsWith(content))
 
     [<TestCase("IICORE", "0x034E4")>]
-    let createRepertoireFromTextReaderOutofLineNameTest name content  =
+    let createRepertoireFromTextReaderOutofLineNameTest name (content: string)  =
       let tr = generateRepertoireFromISOCollection (Some(name)) None 
       Assert.That(tr.ReadToEnd().StartsWith(content))
 
     [<TestCase("UNICODE 6.3", "<union")>]
-    let expandRepertoireCREPDLNameTest name startStr  =
+    let expandRepertoireCREPDLNameTest name (startStr: string)  =
       match expandRepertoireFromISOCollection (Some(name)) None with
       | Some(tr) -> Assert.That(tr.ReadToEnd().StartsWith(startStr))
       | _ -> Assert.Fail()
 
     [<TestCase(306, "<union")>]
-    let expandRepertoireCREPDLNumTest num startStr  =
+    let expandRepertoireCREPDLNumTest num (startStr: string)  =
       match  expandRepertoireFromISOCollection None (Some(num))  with
       | Some(tr) -> Assert.That(tr.ReadToEnd().StartsWith(startStr))
       | _ -> Assert.Fail()

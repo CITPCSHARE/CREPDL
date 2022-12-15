@@ -36,7 +36,7 @@ type CREPDLValidator private (crepdl: XElement, u:unit) =
 /// <param name="crepdl">An XElement representing a CREPDL script</param>
     new (crepdl: XElement) = 
         if not(crepdl.Name.NamespaceName.Equals crepdlNamespaceV2) then
-            failwith "Illegal namespace"
+            failwith "Illegal namespace. Use the CREPDL V2 namespace."
         CREPDLValidator(crepdl, ())
 
 /// <summary>Constructs a validator.</summary>
@@ -44,7 +44,7 @@ type CREPDLValidator private (crepdl: XElement, u:unit) =
     new (uri: Uri) =
         let x = readScriptFromUri uri
         if not(x.Name.NamespaceName.Equals crepdlNamespaceV2) then
-            failwith "Illegal namespace"
+            failwith "Illegal namespace. Use the CREPDL V2 namespace."
         CREPDLValidator(x, ())
 
 /// <summary>Constructs a validator.</summary>
@@ -52,7 +52,7 @@ type CREPDLValidator private (crepdl: XElement, u:unit) =
     new (filename: string) =
         let x = readScriptFromUri (Uri(filename))
         if not(x.Name.NamespaceName.Equals crepdlNamespaceV2) then
-            failwith "Illegal namespace"
+            failwith "Illegal namespace. Use the CREPDL V2 namespace."
         CREPDLValidator(x, ())
 
 /// <summary>Constructs a validator.</summary>
@@ -60,7 +60,7 @@ type CREPDLValidator private (crepdl: XElement, u:unit) =
     new (tr: TextReader) =
         let x = (XDocument.Load(tr, LoadOptions.SetBaseUri)).Root
         if not(x.Name.NamespaceName.Equals crepdlNamespaceV2) then
-            failwith "Illegal namespace"
+            failwith "Illegal namespace. Use the CREPDL V2 namespace."
         CREPDLValidator(x, ())
 
 /// <summary>Validates a string representing a Unicode character
@@ -120,7 +120,7 @@ type CREPDLValidator private (crepdl: XElement, u:unit) =
                 Text.Encoding.GetEncoding(encName)
             with
                 | :?  System.ArgumentException as exc
-                  -> failwith (encName + ": ilegal encoding name")
+                  -> failwith ("ilegal encoding name:" + encName)
           use fs = new FileStream(filename,  FileMode.Open)
           use sr = new StreamReader(fs, enc)
           this.validateTextStream(sr)

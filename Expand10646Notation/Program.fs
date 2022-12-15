@@ -76,8 +76,9 @@ let main argv =
     let help (filename: string) =
         System.Console.WriteLine(filename)
      //   let fn = Path.Combine(path, filename)
+        let sr = asm.GetManifestResourceStream("Expand10646Notation." + filename)
         let textStreamReader = 
-            new StreamReader(asm.GetManifestResourceStream(filename))
+            new StreamReader(sr)
 
         let outputFile = dir + filename
         use ofs = new FileStream(outputFile,  FileMode.Create)

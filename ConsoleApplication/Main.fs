@@ -55,7 +55,7 @@ let main args =
                -> System.Console.WriteLine ("File not found" + fe.FileName)
                   1
             |  e 
-                -> System.Console.WriteLine ("Exception" + e.Message)
+                -> System.Console.WriteLine ("Exception: " + e.Message)
                    1
 
     System.Console.WriteLine(System.DateTime.Now - startTime)

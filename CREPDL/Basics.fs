@@ -31,5 +31,6 @@ let internal createUri (schemaUri: string) =
 
 let internal getStreamReaderForEmbeddedResource fileName: StreamReader = 
     let asm = Assembly.GetExecutingAssembly()
-    new StreamReader(asm.GetManifestResourceStream(fileName))
+    let strm = asm.GetManifestResourceStream("CREPDL." + fileName)
+    new StreamReader(strm)
 

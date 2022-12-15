@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using CREPDL;
 using System.IO;
-
+using System.Linq.Expressions;
 
 namespace EPUBValidatorGUI
 {
@@ -115,7 +115,13 @@ namespace EPUBValidatorGUI
             if (dialog.ShowDialog() == true)
             {
                 this.selectedCREPDLscript.Text = dialog.FileName;
-                validator = new CREPDLValidator(new StreamReader(dialog.FileName));
+                try {
+                    validator = new CREPDLValidator(new StreamReader(dialog.FileName));
+                }
+                catch (Exception excp)
+                {
+                    this.message.Text = excp.Message;
+                }
             }
             else
             {

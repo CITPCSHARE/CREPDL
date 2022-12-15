@@ -55,6 +55,7 @@ let validateSingleFile (vs:ValidatorStruct)  (graphemeClusters: seq<string>) =
         elif vs.JapaneseNonIdeographicsExtensionValidator.validateGraphemeCluster(gc)
           = CREPDLValidationResult.True then appendLine $"拡張非漢字集合 {printCharacter gc}"
         else appendLine $"範囲外の文字 {printCharacter gc}"
+    sb.AppendLine("Done") |> ignore
     sb.ToString()
 
 let validateMultipleFiles (vs:ValidatorStruct) 

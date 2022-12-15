@@ -13,12 +13,10 @@ module ValidationTest =
 
 
     let validateString (scriptFileName: string) str  characterMode = 
-            let x = System.DateTime.Now
             let validator = 
                 if characterMode then  new CREPDLValidator(dir + scriptFileName)
                 else new CREPDLValidator(gcdir + scriptFileName)
             let y = System.DateTime.Now
-            printfn "%A" (y - x)
             let res = validator.validateString(str)
             printfn "%A" (System.DateTime.Now - y)
             res
@@ -85,9 +83,9 @@ module ValidationTest =
     let testValidation scriptFileName str (unknownStr: string) (notIncludedStr: string) characterMode =
         let unknowns, notIncluded = validateString scriptFileName str characterMode
         Assert.That(unknowns.Length = unknownStr.Length && 
-                        Array.forall (fun u -> unknownStr.Contains(u)) unknowns)
+                        Array.forall (fun (u: string) -> unknownStr.Contains(u)) unknowns)
         Assert.That(notIncluded.Length = notIncludedStr.Length && 
-                        Array.forall (fun n -> notIncludedStr.Contains(n)) notIncluded)
+                        Array.forall (fun (n: string) -> notIncludedStr.Contains(n)) notIncluded)
 
     [<TestCase(303, "\u0560", "", "\u0560")>]
     [<TestCase(304, "\u0560", "", "\u0560")>]
@@ -108,14 +106,14 @@ module ValidationTest =
     let test10646ColletionValidation number str (unknownStr: string) (notIncludedStr: string) =
         let unknowns, notIncluded = validateStringAginst10646Collection number str 
         Assert.That(unknowns.Length = unknownStr.Length && 
-                        Array.forall (fun u -> unknownStr.Contains(u)) unknowns)
+                        Array.forall (fun (u: string) -> unknownStr.Contains(u)) unknowns)
         Assert.That(notIncluded.Length = notIncludedStr.Length && 
-                        Array.forall (fun n -> notIncludedStr.Contains(n)) notIncluded)
+                        Array.forall (fun (n: string) -> notIncludedStr.Contains(n)) notIncluded)
 
     [<TestCase("8859-15b.crepdl","abc", true)>]
     let throwsAnMiBenumError scriptFileName str characterMode =
         let ex = Assert.Catch<System.Exception>(fun () -> validateString scriptFileName str characterMode |> ignore)
-        Assert.That(ex.Message.EndsWith("miBenum is not supported"))
+        Assert.That(ex.Message.Contains("miBenum is not supported"))
 
 
     [<TestCase("RefLoop.crepdl","abc", true)>]

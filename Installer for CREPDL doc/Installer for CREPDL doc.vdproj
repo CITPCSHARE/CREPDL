@@ -21,24 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_42BC51DA0DF14C3888FF01C7336BC973"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4C5E0A94587E4129852C9BFBEDB03F3E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_886E4BADE5762833C7E202A63E98E92E"
-        "OwnerKey" = "8:_4C5E0A94587E4129852C9BFBEDB03F3E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_9DC70232F7724EF3B0F66339564EBE52"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -47,18 +29,6 @@
         {
         "MsmKey" = "8:_E8134F7A389347E9B5C796279556279D"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4C5E0A94587E4129852C9BFBEDB03F3E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_886E4BADE5762833C7E202A63E98E92E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -134,88 +104,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_42BC51DA0DF14C3888FF01C7336BC973"
-            {
-            "SourcePath" = "8:..\\CREPDL\\bin\\Release\\icu.net.dll.config"
-            "TargetName" = "8:icu.net.dll.config"
-            "Tag" = "8:"
-            "Folder" = "8:_1F13C3F63B4C447E9FA20834E93239B7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4C5E0A94587E4129852C9BFBEDB03F3E"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:icu.net, Version=2.4.0.0, Culture=neutral, PublicKeyToken=416fdd914afa6b66, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4C5E0A94587E4129852C9BFBEDB03F3E"
-                    {
-                    "Name" = "8:icu.net.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\CREPDL\\bin\\Release\\icu.net.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1F13C3F63B4C447E9FA20834E93239B7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_886E4BADE5762833C7E202A63E98E92E"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Extensions.DependencyModel, Version=2.0.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_886E4BADE5762833C7E202A63E98E92E"
-                    {
-                    "Name" = "8:Microsoft.Extensions.DependencyModel.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Extensions.DependencyModel.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1F13C3F63B4C447E9FA20834E93239B7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9DC70232F7724EF3B0F66339564EBE52"
             {
             "SourcePath" = "8:..\\電子化文書の日本語レパートリー検証\\bin\\Release\\net6.0\\電子化文書の日本語レパートリー検証.exe"
@@ -313,7 +201,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:電子化文書の日本語レパートリー検証"
         "ProductCode" = "8:{5C36DD79-4B49-4583-BE98-6503DB0580F4}"
-        "PackageCode" = "8:{B1CECC85-9506-48EB-BD52-5AA65AAA47C8}"
+        "PackageCode" = "8:{E0B370AF-DCAE-443E-933E-52809BFA1DE3}"
         "UpgradeCode" = "8:{5D306103-4DEF-4F35-BE01-03B1F09F7C86}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

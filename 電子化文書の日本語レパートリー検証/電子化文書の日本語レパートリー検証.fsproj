@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
@@ -31,12 +31,12 @@
         <TrimmableAssembly Include="Avalonia.Themes.Default" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="0.10.15" />
-        <PackageReference Include="Avalonia.Desktop" Version="0.10.15" />
+        <PackageReference Include="Avalonia" Version="0.10.18" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.18" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.15" />
-        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.15" />
-        <PackageReference Include="HtmlAgilityPack" Version="1.11.43" />
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.18" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.18" />
+        <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Assets\" />
@@ -45,6 +45,6 @@
       <ProjectReference Include="..\CREPDL\CREPDL.fsproj" />
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Update="FSharp.Core" Version="6.0.5" />
+      <PackageReference Update="FSharp.Core" Version="7.0.0" />
     </ItemGroup>
 </Project>

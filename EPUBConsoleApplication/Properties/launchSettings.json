@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EPUBConsoleApplication": {
+      "commandName": "Project",
+      "commandLineArgs": "n:/Temp/ivstest.crepdl \"N:\\SSD\\Users\\MURATA Makoto\\Downloads\\20190517-AJ16kanji-test.epub\""
+    }
+  }
+}

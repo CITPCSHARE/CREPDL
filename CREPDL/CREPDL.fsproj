@@ -1,196 +1,72 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>e38863e8-88ef-49ec-89ad-1ebbbbe3be21</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>CREPDL</RootNamespace>
-    <AssemblyName>CREPDL</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>CREPDL</Name>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <Tailcalls>true</Tailcalls>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <WarningLevel>3</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\CREPDL.XML</DocumentationFile>
-    <Prefer32Bit>true</Prefer32Bit>
-    <StartArguments>h:/CREPDLScripts/examples/version2/graphemeClusterMode/IDVAdobe-Japan1.crepdl h:/CREPDLScripts/examples/version2/graphemeClusterMode/IDVAdobe-Japan1.crepdl</StartArguments>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <Tailcalls>true</Tailcalls>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <WarningLevel>3</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>
-    </DocumentationFile>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
-  </PropertyGroup>
-  <Choose>
-    <When Condition="'$(VisualStudioVersion)' == '11.0'">
-      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')">
-        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
-      </PropertyGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets')">
-        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
-      </PropertyGroup>
-    </Otherwise>
-  </Choose>
-  <Import Project="$(FSharpTargetsPath)" />
+
   <ItemGroup>
-    <Content Include="TODO.txt" />
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Basics.fs" />
-    <Compile Include="ThreeValuedBoolean.fs" />
     <Compile Include="Registry.fs" />
-    <Compile Include="Repertoire.fs" />
-    <Compile Include="IVSChecker.fs" />
-    <Compile Include="ISO10646CollectionsDefinitions.fs" />
-    <Compile Include="ISO10646Collection.fs" />
+    <Compile Include="ThreeValuedBoolean.fs" />
     <Compile Include="CharMatcher.fs" />
     <Compile Include="ActivePattern.fs" />
-    <Compile Include="ReadScript.fs" />
-    <Compile Include="ExpandRefAndRepertoire.fs" />
     <Compile Include="CheckExpandedScript.fs" />
-    <Compile Include="Registry2Repertoire.fs" />
-    <Compile Include="StringValidation.fs" />
+    <Compile Include="ReadScript.fs" />
+    <Compile Include="ISO10646CollectionsDefinitions.fs" />
+    <Compile Include="ISO10646Collection.fs" />
+    <Compile Include="ExpandRefAndRepertoire.fs" />
+    <Compile Include="Repertoire.fs" />
+    <Compile Include="IVSChecker.fs" />
     <Compile Include="ReadCharacter.fs" />
     <Compile Include="ReadGraphemeCluster.fs" />
+    <Compile Include="Registry2Repertoire.fs" />
+    <Compile Include="StringValidation.fs" />
     <Compile Include="Validation.fs" />
-    <None Include="App.config" />
-    <EmbeddedResource Include="IVD_Sequences.txt" />
-    <EmbeddedResource Include="IICORE.txt" />
-    <EmbeddedResource Include="JIExt.txt" />
-    <EmbeddedResource Include="JAPANESE IDEOGRAPHICS SUPPLEMENT.txt" />
-    <EmbeddedResource Include="281.txt" />
-    <EmbeddedResource Include="282.txt" />
     <EmbeddedResource Include="-100285.txt" />
     <EmbeddedResource Include="-200285.txt" />
-    <EmbeddedResource Include="286.txt" />
     <EmbeddedResource Include="-287.txt" />
+    <EmbeddedResource Include="-340.txt" />
+    <EmbeddedResource Include="281.txt" />
+    <EmbeddedResource Include="282.txt" />
+    <EmbeddedResource Include="286.txt" />
     <EmbeddedResource Include="288.txt" />
     <EmbeddedResource Include="301.txt" />
     <EmbeddedResource Include="302.txt" />
-    <EmbeddedResource Include="-340.txt" />
+    <EmbeddedResource Include="Age1-1.txt" />
+    <EmbeddedResource Include="Age10-0.txt" />
+    <EmbeddedResource Include="Age11-0.txt" />
+    <EmbeddedResource Include="Age12-0.txt" />
+    <EmbeddedResource Include="Age12-1.txt" />
+    <EmbeddedResource Include="Age13-0.txt" />
+    <EmbeddedResource Include="Age14-0.txt" />
+    <EmbeddedResource Include="Age15-0.txt" />
+    <EmbeddedResource Include="Age2-0.txt" />
+    <EmbeddedResource Include="Age2-1.txt" />
+    <EmbeddedResource Include="Age3-0.txt" />
+    <EmbeddedResource Include="Age3-1.txt" />
+    <EmbeddedResource Include="Age3-2.txt" />
+    <EmbeddedResource Include="Age4-0.txt" />
+    <EmbeddedResource Include="Age4-1.txt" />
+    <EmbeddedResource Include="Age5-0.txt" />
+    <EmbeddedResource Include="Age5-1.txt" />
+    <EmbeddedResource Include="Age5-2.txt" />
+    <EmbeddedResource Include="Age6-0.txt" />
+    <EmbeddedResource Include="Age6-1.txt" />
+    <EmbeddedResource Include="Age6-2.txt" />
+    <EmbeddedResource Include="Age6-3.txt" />
+    <EmbeddedResource Include="Age7-0.txt" />
+    <EmbeddedResource Include="Age8-0.txt" />
+    <EmbeddedResource Include="Age9-0.txt" />
+    <EmbeddedResource Include="IICORE.txt" />
+    <EmbeddedResource Include="IVD_Sequences.txt" />
+    <EmbeddedResource Include="JAPANESE IDEOGRAPHICS SUPPLEMENT.txt" />
     <EmbeddedResource Include="JAPANESE IT VENDORS CONTEMPORARY IDEOGRAPHS-1993.txt" />
     <EmbeddedResource Include="JAPANESE JIS X 0213-2004 IDEOGRAPHS FROM PREVIOUS JIS STANDARDS.txt" />
     <EmbeddedResource Include="JapaneseCoreKanji.txt" />
-    <EmbeddedResource Include="Age12-1.txt" />
-    <EmbeddedResource Include="Age12-0.txt" />
-    <EmbeddedResource Include="Age11-0.txt" />
-    <EmbeddedResource Include="Age10-0.txt" />
-    <EmbeddedResource Include="Age9-0.txt" />
-    <EmbeddedResource Include="Age8-0.txt" />
-    <EmbeddedResource Include="Age7-0.txt" />
-    <EmbeddedResource Include="Age6-3.txt" />
-    <EmbeddedResource Include="Age6-2.txt" />
-    <EmbeddedResource Include="Age6-1.txt" />
-    <EmbeddedResource Include="Age6-0.txt" />
-    <EmbeddedResource Include="Age5-2.txt" />
-    <EmbeddedResource Include="Age5-1.txt" />
-    <EmbeddedResource Include="Age5-0.txt" />
-    <EmbeddedResource Include="Age4-1.txt" />
-    <EmbeddedResource Include="Age4-0.txt" />
-    <EmbeddedResource Include="Age3-2.txt" />
-    <EmbeddedResource Include="Age3-1.txt" />
-    <EmbeddedResource Include="Age3-0.txt" />
-    <EmbeddedResource Include="Age2-1.txt" />
-    <EmbeddedResource Include="Age2-0.txt" />
-    <EmbeddedResource Include="Age1-1.txt" />
-    <Content Include="packages.config" />
-    <None Include="icu4c.readme.txt" />
+    <EmbeddedResource Include="JIExt.txt" />
+    <Content Include="TODO.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="FSharp.Core">
-      <HintPath>..\packages\FSharp.Core.6.0.5\lib\netstandard2.0\FSharp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="icu.net">
-      <HintPath>..\packages\icu.net.2.4.0\lib\net451\icu.net.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.DotNet.PlatformAbstractions">
-      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.3.1.6\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyModel">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.0.4\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
-    </Reference>
-    <Reference Include="mscorlib" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Buffers">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Memory">
-      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
-      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Text.Encodings.Web">
-      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Json">
-      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions">
-      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-  </ItemGroup>
-  <Import Project="..\packages\Icu4c.Win.Full.Lib.59.1.15\build\Icu4c.Win.Full.Lib.targets" Condition="Exists('..\packages\Icu4c.Win.Full.Lib.59.1.15\build\Icu4c.Win.Full.Lib.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Icu4c.Win.Full.Lib.59.1.15\build\Icu4c.Win.Full.Lib.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Icu4c.Win.Full.Lib.59.1.15\build\Icu4c.Win.Full.Lib.targets'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

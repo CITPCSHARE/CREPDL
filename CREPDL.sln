@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CREPDL", "CREPDL\CREPDL.fsproj", "{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "CREPDL", "CREPDL\CREPDL.fsproj", "{E38863E8-88EF-49EC-89AD-1EBBBBE3BE21}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Expand10646Notation", "Expand10646Notation\Expand10646Notation.fsproj", "{95FE28D9-DBED-46AC-81CC-2906CB40BCBD}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Expand10646Notation", "Expand10646Notation\Expand10646Notation.fsproj", "{95FE28D9-DBED-46AC-81CC-2906CB40BCBD}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CREPDLUnitTest", "CREPDLUnitTest\CREPDLUnitTest.fsproj", "{C1468F69-994A-43FC-AD2E-88ED9F38BF99}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "CREPDLUnitTest", "CREPDLUnitTest\CREPDLUnitTest.fsproj", "{C1468F69-994A-43FC-AD2E-88ED9F38BF99}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.fsproj", "{D5CF3F82-45C0-4C0B-9DE4-1F441824C6AF}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.fsproj", "{D5CF3F82-45C0-4C0B-9DE4-1F441824C6AF}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "EPUBConsoleApplication", "EPUBConsoleApplication\EPUBConsoleApplication.fsproj", "{D4679316-3735-468C-96AD-A6383BC1C456}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "EPUBConsoleApplication", "EPUBConsoleApplication\EPUBConsoleApplication.fsproj", "{D4679316-3735-468C-96AD-A6383BC1C456}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "EPUBValidation", "EPUBValidation\EPUBValidation.fsproj", "{AAA6A18D-BB8E-4A02-89F6-E290AD067DDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPUBValidatorGUI", "EPUBValidatorGUI\EPUBValidatorGUI.csproj", "{6D73089C-C5ED-457B-B767-B073414E0907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPUBValidatorGUI", "EPUBValidatorGUI\EPUBValidatorGUI.csproj", "{6D73089C-C5ED-457B-B767-B073414E0907}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "DerivedAgePreprocessor", "DerivedAgePreprocessor\DerivedAgePreprocessor.fsproj", "{DD13DE57-986F-41AA-9693-C3A55C3892FC}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "DerivedAgePreprocessor", "DerivedAgePreprocessor\DerivedAgePreprocessor.fsproj", "{DD13DE57-986F-41AA-9693-C3A55C3892FC}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "NFD", "NFD\NFD.fsproj", "{F5D143E1-CCB4-4D75-8090-3B98359D732D}"
 EndProject

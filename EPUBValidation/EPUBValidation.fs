@@ -43,3 +43,4 @@ let public scanZip (tw: TextWriter) (filePath: string) (validator: CREPDLValidat
                 tw.WriteLine("Not Included:")
             for n in notIncluded do
                 printCharacter tw n
+    tw.WriteLine("Done.")

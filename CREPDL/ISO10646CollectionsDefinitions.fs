@@ -886,6 +886,9 @@ let internal outOfLineCollections =
           (0, "Age11-0", "Age11-0.txt");
           (0, "Age12-0", "Age12-0.txt");
           (0, "Age12-1", "Age12-1.txt");
+          (0, "Age13-0", "Age13-0.txt");
+          (0, "Age14-0", "Age14-0.txt");
+          (0, "Age15-0", "Age15-0.txt");
           (-340, "", "-340.txt");
           (370, "IICORE", "IICORE.txt");
           (371, "JIS2004 IDEOGRAPHICS EXTENSION", "JIExt.txt");
