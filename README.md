@@ -4,17 +4,17 @@ Implementation of ISO/IEC 19757-7 (CREPDL) in F#
 
 ## Overview
 
-This is a .Net library. It is usable from any .Net programming language such as C# and Visual Basic.
+This is a .Net library. It is usable from any .Net programming language such as C#, Visual Basic .Net, and F#.
 
-A rudimentary command-line program for invoking this library is provided.
+A rudimentary command-line program for invoking this library is provided.  Another rudimentary command-line program for examining EPUB publications is provided.
 
-Another rudimentary command-line program for examining EPUB publications is provided.
+Avalonia-based GUI for invoking this library is also provided.
 
-This does not contain any examples of CREPDL scripts. See another repository CREPDLScripts for a collection of CREPDL scripts.
+This repository does not contain any examples of CREPDL scripts. See another repository CREPDLScripts for a collection of CREPDL scripts.
 
 ## Branches
 
-Use the branch "version2". The other branches are archaic.
+Use the branch "version2" or "icu-free". The other branches are archaic.
 
 ## Programming
 
@@ -22,7 +22,7 @@ Use Visual Studio 2015 (and beyond) for cloning this repository.
 
 Use the CREPDL project in the CREPDL solution. The other projects are for testing, preprocessing, and experiments.
 
-The .Net API for this implementation idescribed in a [help file](https://github.com/CITPCSHARE/CREPDL/blob/Version2/Help/Documentation.chm).  Use the download button to download the help file.  This help file covers many classes, but you need Validation.Validator  and nothing else.
+The .Net API for this implementation is described in a [help file](https://github.com/CITPCSHARE/CREPDL/blob/Version2/Help/Documentation.chm).  Use the download button to download the help file.  This help file covers many classes, but you need Validation.Validator and nothing else.
 
 ## History
 
