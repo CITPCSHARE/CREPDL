@@ -5,6 +5,7 @@ open 電子化文書の日本語レパートリー検証.Models.Toolkit
 open 電子化文書の日本語レパートリー検証.Models.EpubValidator
 open 電子化文書の日本語レパートリー検証.Models.HtmlValidator
 open 電子化文書の日本語レパートリー検証.Models.WmlValidator
+open 電子化文書の日本語レパートリー検証.Models.TextValidator
 
 type MainWindowViewModel() =
     inherit ViewModelBase()
@@ -13,6 +14,7 @@ type MainWindowViewModel() =
     let mutable epubDirectory = ""
     let mutable htmlFile = ""
     let mutable wmlFile = ""
+    let mutable textFile = ""
     let mutable diagnostics = ""
     let validatorStruct = createValidatorStruct()
 
@@ -46,11 +48,17 @@ type MainWindowViewModel() =
         and set(s : string) = 
              ignore <| this.RaiseAndSetIfChanged(&wmlFile, s)
     
-
+    member this.TextFile
+        with get() = 
+             textFile
+        and set(s : string) = 
+             ignore <| this.RaiseAndSetIfChanged(&textFile, s)
+    
     member this.Validate() =
         this.Diagnostics <-
             if epubfile <> "" then validateEpubFile validatorStruct epubfile
             elif epubDirectory <> "" then validateEpubDirectory validatorStruct epubDirectory
             elif htmlFile <> "" then validateHtmlFile validatorStruct htmlFile
             elif wmlFile <> "" then validateWmlFile validatorStruct wmlFile
+            elif textFile <> "" then validateTextFile validatorStruct textFile
             else ""

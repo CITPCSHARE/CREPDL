@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
@@ -12,6 +12,7 @@
 		<Compile Include="Models\HtmlValidator.fs" />
 		<Compile Include="Models\EpubValidator.fs" />
 		<Compile Include="Models\WmlValidator.fs" />
+		<Compile Include="Models\TextValidator.fs" />
 		<AvaloniaResource Include="Assets\**" />
 		<None Remove=".gitignore" />
 	</ItemGroup>

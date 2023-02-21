@@ -19,6 +19,8 @@
 		<Button Name="ValidateEpubDirectory">EPUB _Directoryの検証</Button>
 		<Button Name="ValidateDocxFile">_Word (docx)ファイルの検証</Button>
 		<Button Name="ValidateHtmlFile">_HTMLファイルの検証</Button>
+		<Button Name="ValidateTextFile">_Textファイルの検証</Button>
+
 	</StackPanel>
 		<StackPanel Orientation="Vertical" Spacing="8" Margin="20,10,10,10">
 			<Border BorderThickness="1"

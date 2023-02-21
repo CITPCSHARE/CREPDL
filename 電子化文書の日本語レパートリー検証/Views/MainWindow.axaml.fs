@@ -11,6 +11,7 @@ type MainWindow () as this =
     let mutable epubDirectoryValidateButton:Button = null
     let mutable wmlValidateButton:Button = null
     let mutable htmlValidateButton:Button = null
+    let mutable textValidateButton:Button = null
 
     do this.InitializeComponent()
 
@@ -24,6 +25,7 @@ type MainWindow () as this =
         epubDirectoryValidateButton <- this.Find<Button>("ValidateEpubDirectory")
         wmlValidateButton <- this.Find<Button>("ValidateDocxFile")
         htmlValidateButton <- this.Find<Button>("ValidateHtmlFile")
+        textValidateButton <- this.Find<Button>("ValidateTextFile")
 
         epubFileValidateButton.Click.Subscribe(fun _ -> 
             let dialog = new OpenFileDialog()
@@ -39,6 +41,7 @@ type MainWindow () as this =
             dc.EpubDirectory <- ""
             dc.WmlFile <- ""
             dc.HtmlFile <- ""
+            dc.TextFile <- ""
             dc.Validate()
             ()) |> ignore
 
@@ -50,6 +53,7 @@ type MainWindow () as this =
             dc.Epubfile <- ""
             dc.WmlFile <- ""
             dc.HtmlFile <- ""
+            dc.TextFile <- ""
             dc.Validate()
             ()) |> ignore
 
@@ -67,6 +71,7 @@ type MainWindow () as this =
             dc.Epubfile <- ""
             dc.EpubDirectory <- ""
             dc.HtmlFile <- ""
+            dc.TextFile <- ""
             dc.Validate()
             ()) |> ignore
         
@@ -81,6 +86,25 @@ type MainWindow () as this =
             let htmlFiles = dialog.ShowAsync(this) |>  Async.AwaitTask |> Async.RunSynchronously
             let dc = this.DataContext :?> MainWindowViewModel 
             dc.HtmlFile <- if htmlFiles = null then "" else htmlFiles.[0]
+            dc.Epubfile <- ""
+            dc.EpubDirectory <- ""
+            dc.WmlFile <- ""
+            dc.TextFile <- ""
+            dc.Validate()
+            ()) |> ignore
+            
+        textValidateButton.Click.Subscribe(fun _ -> 
+            let dialog = new OpenFileDialog()
+            let f1 = new FileDialogFilter(Name = "Textファイル")
+            f1.Extensions.Add("txt")
+            dialog.Filters.Add(f1)
+            let f2 = new FileDialogFilter(Name = "全てのファイル")
+            f2.Extensions.Add("*")
+            dialog.Filters.Add(f2)
+            let textFiles = dialog.ShowAsync(this) |>  Async.AwaitTask |> Async.RunSynchronously
+            let dc = this.DataContext :?> MainWindowViewModel 
+            dc.TextFile <- if textFiles = null then "" else textFiles.[0]
+            dc.HtmlFile <- ""
             dc.Epubfile <- ""
             dc.EpubDirectory <- ""
             dc.WmlFile <- ""
