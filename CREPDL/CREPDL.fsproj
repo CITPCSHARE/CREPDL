@@ -69,4 +69,8 @@
     <Content Include="TODO.txt" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="7.0.200" />
+  </ItemGroup>
+
 </Project>
