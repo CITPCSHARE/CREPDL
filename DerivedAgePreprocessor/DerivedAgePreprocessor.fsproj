@@ -12,6 +12,6 @@
     <ProjectReference Include="..\EPUBConsoleApplication\EPUBConsoleApplication.fsproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="7.0.200" />
+    <PackageReference Update="FSharp.Core" Version="9.0.303" />
   </ItemGroup>
 </Project>
