@@ -32,12 +32,12 @@
         <TrimmableAssembly Include="Avalonia.Themes.Default" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="0.10.18" />
-        <PackageReference Include="Avalonia.Desktop" Version="0.10.18" />
+        <PackageReference Include="Avalonia" Version="11.3.3" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.3.3" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.18" />
-        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.18" />
-        <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.3.3" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.3" />
+        <PackageReference Include="HtmlAgilityPack" Version="1.12.2" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Assets\" />
@@ -46,6 +46,6 @@
       <ProjectReference Include="..\CREPDL\CREPDL.fsproj" />
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Update="FSharp.Core" Version="7.0.200" />
+      <PackageReference Update="FSharp.Core" Version="9.0.303" />
     </ItemGroup>
 </Project>
