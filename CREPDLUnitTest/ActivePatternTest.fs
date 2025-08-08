@@ -22,8 +22,8 @@ module ActivePatternTest =
         let schema = XDocument.Parse(script, LoadOptions.SetBaseUri).Root
         match schema with
         | Union(Some(mode), None, Some(max), children) ->
-            Assert.AreEqual(mode, CharacterMode)
-            Assert.AreEqual(max, versionString2Int "7.0")
+            Assert.That(mode,Is.EqualTo(CharacterMode))
+            Assert.That(max, Is.EqualTo(versionString2Int "7.0"))
             Assert.That(children.IsEmpty)
         | _ -> Assert.Fail()
             
@@ -39,13 +39,13 @@ module ActivePatternTest =
         let schema = XDocument.Parse(script, LoadOptions.SetBaseUri).Root
         match schema with
         | Difference(Some(mode),Some(min), None, [child]) ->
-            Assert.AreEqual(mode, GraphemeClusterMode)
-            Assert.AreEqual(min, versionString2Int "7.0")
+            Assert.That(mode, Is.EqualTo(GraphemeClusterMode))
+            Assert.That(min, Is.EqualTo(versionString2Int "7.0"))
             match child with
             | Ref(None, None, None,  absUri, [])
-              -> Assert.AreEqual(absUri.ToString(), "http://www.example.com/foo.crepdl")
-            | _ -> Assert.Fail()
-        | _ -> Assert.Fail()
+              -> Assert.Equals(absUri.ToString(), "http://www.example.com/foo.crepdl")
+            | _ -> Assert.Fail();false
+        | _ -> Assert.Fail();false
                     
     [<Test>]
     let refTest1() =
@@ -59,9 +59,9 @@ module ActivePatternTest =
         match schema with
         | Ref(Some(mode), None, Some(max), absUri, [])
               -> 
-                    Assert.AreEqual(mode, GraphemeClusterMode)
-                    Assert.AreEqual(max, versionString2Int "7.0")
-                    Assert.AreEqual(absUri.ToString(), "http://www.example.com/foo.crepdl")
+                    Assert.That(mode, Is.EqualTo(GraphemeClusterMode))
+                    Assert.That(max, Is.EqualTo(versionString2Int "7.0"))
+                    Assert.That(absUri.ToString(), Is.EqualTo("http://www.example.com/foo.crepdl"))
         | _ -> Assert.Fail()
 
     [<Test>]

@@ -12,12 +12,12 @@ module ISO10646CollectionTest =
     [<TestCase(96, "0x1760, 0x177F")>]
     let createRepertoireFromTextReaderInlineNumTest num content  =
       let tr = generateRepertoireFromISOCollection None (Some(num))
-      Assert.That(tr.ReadToEnd(), Is.EqualTo(content))
+      Assert.That(tr.ReadToEnd(), Is.EqualTo(content: string))
 
     [<TestCase("TAGBANWA", "0x1760, 0x177F")>]
     let createRepertoireFromTextReaderInlineNameTest name content  =
       let tr = generateRepertoireFromISOCollection (Some(name)) None 
-      Assert.That(tr.ReadToEnd(), Is.EqualTo(content))
+      Assert.That(tr.ReadToEnd(), Is.EqualTo(content: string))
       
 
     [<TestCase(301, "0x000020,0x00007E")>]

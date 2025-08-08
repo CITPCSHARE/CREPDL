@@ -30,5 +30,5 @@ module CollectionValidationTest =
     [<TestCase(285,"\u3100", false)>]
     let testValidationAgainstCollection annexACollectionNumber str result  =
         let validator = createValidator annexACollectionNumber
-        if result then Assert.True(validator.validateString str = ([||], [||]))
-        else  Assert.False(validator.validateString str = ([||], [||]))
+        if result then Assert.That(validator.validateString str = ([||], [||]))
+        else  Assert.That(validator.validateString str <> ([||], [||]))

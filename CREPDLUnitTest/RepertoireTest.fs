@@ -25,4 +25,4 @@ module RepertoireTest =
     [<TestCaseSource("RepertoireTestCases")>]
     let createRepertoireFromTextReaderTest def str tb  =
         let f = createRepertoireFromTextReader (new StringReader(def)) 
-        Assert.That(f str, Is.EqualTo(tb))
+        Assert.That(f str, Is.EqualTo(tb: string))

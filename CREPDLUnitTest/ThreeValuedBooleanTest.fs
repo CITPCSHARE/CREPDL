@@ -23,7 +23,7 @@ module ThreeValuedBooleanTest =
     [<Category("ThreeValuedBoolean")>]
     let unionTest (x, y, z) =
         let ly = function() -> (unbox y)
-        Assert.AreEqual(union (unbox x) ly, unbox z)
+        Assert.Equals(union (unbox x) ly, unbox z)
 
     let IntersectionCases =
             [
@@ -42,7 +42,7 @@ module ThreeValuedBooleanTest =
     [<Category("ThreeValuedBoolean")>]
     let intersectionTest (x, y, z) =
        let ly = function() -> (unbox y)
-       Assert.AreEqual(intersection (unbox x) ly,  (unbox z))
+       Assert.Equals(intersection (unbox x) ly,  (unbox z))
 
     let DifferenceCases =
             [
@@ -61,4 +61,4 @@ module ThreeValuedBooleanTest =
     [<Category("ThreeValuedBoolean")>]
     let  differenceTest (x , y, z) =
         let ly = function() -> (unbox y)
-        Assert.AreEqual(difference (unbox x) ly,  unbox z)
+        Assert.Equals(difference (unbox x) ly,  unbox z)
