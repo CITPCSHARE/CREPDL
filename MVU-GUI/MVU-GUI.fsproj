@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<OutputType>WinExe</OutputType> <!-- Specify Exe for debugging.  WinExe for distribution     -->	 
+    <TargetFramework>net8.0</TargetFramework>
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+
+	  <UseWindowsSubsystem>false</UseWindowsSubsystem>
+
+	  <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+	  <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+	  <PlatformTarget>x64</PlatformTarget>
+	  <SelfContained>true</SelfContained>
+	  <PublishSingleFile>false</PublishSingleFile>
+
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="PickFileOrDirectory.fs" />
+    <Compile Include="Toolkit.fs" />
+    <Compile Include="WmlValidator.fs" />
+    <Compile Include="TextValidator.fs" />
+    <Compile Include="HtmlValidator.fs" />
+    <Compile Include="EpubValidator.fs" />
+    <Compile Include="Model.fs" />
+    <Compile Include="Msg.fs" />
+    <Compile Include="Update.fs" />
+    <Compile Include="View.fs" />
+    <Compile Include="MainWindow.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.3.3" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.3" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.3" />
+    <PackageReference Include="Avalonia.FuncUI" Version="1.5.1" />
+    <PackageReference Include="Avalonia.FuncUI.Elmish" Version="1.5.1" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.3" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.3.3" />
+    <PackageReference Include="Elmish" Version="4.4.0" />
+    <PackageReference Include="Elmish.Avalonia" Version="2.0.0-gamma.9" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.12.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CREPDL\CREPDL.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="10.0.100-beta.25358.103" />
+  </ItemGroup>
+</Project>

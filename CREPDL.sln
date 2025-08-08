@@ -25,6 +25,8 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "電子化文書の日本語
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer for CREPDL doc", "Installer for CREPDL doc\Installer for CREPDL doc.vdproj", "{7057B9AB-9547-42FD-9447-4398149638FC}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MVU-GUI", "MVU-GUI\MVU-GUI.fsproj", "{4FEC1C18-4AC4-F05A-FCF9-4B6774023CD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|Any CPU = All|Any CPU
@@ -95,6 +97,12 @@ Global
 		{7057B9AB-9547-42FD-9447-4398149638FC}.All|Any CPU.ActiveCfg = Debug
 		{7057B9AB-9547-42FD-9447-4398149638FC}.Debug|Any CPU.ActiveCfg = Debug
 		{7057B9AB-9547-42FD-9447-4398149638FC}.Release|Any CPU.ActiveCfg = Release
+		{4FEC1C18-4AC4-F05A-FCF9-4B6774023CD2}.All|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEC1C18-4AC4-F05A-FCF9-4B6774023CD2}.All|Any CPU.Build.0 = Debug|Any CPU
+		{4FEC1C18-4AC4-F05A-FCF9-4B6774023CD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEC1C18-4AC4-F05A-FCF9-4B6774023CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FEC1C18-4AC4-F05A-FCF9-4B6774023CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FEC1C18-4AC4-F05A-FCF9-4B6774023CD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
