@@ -77,11 +77,16 @@ let view (model: Model) (dispatch: Msg -> unit) : IView =
                                         ScrollViewer.horizontalScrollBarVisibility ScrollBarVisibility.Visible
 
                                         ScrollViewer.content (
-                                            TextBlock.create [
-                                                TextBlock.text model.Diagnostics
-                                                TextBlock.fontFamily "Arial Unicode MS"
-                                                TextBlock.margin (20.0,10.0,20.0,10.0)
-                                                TextBlock.textAlignment TextAlignment.Left
+                                            TextBox.create [
+                                                TextBox.text model.Diagnostics
+                                                TextBox.fontFamily "Arial Unicode MS"
+                                                TextBox.margin (20.0,10.0,20.0,10.0)
+                                                TextBox.textAlignment TextAlignment.Left
+                                                TextBox.isReadOnly true
+                                                TextBox.acceptsReturn true
+                                                TextBox.textWrapping TextWrapping.Wrap
+                                                TextBox.borderThickness 0.0
+                                                TextBox.background "Transparent"
                                             ]
                                         )
                                     ]
