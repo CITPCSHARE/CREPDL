@@ -43,9 +43,9 @@ module ActivePatternTest =
             Assert.That(min, Is.EqualTo(versionString2Int "7.0"))
             match child with
             | Ref(None, None, None,  absUri, [])
-              -> Assert.Equals(absUri.ToString(), "http://www.example.com/foo.crepdl")
-            | _ -> Assert.Fail();false
-        | _ -> Assert.Fail();false
+              -> Assert.That(absUri.ToString(), Is.EqualTo("http://www.example.com/foo.crepdl"))
+            | _ -> Assert.Fail()
+        | _ -> Assert.Fail()
                     
     [<Test>]
     let refTest1() =

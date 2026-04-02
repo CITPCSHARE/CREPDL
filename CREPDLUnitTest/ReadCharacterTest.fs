@@ -16,7 +16,7 @@ module ReadCharacterTest =
         let x = getCharacterEnumerator sr
         let mutable result = []
         for c in x do result <- c::result
-        Assert.Equals(l, List.rev result)
+        Assert.That(List.rev result, Is.EqualTo<string list>(l))
         
     [<Test>]
     let readGCTest2() =
@@ -24,4 +24,4 @@ module ReadCharacterTest =
         let x = getCharacterEnumerator sr
         let mutable result = []
         for c in x do result <- c::result
-        Assert.Equals(List.append l l, List.rev result)
+        Assert.That(List.rev result, Is.EqualTo<string list>(List.append l l))

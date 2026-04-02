@@ -21,9 +21,9 @@ module ThreeValuedBooleanTest =
 
     [<TestCaseSource("UnionCases")>]
     [<Category("ThreeValuedBoolean")>]
-    let unionTest (x, y, z) =
-        let ly = function() -> (unbox y)
-        Assert.Equals(union (unbox x) ly, unbox z)
+    let unionTest (x: obj, y: obj, z: obj) =
+        let ly () = unbox<ThreeValuedBoolean> y
+        Assert.That(union (unbox<ThreeValuedBoolean> x) ly, Is.EqualTo<ThreeValuedBoolean>(unbox<ThreeValuedBoolean> z))
 
     let IntersectionCases =
             [
@@ -40,9 +40,9 @@ module ThreeValuedBooleanTest =
 
     [<TestCaseSource("IntersectionCases")>]
     [<Category("ThreeValuedBoolean")>]
-    let intersectionTest (x, y, z) =
-       let ly = function() -> (unbox y)
-       Assert.Equals(intersection (unbox x) ly,  (unbox z))
+    let intersectionTest (x: obj, y: obj, z: obj) =
+       let ly () = unbox<ThreeValuedBoolean> y
+       Assert.That(intersection (unbox<ThreeValuedBoolean> x) ly, Is.EqualTo<ThreeValuedBoolean>(unbox<ThreeValuedBoolean> z))
 
     let DifferenceCases =
             [
@@ -59,6 +59,6 @@ module ThreeValuedBooleanTest =
 
     [<TestCaseSource("DifferenceCases")>]
     [<Category("ThreeValuedBoolean")>]
-    let  differenceTest (x , y, z) =
-        let ly = function() -> (unbox y)
-        Assert.Equals(difference (unbox x) ly,  unbox z)
+    let  differenceTest (x: obj, y: obj, z: obj) =
+        let ly () = unbox<ThreeValuedBoolean> y
+        Assert.That(difference (unbox<ThreeValuedBoolean> x) ly, Is.EqualTo<ThreeValuedBoolean>(unbox<ThreeValuedBoolean> z))

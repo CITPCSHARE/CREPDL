@@ -26,6 +26,6 @@ module ReadGraphemeClusterTest =
         let x = getGraphemeClusterEnumerator sr
         let mutable result = []
         for gc in x do result <- gc::result
-        Assert.Equals(l, List.rev result)
+        Assert.That(List.rev result, Is.EqualTo<string list>(l))
         
 

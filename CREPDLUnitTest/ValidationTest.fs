@@ -8,8 +8,8 @@ open CREPDL.ReadGraphemeCluster
 [<TestFixture>]
 [<Category("ReadGraphemeCluster")>]
 module ValidationTest =  
-    let dir = @"N:\CREPDLScripts\examples\version2\characterMode\"
-    let gcdir = @"N:\CREPDLScripts\examples\version2\graphemeClusterMode\"
+    let dir = @"F:\CREPDLScripts\examples\version2\characterMode\"
+    let gcdir = @"F:\CREPDLScripts\examples\version2\graphemeClusterMode\"
 
 
     let validateString (scriptFileName: string) str  characterMode = 

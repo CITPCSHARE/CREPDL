@@ -23,6 +23,7 @@ module RepertoireTest =
 
 
     [<TestCaseSource("RepertoireTestCases")>]
-    let createRepertoireFromTextReaderTest def str tb  =
+    let createRepertoireFromTextReaderTest (def:string) (str:string) (tb: obj) =
         let f = createRepertoireFromTextReader (new StringReader(def)) 
-        Assert.That(f str, Is.EqualTo(tb: string))
+        let expected = tb :?> ThreeValuedBoolean
+        Assert.That(f str, Is.EqualTo<ThreeValuedBoolean>(expected))

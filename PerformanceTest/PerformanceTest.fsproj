@@ -69,10 +69,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.ValueTuple">
-      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <ProjectReference Include="..\CREPDL\CREPDL.fsproj">
       <Name>CREPDL</Name>
       <Project>{e38863e8-88ef-49ec-89ad-1ebbbbe3be21}</Project>

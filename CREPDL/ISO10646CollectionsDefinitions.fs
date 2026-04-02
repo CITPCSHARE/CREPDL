@@ -625,6 +625,8 @@ let internal inLineCollections =
                 "0x2B820,0x2CEAF");
            (2006, "CJK UNIFIED IDEOGRAPHS EXTENSION F",
                 "0x2CEB0,0x2EBEF");
+           (2007, "CJK UNIFIED IDEOGRAPHS EXTENSION G",
+                "0x30000,0x3134F");
            (3001, "TAGS",
                 "0xE0000, 0xE007F");
            (3003, "VARIATION SELECTORS SUPPLEMENT",
