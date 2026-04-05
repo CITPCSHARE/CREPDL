@@ -28,6 +28,7 @@
     <EmbeddedResource Include="-200285.txt" />
     <EmbeddedResource Include="-287.txt" />
     <EmbeddedResource Include="-340.txt" />
+    <EmbeddedResource Include="-392.txt" />
     <EmbeddedResource Include="281.txt" />
     <EmbeddedResource Include="282.txt" />
     <EmbeddedResource Include="286.txt" />

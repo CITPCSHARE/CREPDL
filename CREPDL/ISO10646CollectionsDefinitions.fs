@@ -613,6 +613,20 @@ let internal inLineCollections =
                  "0x1E2C0,0x1E2FF");
            (1127, "OTTOMAN SIYAQ NUMBERS",
                  "0x1ED00,0x1ED4F");
+           (1128, "DIVES AKURU",
+                 "0x11900,0x1195F");
+           (1129, "LISU SUPPLEMENT",
+                 "0x11FB0,0x11FBF");
+           (1130, "KHITAN SMALL SCRIPT",
+                 "0x18B00,0x18CFF");
+           (1131, "SYMBOLS AND PICTOGRAPHS EXTENDED-A",
+                 "0x1FA70,0x1FAFF");
+           (1132, "SYMBOLS FOR LEGACY COMPUTING",
+                 "0x1FB00,0x1FBFF");
+           (1133, "YEZIDI",
+                 "0x10E80,0x10EBF");
+           (1134, "TANGUT SUPPLEMENT",
+                 "0x18D00,0x18D7F");
            (2001, "CJK UNIFIED IDEOGRAPHS EXTENSION B",
                 "0x20000, 0x2A6DF");
            (2002, "CJK COMPATIBILITY IDEOGRAPHS SUPPLEMENT",
@@ -820,7 +834,6 @@ let internal inLineCollections =
               0x2B740,0x2B81D
               0x2B820,0x2CEA1
               0x2CEB0,0x2EBE0");
-
     //284 CONTEMPORARY LITHUANIAN LETTERS see A.5.5 *
 
            (300, "BMP",
@@ -850,11 +863,7 @@ let internal inLineCollections =
                 "0x3164
                 0xFFA0
                 0x206A, 0x206D
-                0x206E, 0x206F");
-           (4000, "UCS PART-2",
-                "0x10000, 0x1FFFD
-                0x20000, 0x2FFFD
-                0xE0000, 0xEFFFD")]
+                0x206E, 0x206F")]
             
 let internal outOfLineCollections =
          [(281, "MES-1", "281.txt");
@@ -892,6 +901,7 @@ let internal outOfLineCollections =
           (0, "Age14-0", "Age14-0.txt");
           (0, "Age15-0", "Age15-0.txt");
           (-340, "", "-340.txt");
+          (-392, "", "-392.txt");
           (370, "IICORE", "IICORE.txt");
           (371, "JIS2004 IDEOGRAPHICS EXTENSION", "JIExt.txt");
           (372, "JAPANESE IDEOGRAPHICS SUPPLEMENT", "JAPANESE IDEOGRAPHICS SUPPLEMENT.txt");
@@ -1085,6 +1095,22 @@ let internal collectionsInCREPDL =
                         <repertoire  registry=""10646"" name=""Age11-0""/>
                     </union>");
 
+                    
+            (319, "UNICODE 12.0",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""318""/>
+                        <repertoire  registry=""10646"" name=""Age12-0""/>
+                    </union>");
+            (320, "UNICODE 12.1",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""319""/>
+                        <repertoire  registry=""10646"" name=""Age12-1""/>
+                    </union>");
+            (321, "UNICODE 13.0",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                        <repertoire  registry=""10646"" number=""320""/>
+                        <repertoire  registry=""10646"" name=""Age13-0""/>
+                    </union>");
 
           (340, "COMBINED FIRST EDITION",
                 @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
@@ -1099,9 +1125,20 @@ let internal collectionsInCREPDL =
                       <repertoire  registry=""10646"" number=""111""/>
                       <repertoire  registry=""10646"" number=""-340""/>
                     </union>");
-          (390, "MOJI-JOHO-KIBAN IDEOGRAPHS-2016",
+   //       (390, "MOJI-JOHO-KIBAN IDEOGRAPHS-2016",
+   //         @"<repertoire xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"" 
+   //             registry=""IVD"" name=""Moji_Joho""/>");
+          (391, "MOJI-JOHO-KIBAN IDEOGRAPHS-2018",
             @"<repertoire xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"" 
-                registry=""IVD"" name=""""/>");
+                registry=""IVD"" name=""Moji_Joho""/>");
+
+                
+          (392, "CJK UNIFIED IDEOGRAPHS-2020",
+                @"<union xmlns=""http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0"">
+                      <repertoire  registry=""10646"" number=""389""/>
+                      <repertoire  registry=""10646"" number=""-392""/>
+                    </union>");
+
           (4000, "UCS PART-2", """
                 <union xmlns="http://purl.oclc.org/dsdl/crepdl/ns/structure/2.0">
                       <repertoire  registry="10646" number="1000"/>

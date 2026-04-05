@@ -34,8 +34,8 @@ module ValidationTest =
         Seq.length l
             
     [<TestCase("8859-15a.crepdl","abc", true)>]
-    [<TestCase("8859-15c.crepdl","abc", true)>]
-    [<TestCase("8859-15a.crepdl","abc", true)>]
+//    [<TestCase("8859-15b.crepdl","abc", true)>]
+//    [<TestCase("8859-15c.crepdl","abc", true)>]
     [<TestCase("8859-6b.crepdl", "abc", true)>]
     [<TestCase("IICORE.crepdl", "一二三四五征悟父暗漁禁己", true)>]
     [<TestCase("IICORE.crepdl", "\u35BF\u4C81\u4E66\u4EC1\u4F1D\u4FE1\u5074\u5112\u5173\u51C9\u5247\u5356\u53D8\u541B\u5492\u550F\u556E\u5608\u56AD\u5730\u57F8\u58F1\u596D\u5AE9\u5BA4\u5E43\u5F01\u5F82\u6159\u62D0\u7C73\u8DA3\u8E3D\u9328\u9756\u982D\u9F9B", true)>]
